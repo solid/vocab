@@ -1,0 +1,89 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<>
+    <http://creativecommons.org/ns#attributionName> "Andrei Sambra" ;
+    <http://creativecommons.org/ns#attributionURL> <> ;
+    <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by-sa/2.0/uk/deed.en_GB> ;
+    <http://purl.org/dc/terms/issued> "2015-06-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Solid Web Application"@en ;
+    <http://xmlns.com/foaf/0.1/maker> <https://deiu.me/profile#me> .
+
+<#Application>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A Solid Web application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Application"@en .
+
+<#Configuration>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A set of configuration data for a Solid Web application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Configuration data"@en .
+
+<#PreferencesWorkspace>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A special workspace that contains configuration resources for Solid Web application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Configuration Workspace"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/pim/space#Workspace> .
+
+<#configuration>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The configuration data for a given app."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Configuration"@en .
+
+<#description>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Description of an application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Description"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<#name>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of a Web application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Name"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+
+<#icon>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An icon URI for a Web application."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Icon"@en .
+
+<#homepage>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A homepage URI, where the app is hosted and ran from."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Homepage"@en .
+
+<#dataSource>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A container (workspace) in which the app stores data."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Data source"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/pim/space#Workspace> .
+
+<#index>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "An index resource that contains references to resources managed by the app."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Data index"@en .
+
+<#commonType>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A common type of data that the app uses. An app can publish a list of common  types that can be used by other apps."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Common type"@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> .
+

@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<>
+    <http://creativecommons.org/ns#attributionName> "Andrei Sambra" ;
+    <http://creativecommons.org/ns#attributionURL> <> ;
+    <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by-sa/2.0/uk/deed.en_GB> ;
+    <http://purl.org/dc/terms/issued> "2015-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    a <http://www.w3.org/2002/07/owl#Ontology> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en ;
+    <http://xmlns.com/foaf/0.1/maker> <https://deiu.me/profile#me> .
+
+<#Inbox>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A resource containing notifications."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Inbox"@en .
+
+<#inbox>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "inbox"@en .
