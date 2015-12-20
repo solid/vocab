@@ -14,7 +14,7 @@
     <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A notification resource."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Inbox"@en .
+    <http://www.w3.org/2000/01/rdf-schema#label> "Notification"@en .
 
 <#Inbox>
     a <http://www.w3.org/2000/01/rdf-schema#Class> ;
