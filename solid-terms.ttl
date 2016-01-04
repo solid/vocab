@@ -22,6 +22,12 @@
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Inbox"@en .
 
+<#Timeline>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A resource containing time ordered items and sub-containers.  Sub-containers may be desirable in file based systems to split the timeline into logical components e.g. /yyyy-mm-dd/ as used in ISO 8061."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Timeline"@en .
+
 <#read>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
@@ -35,3 +41,10 @@
     <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "inbox"@en .
+
+<#timeline>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Timeline for a given resource."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "timeline"@en .
