@@ -67,7 +67,7 @@
 <#dataSource>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A container (workspace) in which the app stores data."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
+    <http://www.w3.org/2000/01/rdf-schema#domain> <#Configuration> ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Data source"@en ;
     <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/pim/space#Workspace> .
