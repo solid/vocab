@@ -36,7 +36,7 @@
     <http://www.w3.org/2000/01/rdf-schema#label> "Configuration"@en .
 
 <#description>
-    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Description of an application."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Description"@en ;
