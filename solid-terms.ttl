@@ -9,6 +9,12 @@
     <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en ;
     <http://xmlns.com/foaf/0.1/maker> <https://deiu.me/profile#me> .
 
+<#TypeIndex>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Type index"@en .
+
 <#Notification>
     a <http://www.w3.org/2000/01/rdf-schema#Class> ;
     <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> ;
@@ -35,10 +41,18 @@
     <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "read"@en .
 
+<#typeIndex>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Points to a TypeIndex resource."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <#TypeIndex> ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "type index"@en .
+    
 <#inbox>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
     <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <#Inbox> .
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "inbox"@en .
 
