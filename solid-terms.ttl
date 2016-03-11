@@ -1,13 +1,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 
 <>
-    <http://creativecommons.org/ns#attributionName> "Andrei Sambra" ;
     <http://creativecommons.org/ns#attributionURL> <> ;
-    <http://creativecommons.org/ns#license> <http://creativecommons.org/licenses/by-sa/2.0/uk/deed.en_GB> ;
+    <http://creativecommons.org/ns#license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
     <http://purl.org/dc/terms/issued> "2015-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
     a <http://www.w3.org/2002/07/owl#Ontology> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en ;
-    <http://xmlns.com/foaf/0.1/maker> <https://deiu.me/profile#me> .
+    <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en .
 
 <#TypeIndex>
     a <http://www.w3.org/2000/01/rdf-schema#Class> ;
@@ -17,7 +15,6 @@
 
 <#Notification>
     a <http://www.w3.org/2000/01/rdf-schema#Class> ;
-    <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://rdfs.org/sioc/ns#Post> ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A notification resource."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Notification"@en .
@@ -51,14 +48,17 @@
 <#inbox>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
-    <http://www.w3.org/2000/01/rdf-schema#range> <#Inbox> .
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "inbox"@en .
+
+<#notification>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "Notification resource for an inbox."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "notification"@en .
 
 <#timeline>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Timeline for a given resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2002/07/owl#Thing> ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "timeline"@en .
