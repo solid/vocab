@@ -35,35 +35,6 @@
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Configuration"@en .
 
-<#description>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Description of an application."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Description"@en ;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-
-<#name>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "The official name of a Web application."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Name"@en ;
-    <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-
-<#icon>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "An icon URI for a Web application."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Icon"@en .
-
-<#homepage>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "A homepage URI, where the app is hosted and ran from."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <#Application> ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Homepage"@en .
-
 <#dataSource>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A container (workspace) in which the app stores data."@en ;
