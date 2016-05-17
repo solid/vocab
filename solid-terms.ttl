@@ -7,6 +7,12 @@
     a <http://www.w3.org/2002/07/owl#Ontology> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en .
 
+<#Account>
+    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A Solid account."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "Account"@en .
+
 <#TypeIndex>
     a <http://www.w3.org/2000/01/rdf-schema#Class> ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
@@ -45,6 +51,12 @@
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "type index"@en .
     
+<#account>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "A solid account belonging to an Agent."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "account"@en .
+  
 <#inbox>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
