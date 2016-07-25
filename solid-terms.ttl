@@ -60,7 +60,7 @@
 
 <#typeIndex>
     a rdf:Property ;
-    rdfs:comment "Points to a TypeIndex resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#range> <#TypeIndex> ;
     rdfs:isDefinedBy <> ;
-    rdfs:label "type index"@en .
+    rdfs:label "type index"@en ;
+    rdfs:comment "Points to a TypeIndex resource."@en ;
+    rdfs:range <#TypeIndex> .
