@@ -1,64 +1,66 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/issued> .
 
 <>
-    <http://creativecommons.org/ns#attributionURL> <> ;
-    <http://creativecommons.org/ns#license> <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    <http://purl.org/dc/terms/issued> "2015-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
     a <http://www.w3.org/2002/07/owl#Ontology> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Solid terms"@en .
-
-<#TypeIndex>
-    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Type index"@en .
-
-<#Notification>
-    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "A notification resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Notification"@en .
+    rdfs:label "Solid terms"@en ;
+    dcterms:issues "2015-11-16"^^<http://www.w3.org/2001/XMLSchema#date> ;
+    dcterms:modified "2016-07-25"^^<http://www.w3.org/2001/XMLSchema#date> .
 
 <#Inbox>
-    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "A resource containing notifications."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Inbox"@en .
+    a rdfs:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Inbox"@en ;
+    rdfs:comment "A resource containing notifications."@en .
+
+<#Notification>
+    a rdfs:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Notification"@en ;
+    rdfs:comment "A notification resource."@en .
 
 <#Timeline>
-    a <http://www.w3.org/2000/01/rdf-schema#Class> ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "A resource containing time ordered items and sub-containers.  Sub-containers may be desirable in file based systems to split the timeline into logical components e.g. /yyyy-mm-dd/ as used in ISO 8061."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "Timeline"@en .
+    a rdfs:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:comment "A resource containing time ordered items and sub-containers.  Sub-containers may be desirable in file based systems to split the timeline into logical components e.g. /yyyy-mm-dd/ as used in ISO 8061."@en ;
+    rdfs:label "Timeline"@en .
 
-<#read>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#domain> <http://rdfs.org/sioc/ns#Post> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "read"@en .
-
-<#typeIndex>
-    a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Points to a TypeIndex resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#range> <#TypeIndex> ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "type index"@en .
+<#TypeIndex>
+    a rdfs:Class ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Type index"@en ;
+    rdfs:comment "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en .
     
 <#inbox>
     a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "inbox"@en .
+    rdfs:isDefinedBy <> ;
+    rdfs:label "inbox"@en ;
+    rdfs:comment "Used to discover an Inbox to send notifications to and consume from. Used in Linked Data Notifications: http://www.w3.org/TR/ldn/"@en .
 
 <#notification>
     a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Notification resource for an inbox."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "notification"@en .
+    rdfs:comment "Notification resource for an inbox."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "notification"@en .
+
+<#read>
+    a rdf:Property ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "read"@en ;
+    rdfs:comment "Indicates if a message has been read or not."@en ;
+    rdfs:range xsd:boolean .
 
 <#timeline>
     a rdf:Property ;
-    <http://www.w3.org/2000/01/rdf-schema#comment> "Timeline for a given resource."@en ;
-    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "timeline"@en .
+    rdfs:comment "Timeline for a given resource."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "timeline"@en .
+
+<#typeIndex>
+    a rdf:Property ;
+    rdfs:comment "Points to a TypeIndex resource."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#range> <#TypeIndex> ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "type index"@en .
