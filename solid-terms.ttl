@@ -50,13 +50,13 @@
     <http://www.w3.org/2000/01/rdf-schema#range> <#TypeIndex> ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "type index"@en .
-    
+
 <#account>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "A solid account belonging to an Agent."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "account"@en .
-  
+
 <#inbox>
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "Inbox resource for notifications."@en ;
@@ -86,3 +86,9 @@
     <http://www.w3.org/2000/01/rdf-schema#comment> "The logout URI of a given server."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
     <http://www.w3.org/2000/01/rdf-schema#label> "logoutEndpoint"@en .
+
+<#oidcIssuer>
+    a rdf:Property ;
+    <http://www.w3.org/2000/01/rdf-schema#comment> "The preferred OpenID Connect issuer URI for a given Web ID."@en ;
+    <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
+    <http://www.w3.org/2000/01/rdf-schema#label> "oidcIssuer"@en .
