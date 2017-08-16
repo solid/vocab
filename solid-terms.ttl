@@ -1,4 +1,5 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <>
     <http://creativecommons.org/ns#attributionURL> <> ;
@@ -91,4 +92,5 @@
     a rdf:Property ;
     <http://www.w3.org/2000/01/rdf-schema#comment> "The preferred OpenID Connect issuer URI for a given Web ID."@en ;
     <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <> ;
-    <http://www.w3.org/2000/01/rdf-schema#label> "oidcIssuer"@en .
+    <http://www.w3.org/2000/01/rdf-schema#label> "oidcIssuer"@en ;
+    rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
