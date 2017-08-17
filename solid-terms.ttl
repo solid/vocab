@@ -3,9 +3,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix cc: <http://creativecommons.org/ns#>.
-@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix log: <http://www.w3.org/2000/10/swap/log#> .
 
 
 <>
@@ -101,3 +102,42 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "oidcIssuer"@en ;
     rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
+
+# Patches
+:Patch
+    a rdfs:Class ;
+    rdfs:comment "A patch expresses conditional modifications to a resource that has an RDF-based representation."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Patch"@en .
+
+:patches
+    a rdf:Property, owl:ObjectProperty ;
+    rdfs:comment "The document to which this patch applies."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "patches"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range rdfs:Resource .
+
+:inserts
+    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:comment "The triple patterns this patch adds to the document."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "inserts"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range log:Formula .
+
+:deletes
+    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:comment "The triple patterns this patch removes from the document."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "deletes"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range log:Formula .
+
+:where
+    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:comment "The conditions the document and the inserted and deleted triple patterns need to satisfy in order for the patch to be applied."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "where"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range log:Formula .
