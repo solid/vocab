@@ -9,12 +9,12 @@
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 
 
-
 <>
     a owl:Ontology ;
     cc:attributionURL <> ;
     cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:issued "2015-11-16"^^xsd:date ;
+    dcterms:modified "2018-01-22"^^xsd:date ;
     rdfs:label "Solid terms"@en .
 
 :Account
@@ -28,18 +28,6 @@
     rdfs:comment "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "Type index"@en .
-
-:Notification
-    a rdfs:Class ;
-    rdfs:comment "A notification resource."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "Notification"@en .
-
-:Inbox
-    a rdfs:Class ;
-    rdfs:comment "A resource containing notifications."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "Inbox"@en .
 
 :Timeline
     a rdfs:Class ;
@@ -66,18 +54,6 @@
     rdfs:comment "A solid account belonging to an Agent."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "account"@en .
-
-:inbox
-    a rdf:Property ;
-    rdfs:comment "Inbox resource for notifications."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "inbox"@en .
-
-:notification
-    a rdf:Property ;
-    rdfs:comment "Notification resource for an inbox."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "notification"@en .
 
 :timeline
     a rdf:Property ;
