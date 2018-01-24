@@ -28,6 +28,12 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Listed Type Index"@en .
 
+:Patch
+    a rdfs:Class ;
+    rdfs:comment "A patch expresses conditional modifications to a resource that has an RDF-based representation."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Patch"@en .
+
 :Timeline
     a rdfs:Class ;
     rdfs:comment "A resource containing time ordered items and sub-containers.  Sub-containers may be desirable in file based systems to split the timeline into logical components e.g. /yyyy-mm-dd/ as used in ISO 8061."@en ;
@@ -52,19 +58,33 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Unlisted Type Index"@en .
 
-
-:read
+:account
     a rdf:Property ;
-    rdfs:comment "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
+    rdfs:comment "A solid account belonging to an Agent."@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
-    rdfs:label "read"@en .
+    rdfs:label "account"@en .
+
+:deletes
+    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:comment "The triple patterns this patch removes from the document."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "deletes"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range log:Formula .
 
 :forClass
     a rdf:Property ;
     rdfs:comment "A class that is used to map an listed or unlisted type index."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "registry class"@en .
+
+:inserts
+    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:comment "The triple patterns this patch adds to the document."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "inserts"@en ;
+    rdfs:domain :Patch ;
+    rdfs:range log:Formula .
 
 :instance
     a rdf:Property ;
@@ -77,6 +97,18 @@
     rdfs:comment "Maps a type to a container which the client would have to list to get the instances of that type."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "instance container"@en .
+
+:loginEndpoint
+    a rdf:Property ;
+    rdfs:comment "The login URI of a given server."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "loginEndpoint"@en .
+
+:logoutEndpoint
+    a rdf:Property ;
+    rdfs:comment "The logout URI of a given server."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "logoutEndpoint"@en .
 
 :privateTypeIndex
     a rdf:Property ;
@@ -93,6 +125,13 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "public type index"@en .
 
+:read
+    a rdf:Property ;
+    rdfs:comment "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
+    rdfs:label "read"@en .
+
 :typeIndex
     a rdf:Property ;
     rdfs:comment "Points to a TypeIndex resource."@en ;
@@ -100,43 +139,12 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "type index"@en .
 
-:account
-    a rdf:Property ;
-    rdfs:comment "A solid account belonging to an Agent."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "account"@en .
-
-:timeline
-    a rdf:Property ;
-    rdfs:comment "Timeline for a given resource."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "timeline"@en .
-
-:loginEndpoint
-    a rdf:Property ;
-    rdfs:comment "The login URI of a given server."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "loginEndpoint"@en .
-
-:logoutEndpoint
-    a rdf:Property ;
-    rdfs:comment "The logout URI of a given server."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "logoutEndpoint"@en .
-
 :oidcIssuer
     a rdf:Property ;
     rdfs:comment "The preferred OpenID Connect issuer URI for a given Web ID."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "oidcIssuer"@en ;
     rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
-
-# Patches
-:Patch
-    a rdfs:Class ;
-    rdfs:comment "A patch expresses conditional modifications to a resource that has an RDF-based representation."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "Patch"@en .
 
 :patches
     a rdf:Property, owl:ObjectProperty ;
@@ -146,21 +154,11 @@
     rdfs:domain :Patch ;
     rdfs:range rdfs:Resource .
 
-:inserts
-    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:comment "The triple patterns this patch adds to the document."@en ;
+:timeline
+    a rdf:Property ;
+    rdfs:comment "Timeline for a given resource."@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:label "inserts"@en ;
-    rdfs:domain :Patch ;
-    rdfs:range log:Formula .
-
-:deletes
-    a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
-    rdfs:comment "The triple patterns this patch removes from the document."@en ;
-    rdfs:isDefinedBy <> ;
-    rdfs:label "deletes"@en ;
-    rdfs:domain :Patch ;
-    rdfs:range log:Formula .
+    rdfs:label "timeline"@en .
 
 :where
     a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
