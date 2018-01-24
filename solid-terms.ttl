@@ -8,13 +8,12 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
 
-
 <>
     a owl:Ontology ;
     cc:attributionURL <> ;
     cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     dcterms:issued "2015-11-16"^^xsd:date ;
-    dcterms:modified "2018-01-22"^^xsd:date ;
+    dcterms:modified "2018-01-24"^^xsd:date ;
     rdfs:label "Solid terms"@en .
 
 :Account
@@ -23,11 +22,11 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Account"@en .
 
-:TypeIndex
+:ListedDocument
     a rdfs:Class ;
-    rdfs:comment "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
+    rdfs:comment "Listed Type Index is a registry of resources that are publicly discoverable by outside users and applications."@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:label "Type index"@en .
+    rdfs:label "Listed Type Index"@en .
 
 :Timeline
     a rdfs:Class ;
@@ -35,12 +34,64 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Timeline"@en .
 
+:TypeIndex
+    a rdfs:Class ;
+    rdfs:comment "A index of type registries for resources. Applications can register the RDF type they use and list them in the index resource."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Type index"@en .
+
+:TypeRegistration
+    a rdfs:Class ;
+    rdfs:comment "The registered types that map a RDF classes/types to their locations using either `instance` or `instanceContainer` property."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Type Registration"@en .
+
+:UnlistedDocument
+    a rdfs:Class ;
+    rdfs:comment "Unlisted Type Index is a registry of resources that are private to the user and their apps, for types that are not publicly discoverable."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Unlisted Type Index"@en .
+
+
 :read
     a rdf:Property ;
     rdfs:comment "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
     rdfs:label "read"@en .
+
+:forClass
+    a rdf:Property ;
+    rdfs:comment "A class that is used to map an listed or unlisted type index."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "registry class"@en .
+
+:instance
+    a rdf:Property ;
+    rdfs:comment "Maps a type to an individual resource, typically an index or a directory listing resource."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "instance"@en .
+
+:instanceContainer
+    a rdf:Property ;
+    rdfs:comment "Maps a type to a container which the client would have to list to get the instances of that type."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "instance container"@en .
+
+:privateTypeIndex
+    a rdf:Property ;
+    rdfs:comment "Points to an unlisted type index resource."@en ;
+    rdfs:range <#UnlistedDocument> ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "private type index"@en .
+
+:publicTypeIndex
+    a rdf:Property ;
+    rdfs:subPropertyOf :typeIndex ;
+    rdfs:comment "Points to a listed type index resource."@en ;
+    rdfs:range <#ListedDocument> ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "public type index"@en .
 
 :typeIndex
     a rdf:Property ;
