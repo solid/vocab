@@ -22,6 +22,12 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Account"@en .
 
+:Inbox
+    a rdfs:Class ;
+    rdfs:comment "A resource containing notifications."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Inbox"@en .
+
 :ListedDocument
     a rdfs:Class ;
     rdfs:comment "Listed Type Index is a registry of resources that are publicly discoverable by outside users and applications."@en ;
@@ -77,6 +83,12 @@
     rdfs:comment "A class that is used to map an listed or unlisted type index."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "registry class"@en .
+
+:inbox
+    a rdf:Property ;
+    rdfs:comment "Inbox resource for notifications."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "inbox"@en .
 
 :inserts
     a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
