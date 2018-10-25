@@ -75,7 +75,7 @@
 
 :yottabyte a owl:DatatypeProperty ;
     rdfs:subPropertyOf :unit ;
-    rdfs:comment "A yottabyte (YB) datatype to set the multiple of 1000² * bytes."@en ;
+    rdfs:comment "A yottabyte (YB) datatype to set the multiple of 1000⁸ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "YB"@en .
 
@@ -126,7 +126,7 @@
 
 :yobibyte a owl:DatatypeProperty ;
     rdfs:subPropertyOf :unit ;
-    rdfs:comment "A yobibyte (YiB) datatype to set the multiple of 1024² * bytes."@en ;
+    rdfs:comment "A yobibyte (YiB) datatype to set the multiple of 1024⁸ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "YiB"@en .
 
