@@ -1,0 +1,134 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix cc: <https://creativecommons.org/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix : <#> .
+
+<>
+    a owl:Ontology ;
+    cc:attributionURL <> ;
+    cc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    dcterms:issued "2018-10-25"^^xsd:date ;
+    dcterms:modified "2018-10-25"^^xsd:date ;
+    rdfs:label "Units of digital information as data types."@en ;
+    rdfs:comment "This ontology contains datatype properties that be used as units to measure the size of digital information, for example megabyte, tebibyte, etc. It is applied to a literal containing a non-negative integer which is the multiple of the unit."@en .
+
+
+
+:unit a owl:DatatypeProperty ;
+    rdfs:subPropertyOf xsd:nonNegativeInteger ;
+    rdfs:comment "A datatype unit to measure the size of digital information."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "unit"@en .
+
+
+:byte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A byte datatype to set the multiple of bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "byte"@en .
+
+:kilobyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A kilobyte (kB) datatype to set the multiple of 1000 * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "kB"@en .
+
+:megabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A megabyte (MB) datatype to set the multiple of 1000² * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "MB"@en .
+
+:gigabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A gigabyte (GB) datatype to set the multiple of 1000³ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "GB"@en .
+
+:terabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A terabyte (TB) datatype to set the multiple of 1000⁴ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "TB"@en .
+
+:petabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A petabyte (PB) datatype to set the multiple of 1000⁵ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "PB"@en .
+
+:exabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A exabyte (EB) datatype to set the multiple of 1000⁶ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "EB"@en .
+
+:zettabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A zettabyte (ZB) datatype to set the multiple of 1000⁷ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "ZB"@en .
+
+:yottabyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A yottabyte (YB) datatype to set the multiple of 1000² * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "YB"@en .
+
+
+
+:kibibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A kibibyte (kiB) datatype to set the multiple of 1024 * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "kiB"@en .
+
+:mebibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A mebibyte (MiB) datatype to set the multiple of 1024² * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "MiB"@en .
+
+
+:gibibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A gibibyte (GiB) datatype to set the multiple of 1024³ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "GiB"@en .
+
+:tebibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A tebibyte (TiB) datatype to set the multiple of 1024⁴ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "TiB"@en .
+
+:pebibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A pebibyte (PiB) datatype to set the multiple of 1024⁵ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "PiB"@en .
+
+:exbibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A exbibyte (EiB) datatype to set the multiple of 1024⁶ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "EiB"@en .
+
+:zebibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A zebibyte (ZiB) datatype to set the multiple of 1024⁷ * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "ZiB"@en .
+
+:yobibyte a owl:DatatypeProperty ;
+    rdfs:subPropertyOf :unit ;
+    rdfs:comment "A yobibyte (YiB) datatype to set the multiple of 1024² * bytes."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "YiB"@en .
+
+
+	
