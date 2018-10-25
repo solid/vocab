@@ -7,6 +7,7 @@
 @prefix cc: <https://creativecommons.org/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 
 <>
     a owl:Ontology ;
@@ -92,9 +93,12 @@
 
 :inbox
     a rdf:Property ;
-    rdfs:comment "Inbox resource for notifications."@en ;
+    owl:deprecated true ;
+    owl:equivalentProperty ldp:inbox;
+    rdfs:subPropertyOf ldp:inbox;
+    rdfs:comment "Deprecated pointer to a Linked Data Notifications inbox; please use http://www.w3.org/ns/ldp#inbox instead."@en ;
     rdfs:isDefinedBy <> ;
-    rdfs:label "inbox"@en .
+    rdfs:label "inbox (deprecated)"@en .
 
 :inserts
     a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
