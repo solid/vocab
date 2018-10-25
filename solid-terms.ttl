@@ -34,6 +34,12 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Listed Type Index"@en .
 
+:Notification
+    a rdfs:Class ;
+    rdfs:comment "A notification resource."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Notification"@en .
+
 :Patch
     a rdfs:Class ;
     rdfs:comment "A patch expresses conditional modifications to a resource that has an RDF-based representation."@en ;
@@ -121,6 +127,12 @@
     rdfs:comment "The logout URI of a given server."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "logoutEndpoint"@en .
+
+:notification
+    a rdf:Property ;
+    rdfs:comment "Notification resource for an inbox."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "notification"@en .
 
 :privateTypeIndex
     a rdf:Property ;
