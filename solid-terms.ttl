@@ -196,7 +196,7 @@
     rdfs:domain :Patch ;
     rdfs:range log:Formula .
 
-:nvmQuota
+:storageQuota
     a rdf:Property, owl:DatatypeProperty ;
     rdfs:comment "The quota of non-volatile memory that the user may use"@en ;
     rdfs:isDefinedBy <> ;
