@@ -25,90 +25,90 @@
     rdfs:label "Unit"@en .
 
 
-:Byte a :Unit
+:Byte a :Unit, rdfs:Datatype ;
     rdfs:comment "A byte datatype to set the multiple of bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "byte"@en .
 
-:Kilobyte a :Unit
+:Kilobyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A kilobyte (kB) datatype to set the multiple of 1000 * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "kB"@en .
 
-:Megabyte a :Unit
+:Megabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A megabyte (MB) datatype to set the multiple of 1000² * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "MB"@en .
 
-:Gigabyte a :Unit
+:Gigabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A gigabyte (GB) datatype to set the multiple of 1000³ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "GB"@en .
 
-:Terabyte a :Unit
+:Terabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A terabyte (TB) datatype to set the multiple of 1000⁴ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "TB"@en .
 
-:Petabyte a :Unit
+:Petabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A petabyte (PB) datatype to set the multiple of 1000⁵ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "PB"@en .
 
-:Exabyte a :Unit
+:Exabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A exabyte (EB) datatype to set the multiple of 1000⁶ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "EB"@en .
 
-:Zettabyte a :Unit
+:Zettabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A zettabyte (ZB) datatype to set the multiple of 1000⁷ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "ZB"@en .
 
-:Yottabyte a :Unit
+:Yottabyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A yottabyte (YB) datatype to set the multiple of 1000⁸ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "YB"@en .
 
 
 
-:Kibibyte a :Unit
+:Kibibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A kibibyte (kiB) datatype to set the multiple of 1024 * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "kiB"@en .
 
-:Mebibyte a :Unit
+:Mebibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A mebibyte (MiB) datatype to set the multiple of 1024² * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "MiB"@en .
 
 
-:Gibibyte a :Unit
+:Gibibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A gibibyte (GiB) datatype to set the multiple of 1024³ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "GiB"@en .
 
-:Tebibyte a :Unit
+:Tebibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A tebibyte (TiB) datatype to set the multiple of 1024⁴ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "TiB"@en .
 
-:Pebibyte a :Unit
+:Pebibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A pebibyte (PiB) datatype to set the multiple of 1024⁵ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "PiB"@en .
 
-:Exbibyte a :Unit
+:Exbibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A exbibyte (EiB) datatype to set the multiple of 1024⁶ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "EiB"@en .
 
-:Zebibyte a :Unit
+:Zebibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A zebibyte (ZiB) datatype to set the multiple of 1024⁷ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "ZiB"@en .
 
-:Yobibyte a :Unit
+:Yobibyte a :Unit, rdfs:Datatype ;
     rdfs:comment "A yobibyte (YiB) datatype to set the multiple of 1024⁸ * bytes."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "YiB"@en .
