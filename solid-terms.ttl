@@ -200,5 +200,6 @@
     a rdf:Property, owl:DatatypeProperty ;
     rdfs:comment "The quota of non-volatile memory that the user may use"@en ;
     rdfs:isDefinedBy <> ;
+    rdfs:domain :Account ;
     rdfs:label "Non-volatile memory quota"@en .
     
