@@ -198,14 +198,14 @@
 
 :storageQuota
     a rdf:Property, owl:DatatypeProperty ;
-    rdfs:comment "The quota of non-volatile memory that the user may use"@en ;
+    rdfs:comment "The quota of non-volatile memory that is available for the account (in bytes)"@en ;
     rdfs:isDefinedBy <> ;
     rdfs:domain :Account ;
     rdfs:label "Non-volatile memory quota"@en .
 
 :storageUsage
     a rdf:Property, owl:DatatypeProperty ;
-    rdfs:comment "The amount of non-volatile memory that the user have used"@en ;
+    rdfs:comment "The amount of non-volatile memory that the account have used (in bytes)"@en ;
     rdfs:isDefinedBy <> ;
     rdfs:domain :Account ;
     rdfs:label "Non-volatile memory usage"@en .
