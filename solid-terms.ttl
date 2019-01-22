@@ -202,4 +202,11 @@
     rdfs:isDefinedBy <> ;
     rdfs:domain :Account ;
     rdfs:label "Non-volatile memory quota"@en .
-    
+
+:storageUsage
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "The amount of non-volatile memory that the user have used"@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:domain :Account ;
+    rdfs:label "Non-volatile memory usage"@en .
+
