@@ -11,7 +11,7 @@ prefix vann: <http://purl.org/vocab/vann/>
 <http://www.w3.org/ns/solid/terms>
     a owl:Ontology ;
     dc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
-    rdfs:label "Solid Terms ontology"@en ;
+    rdfs:label "Solid Terms"@en ;
     rdfs:comment "Solid, derived from social linked data, is a proposed set of conventions and tools for building decentralized social applications based on Linked Data principles."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
     dc:issued "2015-11-16"^^xsd:date ;
