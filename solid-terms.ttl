@@ -210,3 +210,8 @@
     rdfs:domain :Account ;
     rdfs:label "Non-volatile memory usage"@en .
 
+:oidcRegistration
+    a rdf:Property ;
+    rdfs:comment "A JSON serialization of an OIDC client registration, per the definition of client registration metadata from [RFC7591] section 2."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
+    rdfs:label "oidc registration"@en .
