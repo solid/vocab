@@ -219,7 +219,7 @@ solid:privateTypeIndex
     a rdf:Property ;
     dc:issued "2018-01-24"^^xsd:date ;
     rdfs:comment "Points to an unlisted type index resource."@en ;
-    rdfs:range <#UnlistedDocument> ;
+    rdfs:range solid:UnlistedDocument ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
     rdfs:label "private type index"@en .
 
