@@ -1,25 +1,13 @@
-# See details within this document for linkage to specification and purpose.
-# This ontology file is a non-normative supporting document.
-
-# Solid terms ontology
-
-## Ontology preferred namespace prefix and URI
 prefix solid: <http://www.w3.org/ns/solid/terms#>
-
-## Other namespaces used
-### Core W3C ontologies (OWL 2 reserved vocabulary)
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
-### Other ontologies
 prefix dc: <http://purl.org/dc/terms/>
 prefix ldp: <http://www.w3.org/ns/ldp#>
 prefix log: <http://www.w3.org/2000/10/swap/log#>
 prefix vann: <http://purl.org/vocab/vann/>
 
-
-## Ontology
 <http://www.w3.org/ns/solid/terms>
     a owl:Ontology ;
     dc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
