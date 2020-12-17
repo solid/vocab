@@ -262,7 +262,7 @@ solid:typeIndex
     a rdf:Property ;
     dc:issued "2016-02-05"^^xsd:date ;
     rdfs:comment "Points to a TypeIndex resource."@en ;
-    rdfs:range <#TypeIndex> ;
+    rdfs:range solid:TypeIndex ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
     rdfs:label "type index"@en .
 
