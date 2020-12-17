@@ -228,7 +228,7 @@ solid:publicTypeIndex
     dc:issued "2018-01-24"^^xsd:date ;
     rdfs:subPropertyOf solid:typeIndex ;
     rdfs:comment "Points to a listed type index resource."@en ;
-    rdfs:range <#ListedDocument> ;
+    rdfs:range solid:ListedDocument ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
     rdfs:label "public type index"@en .
 
