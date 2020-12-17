@@ -190,7 +190,7 @@ solid:oidcIssuer
     dc:modified "2017-08-16"^^xsd:date ;
     rdfs:comment "The preferred OpenID Connect issuer URI for a given Web ID."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
-    rdfs:label "oidc issuer"@en ;
+    rdfs:label "OIDC issuer"@en ;
     rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
 
 solid:patches
