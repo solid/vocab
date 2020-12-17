@@ -25,8 +25,6 @@ prefix vann: <http://purl.org/vocab/vann/>
     rdfs:label "Solid Terms ontology"@en ;
     rdfs:comment "Solid, derived from social linked data, is a proposed set of conventions and tools for building decentralized social applications based on Linked Data principles."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms> ;
-    rdfs:seeAlso
-        <https://solid.github.io/specification/> ;
     dc:issued "2015-11-16"^^xsd:date ;
     dc:modified "2015-12-18"^^xsd:date ;
     dc:modified "2015-12-20"^^xsd:date ;
