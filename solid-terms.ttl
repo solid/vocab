@@ -15,7 +15,11 @@ prefix vann: <http://purl.org/vocab/vann/>
     rdfs:comment "The Solid Terms vocabulary defines terms used in the Solid API specifications."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     dc:issued "2015-11-16"^^xsd:date ;
-    dc:modified "2020-12-22"^^xsd:date ;
+    owl:versionInfo [
+            dc:date "2020-12-22"^^xsd:date ;
+            dc:replaces <https://raw.githubusercontent.com/solid/vocab/387df145ef39936120b25b48891315fe53cb4d91/solid-terms.ttl> ;
+            rdfs:seeAlso <https://github.com/solid/vocab/pull/46> ;
+        ] ;
     vann:preferredNamespacePrefix "solid" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/terms#"^^xsd:anyURI .
 
