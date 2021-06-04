@@ -1,0 +1,286 @@
+@prefix : <> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix httpm: <http://www.w3.org/2011/http-methods#> .
+@prefix httph: <http://www.w3.org/2011/http-headers#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+#Specification Terms namespace TBD. Possibly http://www.w3.org/ns/spec#
+@prefix spec: <#> .
+
+spec:
+  vs:term_status "testing"@en ;
+  vs:usageNote "Work in Progress! Some of the terms can extend existing external terms."@en ;
+  dcterms:issued "2021-06-04"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  owl:versionInfo [
+    dcterms:date "2021-06-04"^^xsd:date ;
+#    dcterms:replaces <> ;
+#    rdfs:seeAlso <> ;
+  ] ;
+  vann:preferredNamespacePrefix "spec"@en ;
+  vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
+  dcterms:creator <https://csarven.ca/#i> .
+
+spec:Specification
+  a rdfs:Class ;
+  rdfs:label "Specification"@en ;
+  rdfs:comment "Specification Terms"@en ;
+  rdfs:isDefinedBy spec: .
+
+spec:requirement
+  a rdf:Property ;
+  rdfs:label "requirement"@en ;
+  rdfs:range spec:Requirement .
+
+spec:Requirement
+  a rdfs:Class ;
+  rdfs:label "Specification Requirement (Conformance Criteria)."@en .
+
+spec:NormativeRequirement
+  rdfs:subClassOf spec:Requirement ;
+  rdfs:label "Normative Requirement"@en .
+
+spec:InformativeRequirement
+  rdfs:subClassOf spec:Requirement ;
+  rdfs:label "Informative Requirement"@en .
+
+spec:basedOnConsensus
+  a rdf:Property ;
+  rdfs:label "based on consensus"@en .
+
+spec:intellectualPropertyRights
+  a rdf:Property ;
+  rdfs:label "intellectual property rights"@en .
+
+spec:acknowledgements
+  a rdf:Property ;
+  rdfs:label "acknowledgements"@en .
+
+
+#Conformance
+
+spec:conformanceRole
+  a rdf:Property ;
+  rdfs:label "conformance role"@en ;
+  rdfs:range spec:ConformanceClass .
+
+spec:ConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Conformance"@en .
+
+spec:ServerConformanceClass
+  rdfs:label "Server Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:ClientConformanceClass
+  rdfs:label "Client Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:conformanceLevel
+  a rdf:Property ;
+  rdfs:label "conformance level"@en ;
+  rdfs:domain spec:Requirement ;
+  rdfs:range spec:ConformanceLevel .
+
+spec:ConformanceLevel
+  a rdfs:Class ;
+  rdfs:label "Conformance Level"@en .
+
+spec:normativeConformanceLevel
+  a rdf:Property ;
+  rdfs:label "normative conformance level" ;
+  rdfs:subPropertyOf spec:conformanceLevel .
+
+spec:informativeConformanceLevel
+  a rdf:Property ;
+  rdfs:label "informative conformance level" ;
+  rdfs:subPropertyOf spec:conformanceLevel .
+
+spec:NormativeConformanceLevel
+  a rdfs:Class ;
+  rdfs:label "Conformance Level"@en .
+
+spec:InformativeConformanceLevel
+  a rdfs:Class ;
+  rdfs:label "Informative Conformance Level"@en .
+
+### TODO all conformance levels:
+spec:ConformanceMust
+  a rdfs:Class ;
+  rdfs:subClassOf spec:NormativeConformanceLevel ;
+  rdfs:label "MUST"@en ;
+  rdfs:isDefinedBy
+    <https://www.rfc-editor.org/refs/ref-bcp14.txt> ,
+    <https://datatracker.ietf.org/doc/html/rfc8174> ,
+    <https://datatracker.ietf.org/doc/html/rfc2119> .
+
+spec:ConformanceMustNot
+  a rdfs:Class ;
+  rdfs:subClassOf spec:NormativeConformanceLevel ;
+  rdfs:label "MUST NOT"@en ;
+  rdfs:isDefinedBy
+    <https://www.rfc-editor.org/refs/ref-bcp14.txt> ,
+    <https://datatracker.ietf.org/doc/html/rfc8174> ,
+    <https://datatracker.ietf.org/doc/html/rfc2119> .
+###...
+
+spec:ConformanceStronglyEncouraged
+  a rdfs:Class ;
+  rdfs:subClassOf spec:InformativeConformanceLevel ;
+  rdfs:label "Strongly Encouraged"@en .
+
+spec:ConformanceMight
+  a rdfs:Class ;
+  rdfs:subClassOf spec:InformativeConformanceLevel ;
+  rdfs:label "Might"@en .
+###...
+
+
+spec:conformanceParameter
+  a rdf:Property ;
+  rdfs:label "conformance paramater" ;
+  rdfs:range spec:ConformanceParameter .
+
+spec:ConformanceParameter
+  a rdfs:Class ;
+  rdfs:label "Conformance Paramater"@en .
+
+
+### Example spec:Requirement
+### TODO: Work out Request/Response eg, when not PUT+Content-Type, 400
+
+#<https://solidproject.org/TR/protocol#test-server-header-put-content-type>
+#  a spec:NormativeRequirement ;
+#  spec:conformanceRole spec:ServerConformanceClass ;
+#  spec:normativeConformanceLevel spec:ConformanceMust ;
+#  spec:httpRequest [
+#    http:mthd httpm:PUT .
+#  ]
+#  spec:httpRequestHeader [
+#    http:hdrName httph:content-type .
+#  ]
+
+#TODO? Property-ize all classes in http://www.w3.org/2011/http eg:
+spec:httpRequest
+  a rdf:Property ;
+  rdfs:subPropertyOf spec:conformanceParameter ;
+  rdfs:range http:Request ;
+  rdfs:label "HTTP request conformance paramater"@en .
+
+spec:httpRequestHeader
+  a rdf:Property ;
+  rdfs:subPropertyOf spec:conformanceParameter ;
+  rdfs:range http:RequestHeader ;
+  rdfs:comment "HTTP request header conformance parameter"@en .
+
+
+
+spec:documentStatus
+  a rdf:Property ;
+  rdfs:label "document status"@en .
+
+spec:terminology
+  a rdf:Property ;
+  rdfs:label "terminology" ;
+  rdfs:range skos:Concept .
+
+spec:conventions
+  a rdf:Property ;
+  rdfs:label "conventions"@en .
+
+spec:complianceWithOtherSpecifications
+  a rdf:Property ;
+  rdfs:label "compliance with other specifications"@en .
+
+spec:documentConventions
+  a rdf:Property ;
+  rdfs:label "document conventions"@en .
+
+spec:example
+  a rdf:Property ;
+  rdfs:label "example"@en .
+
+
+### Considerations
+
+spec:consideration
+  a rdf:Property ;
+  rdfs:label "consideration"@en ;
+  rdfs:range spec:Consideration .
+
+spec:Consideration
+  a rdfs:Class ;
+  rdfs:label "Consideration"@en .
+
+spec:SecurityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Security Consideration"@en .
+
+spec:PrivacyConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Privacy Consideration"@en .
+
+spec:AccessibilityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Accessibility Consideration"@en .
+
+spec:InternationalizationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Internationalization Consideration"@en .
+
+spec:RegistrationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Registration Consideration"@en ;
+  rdfs:comment "Registration considerations at standards bodies eg. Registering HTTP Link Relations at IANA."@en .
+
+spec:SelfReviewQuestionnaire
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Self-Review Questionnaire"@en .
+
+spec:SelfReviewQuestionnaireSecurityPrivacy
+  a rdfs:Class ;
+  rdfs:subClassOf spec:SelfReviewQuestionnaire ;
+  rdfs:label "Self-Review Questionnaire: Security and Privacy"@en ;
+  rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
+
+
+### Variability in Specifications
+
+spec:Variability
+  a rdfs:Class ;
+  rdfs:seeAlso <https://www.w3.org/TR/spec-variability/> .
+
+spec:productClass
+  a rdf:Property .
+spec:profile
+  a rdf:Property .
+spec:module
+  a rdf:Property .
+spec:level
+  a rdf:Property .
+spec:discretionaryItem
+  a rdf:Property .
+spec:deprecation
+  a rdf:Property .
+spec:extensibility
+  a rdf:Property ;
+  rdfs:label "extensibility"@en ;
+  rdfs:range spec:Extensibility .
+
+spec:Extensibility
+  a rdfs:Class ;
+  rdfs:label "Extensibility"@en .
