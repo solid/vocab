@@ -316,3 +316,6 @@ spec:issueTracker
   a rdf:Property .
 spec:implementation
   a rdf:Property .
+### Citations / References. Use CiTO
+spec:citation
+   a rdf:Property .
