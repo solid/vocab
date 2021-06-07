@@ -309,3 +309,10 @@ spec:author
   a rdf:Property .
 spec:contributor
   a rdf:Property .
+### doap-ish.
+spec:repository
+  a rdf:Property .
+spec:issueTracker
+  a rdf:Property .
+spec:implementation
+  a rdf:Property .
