@@ -200,13 +200,21 @@ spec:complianceWithOtherSpecifications
   a rdf:Property ;
   rdfs:label "compliance with other specifications"@en .
 
-spec:documentConventions
-  a rdf:Property ;
-  rdfs:label "document conventions"@en .
-
 spec:example
   a rdf:Property ;
   rdfs:label "example"@en .
+
+spec:note
+  a rdf:Property ;
+  rdfs:label "note"@en .
+
+spec:issue
+  a rdf:Property ;
+  rdfs:label "issue"@en .
+
+spec:exitCriteria
+  a rdf:Property ;
+  rdfs:label "exit criteria"@en .
 
 
 ### Considerations
