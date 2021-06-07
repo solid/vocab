@@ -302,3 +302,10 @@ spec:latestVersion
   a rdf:Property .
 spec:previousVersion
   a rdf:Property .
+### or editorList authorList contributorList
+spec:editor
+  a rdf:Property .
+spec:author
+  a rdf:Property .
+spec:contributor
+  a rdf:Property .
