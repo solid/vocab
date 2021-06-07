@@ -319,3 +319,8 @@ spec:implementation
 ### Citations / References. Use CiTO
 spec:citation
    a rdf:Property .
+
+## Reuse Social
+#as:inReplyTo
+#ldp:inbox
+#oa:annotationService
