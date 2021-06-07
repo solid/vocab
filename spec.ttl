@@ -292,3 +292,13 @@ spec:extensibility
 spec:Extensibility
   a rdfs:Class ;
   rdfs:label "Extensibility"@en .
+
+
+### Already covered by random vocabs. Just listing to keep track.
+### Consider reusing those or subProperty or equivalentProperty these..
+spec:thisVersion
+  a rdf:Property .
+spec:latestVersion
+  a rdf:Property .
+spec:previousVersion
+  a rdf:Property .
