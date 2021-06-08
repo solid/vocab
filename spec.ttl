@@ -16,8 +16,6 @@
 @prefix spec: <#> .
 
 spec:
-  vs:term_status "testing"@en ;
-  vs:usageNote "Work in Progress! Some of the terms can extend existing external terms."@en ;
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
@@ -27,6 +25,8 @@ spec:
   ] ;
   vann:preferredNamespacePrefix "spec"@en ;
   vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
+  vann:usageNote "Work in Progress! Some of the terms can extend existing external terms."@en ;
+  vs:term_status "testing"@en ;
   dcterms:creator <https://csarven.ca/#i> .
 
 spec:Specification
