@@ -1,0 +1,65 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "oidc": "http://www.w3.org/ns/solid/oidc#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "client_id": {
+      "@id": "@id",
+      "@type": "@id"
+    },
+    "client_uri": {
+      "@id": "oidc:client_uri",
+      "@type": "@id"
+    },
+    "logo_uri": {
+      "@id": "oidc:logo_uri",
+      "@type": "@id"
+    },
+    "policy_uri": {
+      "@id": "oidc:policy_uri",
+      "@type": "@id"
+    },
+    "tos_uri": {
+      "@id": "oidc:tos_uri",
+      "@type": "@id"
+    },
+    "redirect_uris": {
+      "@id": "oidc:redirect_uris",
+      "@type": "@id",
+      "@container": [
+        "@id",
+        "@set"
+      ]
+    },
+    "require_auth_time": {
+      "@id": "oidc:require_auth_time",
+      "@type": "xsd:boolean"
+    },
+    "default_max_age": {
+      "@id": "oidc:default_max_age",
+      "@type": "xsd:integer"
+    },
+    "application_type": {
+      "@id": "oidc:application_type"
+    },
+    "client_name": {
+      "@id": "oidc:client_name"
+    },
+    "contacts": {
+      "@id": "oidc:contacts"
+    },
+    "grant_types": {
+      "@id": "oidc:grant_types"
+    },
+    "response_types": {
+      "@id": "oidc:response_types"
+    },
+    "scope": {
+      "@id": "oidc:scope"
+    },
+    "token_endpoint_auth_method": {
+      "@id": "oidc:token_endpoint_auth_method"
+    }
+  }
+}
