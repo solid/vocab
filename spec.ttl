@@ -52,6 +52,10 @@ spec:InformativeRequirement
   rdfs:subClassOf spec:Requirement ;
   rdfs:label "Informative Requirement"@en .
 
+spec:excerpt
+  a rdf:Property ;
+  rdfs:range rdfs:Literal .
+
 spec:basedOnConsensus
   a rdf:Property ;
   rdfs:label "based on consensus"@en .
@@ -63,6 +67,12 @@ spec:intellectualPropertyRights
 spec:acknowledgements
   a rdf:Property ;
   rdfs:label "acknowledgements"@en .
+
+spec:requirementReference
+  a rdf:Property ;
+  rdfs:label; "requirement reference" ;
+  rdfs:domain td:SpecificationTestCase ;
+  rdfs:range spec:Requirement .
 
 
 #Conformance
@@ -165,6 +175,9 @@ spec:ConformanceParameter
 #    http:mthd httpm:PUT .
 #  ]
 #  spec:httpRequestHeader [
+#    http:hdrName httph:content-type .
+#  ]
+#  spec:httpResponseHeader [
 #    http:hdrName httph:content-type .
 #  ]
 
