@@ -21,7 +21,7 @@
 <>  dc:title "Workspace Ontology";
 
     doc:version "$Id: space.n3,v 1.18 2020/12/06 10:08:07 eric Exp $";
-    s:comment """This ontology is for use in describing 
+    s:comment """This ontology is for use in describing
 Workspaces.  Workspaces are places where data is stored and associated policies of privacy.
 A given application typically stores information in several different
 workspaces, some being user private, some shared, and some public.
@@ -55,7 +55,7 @@ This may be used for constructing URIs for new storage resources.
 
 :MasterWorkspace s:subClassOf :PrivateWorkspace;
     s:label "Master Workspace"@en;
-    s:comment """This is a workspace for storing the 
+    s:comment """This is a workspace for storing the
     information about the other workspaces.
     As a user, you normally don't have to worry about it.""".
 
@@ -68,7 +68,7 @@ This may be used for constructing URIs for new storage resources.
     s:label "workspace"@en;
 #    s:domain foaf:Agent;
     s:range :Workspace.
-    
+
 :PrivateWorkspace s:subClassOf :Workspace;
     s:label "Private workspace";
     s:comment """Access only by the you, the user.""".
@@ -88,8 +88,8 @@ This may be used for constructing URIs for new storage resources.
 
 :storage a rdf:Property; s:label "storage";
     s:range :Storage;
-    owl:inverse [ s:label "workspace included" ];
-    s:comment """The storage in which this workspace is""".
+    s:comment """The storage in which this workspace is, or the storage which
+contains this resource, or a storage available to this agent to use.""".
 
 ##########################################
 #
