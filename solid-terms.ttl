@@ -4,9 +4,11 @@ prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix dc: <http://purl.org/dc/terms/>
+prefix foaf: <http://xmlns.com/foaf/0.1/>
 prefix ldp: <http://www.w3.org/ns/ldp#>
 prefix log: <http://www.w3.org/2000/10/swap/log#>
 prefix vann: <http://purl.org/vocab/vann/>
+prefix ws: <http://www.w3.org/ns/pim/space#>
 
 <http://www.w3.org/ns/solid/terms#>
     a owl:Ontology ;
@@ -181,6 +183,15 @@ solid:oidcIssuer
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "OIDC issuer"@en ;
     rdfs:subPropertyOf <http://openid.net/specs/connect/1.0/issuer> .
+
+solid:owner
+    a rdf:Property ;
+    dc:issued "2021-05-19"^^xsd:date ;
+    rdfs:comment "The a person or a social entity that is considered to have control, rights and responsibilities of a data storage."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:domain ws:Storage ;
+    rdfs:range foaf:Agent ;
+    rdfs:label "owner"@en .
 
 solid:patches
     a rdf:Property, owl:ObjectProperty ;
