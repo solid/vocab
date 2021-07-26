@@ -187,7 +187,7 @@ solid:oidcIssuer
 solid:owner
     a rdf:Property ;
     dc:issued "2021-05-19"^^xsd:date ;
-    rdfs:comment "The a person or a social entity that is considered to have control, rights and responsibilities of a data storage."@en ;
+    rdfs:comment "A person or social entity that is considered to have control, rights, and responsibilities over a data storage."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:domain ws:Storage ;
     rdfs:range foaf:Agent ;
