@@ -189,7 +189,7 @@ solid:owner
     dc:issued "2021-05-19"^^xsd:date ;
     rdfs:comment "A person or social entity that is considered to have control, rights, and responsibilities over a data storage."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
-    rdfs:domain ws:Storage ;
+    rdfs:domain rdfs:Resource ;
     rdfs:range foaf:Agent ;
     rdfs:label "owner"@en .
 
