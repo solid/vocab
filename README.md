@@ -32,6 +32,22 @@ Canonical prefix URL: `http://www.w3.org/ns/solid/terms#`
 
 Source code: [solid-terms.ttl](solid-terms.ttl)
 
+##### `solid/oidc`
+Contains OpenID Connect terms as used in the [Solid-OIDC](https://solid.github.io/authentication-panel/solid-oidc/)
+specification.
+
+Canonical prefix URL: `http://www.w3.org/ns/solid/oidc#`
+
+Source code: [solid-oidc.ttl](solid-oidc.ttl)
+
+##### `solid/oidc-context`
+Contains a JSON-LD context document as used in the [Solid-OIDC](https://solid.github.io/authentication-panel/solid-oidc/)
+specification.
+
+Canonical URL: `https://www.w3.org/ns/solid/oidc-context.jsonld`
+
+Source code: [solid-oidc-context.jsonld](solid-oidc-context.jsonld)
+
 ## Used in Core Solid Spec
 
 These vocabularies are used in required/normative sections of the [Solid

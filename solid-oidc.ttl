@@ -1,0 +1,118 @@
+@prefix oidc: <http://www.w3.org/ns/solid/oidc#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+<http://www.w3.org/ns/solid/oidc#>
+    a owl:Ontology ;
+    dc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+    rdfs:label "Solid OIDC"@en ;
+    rdfs:comment "The OpenID Connect vocabulary used by the Solid-OIDC authentication specification."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    rdfs:seeAlso <https://openid.net/specs/openid-connect-registration-1_0.html> ;
+    dc:issued "2021-06-07"^^xsd:date ;
+    vann:preferredNamespacePrefix "oidc" ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/solid/oidc#"^^xsd:anyURI .
+
+oidc:application_type
+    a rdf:Property ;
+    rdfs:label "application type"@en ;
+    rdfs:comment "TODO"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:client_name
+    a rdf:Property ;
+    rdfs:label "client name"@en ;
+    rdfs:comment "A name for this client that can be presented to an End-User"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:client_uri
+    a rdf:Property ;
+    rdfs:label "client URI"@en ;
+    rdfs:comment "A URI for this client's home page"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:contacts
+    a rdf:Property ;
+    rdfs:label "contacts"@en ;
+    rdfs:comment "A collection of URIs where individuals or entities responsible for this client can be contacted."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:default_max_age
+    a rdf:Property ;
+    rdfs:label "default max age"@en ;
+    rdfs:comment "TODO"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:grant_types
+    a rdf:Property ;
+    rdfs:label "grant types"@en ;
+    rdfs:comment "A collection of OAuth 2.0 Grant Types that the client will restrict itself to using."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:logo_uri
+    a rdf:Property ;
+    rdfs:label "logo URI"@en ;
+    rdfs:comment "A URI for this client's logo"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:policy_uri
+    a rdf:Property ;
+    rdfs:label "policy URI"@en ;
+    rdfs:comment "A URI for this client's policy document"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:redirect_uris
+    a rdf:Property ;
+    rdfs:label "redirect URIs"@en ;
+    rdfs:comment "A collection of registered URIs used by the client for redirection"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:require_auth_time
+    a rdf:Property ;
+    rdfs:label "require auth time"@en ;
+    rdfs:comment "TODO"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:response_types
+    a rdf:Property ;
+    rdfs:label "response types"@en ;
+    rdfs:comment "A collection of OAuth 2.0 Response Types that the client will restrict itself to using."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:scope
+    a rdf:Property ;
+    rdfs:label "scope"@en ;
+    rdfs:comment "An OAuth2 scope for the requested access token."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:token_endpoint_auth_method
+    a rdf:Property ;
+    rdfs:label "token endpoint auth method"@en ;
+    rdfs:comment "The requested client authentication method for the Token Endpoint"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
+oidc:tos_uri
+    a rdf:Property ;
+    rdfs:label "ToS URI"@en ;
+    rdfs:comment "A URI for this client's terms of service document"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
