@@ -1,31 +1,37 @@
 @prefix : <> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix httph: <http://www.w3.org/2011/http-headers#> .
+@prefix httpm: <http://www.w3.org/2011/http-methods#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
-@prefix http: <http://www.w3.org/2011/http#> .
-@prefix httpm: <http://www.w3.org/2011/http-methods#> .
-@prefix httph: <http://www.w3.org/2011/http-headers#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix test-description: <http://www.w3.org/2006/03/test-description#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#Specification Terms namespace TBD. Possibly http://www.w3.org/ns/spec#
+#TODO: Specification Terms namespace. Possibly http://www.w3.org/ns/spec#
+
+#XXX: DO NOT USE besides experimenting.
+
 @prefix spec: <#> .
 
 spec:
+  a owl:Ontology ;
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2021-06-04"^^xsd:date ;
+    dcterms:date "2021-08-17"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
   vann:preferredNamespacePrefix "spec"@en ;
   vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
-  vann:usageNote "Work in Progress! Some of the terms can extend existing external terms."@en ;
+  vann:usageNote "Work in Progress!"@en ;
   vs:term_status "testing"@en ;
   dcterms:creator <https://csarven.ca/#i> .
 
@@ -36,25 +42,33 @@ spec:Specification
   rdfs:isDefinedBy spec: .
 
 spec:requirement
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "requirement"@en ;
   rdfs:range spec:Requirement .
 
 spec:Requirement
   a rdfs:Class ;
-  rdfs:label "Specification Requirement (Conformance Criteria)."@en .
+  rdfs:label "Requirement"@en .
 
-spec:NormativeRequirement
-  rdfs:subClassOf spec:Requirement ;
-  rdfs:label "Normative Requirement"@en .
+spec:requirementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirment level"@en ;
+  rdfs:domain spec:Requirement .
 
-spec:InformativeRequirement
-  rdfs:subClassOf spec:Requirement ;
-  rdfs:label "Informative Requirement"@en .
 
-spec:excerpt
-  a rdf:Property ;
-  rdfs:range rdfs:Literal .
+### XXX: Experimental
+#spec:NormativeRequirement
+#  rdfs:subClassOf spec:Requirement ;
+#  rdfs:label "Normative Requirement"@en .
+
+#spec:InformativeRequirement
+#  rdfs:subClassOf spec:Requirement ;
+#  rdfs:label "Informative Requirement"@en .
+
+#spec:excerpt
+#  a rdf:Property, owl:DatatypeProperty ;
+#  rdfs:label "excerpt"@en ;
+#  rdfs:range rdfs:Literal ;
 
 spec:basedOnConsensus
   a rdf:Property ;
@@ -70,13 +84,13 @@ spec:acknowledgements
 
 spec:requirementReference
   a rdf:Property ;
-  rdfs:label; "requirement reference" ;
-  rdfs:domain td:SpecificationTestCase ;
+  rdfs:label "requirement reference"@en ;
+  rdfs:domain test-description:SpecificationTestCase ;
   rdfs:range spec:Requirement .
 
 
 #Conformance
-
+### XXX: Experimental
 spec:conformanceRole
   a rdf:Property ;
   rdfs:label "conformance role"@en ;
@@ -84,43 +98,49 @@ spec:conformanceRole
 
 spec:ConformanceClass
   a rdfs:Class ;
-  rdfs:label "Conformance"@en .
+  rdfs:label "Conformance Class"@en .
 
 spec:ServerConformanceClass
+  a rdfs:Class ;
   rdfs:label "Server Conformance"@en ;
   rdfs:subClassOf spec:ConformanceClass .
 
 spec:ClientConformanceClass
+  a rdfs:Class ;
   rdfs:label "Client Conformance"@en ;
   rdfs:subClassOf spec:ConformanceClass .
 
-spec:conformanceLevel
-  a rdf:Property ;
-  rdfs:label "conformance level"@en ;
-  rdfs:domain spec:Requirement ;
-  rdfs:range spec:ConformanceLevel .
+### XXX: Experimental.
+### TODO: This needs to be higher level than Requirement
+#spec:conformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "conformance level"@en ;
+#  rdfs:domain spec:Requirement ;
+#  rdfs:range spec:ConformanceLevel .
 
-spec:ConformanceLevel
-  a rdfs:Class ;
-  rdfs:label "Conformance Level"@en .
+#spec:ConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
 
-spec:normativeConformanceLevel
-  a rdf:Property ;
-  rdfs:label "normative conformance level" ;
-  rdfs:subPropertyOf spec:conformanceLevel .
+### XXX: Experimental. May not be necessary.
+#spec:normativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "normative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:informativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "informative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:NormativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
+#
+#spec:InformativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Informative Conformance Level"@en .
 
-spec:informativeConformanceLevel
-  a rdf:Property ;
-  rdfs:label "informative conformance level" ;
-  rdfs:subPropertyOf spec:conformanceLevel .
-
-spec:NormativeConformanceLevel
-  a rdfs:Class ;
-  rdfs:label "Conformance Level"@en .
-
-spec:InformativeConformanceLevel
-  a rdfs:Class ;
-  rdfs:label "Informative Conformance Level"@en .
 
 ### TODO all conformance levels:
 spec:ConformanceMust
@@ -154,14 +174,15 @@ spec:ConformanceMight
 ###...
 
 
-spec:conformanceParameter
-  a rdf:Property ;
-  rdfs:label "conformance paramater" ;
-  rdfs:range spec:ConformanceParameter .
+### XXX: Experimental
+#spec:conformanceParameter
+#  a rdf:Property ;
+#  rdfs:label "conformance paramater"@en ;
+#  rdfs:range spec:ConformanceParameter .
 
-spec:ConformanceParameter
-  a rdfs:Class ;
-  rdfs:label "Conformance Paramater"@en .
+#spec:ConformanceParameter
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Paramater"@en .
 
 
 ### Example spec:Requirement
@@ -182,17 +203,17 @@ spec:ConformanceParameter
 #  ]
 
 #TODO? Property-ize all classes in http://www.w3.org/2011/http eg:
-spec:httpRequest
-  a rdf:Property ;
-  rdfs:subPropertyOf spec:conformanceParameter ;
-  rdfs:range http:Request ;
-  rdfs:label "HTTP request conformance paramater"@en .
+#spec:httpRequest
+#  a rdf:Property ;
+#  rdfs:subPropertyOf spec:conformanceParameter ;
+#  rdfs:range http:Request ;
+#  rdfs:label "HTTP request conformance paramater"@en .
 
-spec:httpRequestHeader
-  a rdf:Property ;
-  rdfs:subPropertyOf spec:conformanceParameter ;
-  rdfs:range http:RequestHeader ;
-  rdfs:comment "HTTP request header conformance parameter"@en .
+#spec:httpRequestHeader
+#  a rdf:Property ;
+#  rdfs:subPropertyOf spec:conformanceParameter ;
+#  rdfs:range http:RequestHeader ;
+#  rdfs:comment "HTTP request header conformance parameter"@en .
 
 
 
@@ -202,8 +223,8 @@ spec:documentStatus
 
 spec:terminology
   a rdf:Property ;
-  rdfs:label "terminology" ;
-  rdfs:range skos:Concept .
+  rdfs:label "terminology"@en ;
+  rdfs:range skos:ConceptScheme .
 
 spec:conventions
   a rdf:Property ;
@@ -229,6 +250,9 @@ spec:exitCriteria
   a rdf:Property ;
   rdfs:label "exit criteria"@en .
 
+spec:successCriteria
+  a rdf:Property ;
+  rdfs:label "success criteria"@en .
 
 ### Considerations
 
