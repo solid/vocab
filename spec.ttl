@@ -229,6 +229,61 @@ spec:OPTIONAL
   skos:prefLabel "OPTIONAL"@en ;
   skos:exactMatch spec:MAY .
 
+### Advisement Level
+spec:AdvisementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Advisement Level"@en .
+
+spec:strongly-encouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly encouraged"@en .
+
+spec:strongly-discouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly discouraged"@en .
+
+spec:encouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "encouraged"@en .
+
+spec:discouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "discouraged"@en .
+
+spec:can
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "can"@en .
+
+spec:cannot
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "cannot"@en .
+
+spec:could
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could"@en .
+
+spec:could-not
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could not"@en .
+
+spec:might
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might"@en .
+
+spec:might-not
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might not"@en .
+
 ### XXX: Experimental
 #spec:conformanceParameter
 #  a rdf:Property ;
