@@ -152,37 +152,82 @@ spec:ClientConformanceClass
 #  rdfs:label "Informative Conformance Level"@en .
 
 
-### TODO all conformance levels:
-spec:ConformanceMust
-  a rdfs:Class ;
-  rdfs:subClassOf spec:NormativeConformanceLevel ;
-  rdfs:label "MUST"@en ;
+### Requirement Level
+spec:RequirementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Requirement Level"@en ;
+  skos:hasTopConcept spec:MUST, spec:MUST-NOT, spec:REQUIRED, spec:REQUIRED, spec:SHALL-NOT, spec:SHOULD, spec:SHOULD-NOT, spec:RECOMMENDED, spec:NOT-RECOMMENDED, spec:MAY, spec:OPTIONAL ;
   rdfs:isDefinedBy
     <https://www.rfc-editor.org/refs/ref-bcp14.txt> ,
     <https://datatracker.ietf.org/doc/html/rfc8174> ,
     <https://datatracker.ietf.org/doc/html/rfc2119> .
 
-spec:ConformanceMustNot
-  a rdfs:Class ;
-  rdfs:subClassOf spec:NormativeConformanceLevel ;
-  rdfs:label "MUST NOT"@en ;
-  rdfs:isDefinedBy
-    <https://www.rfc-editor.org/refs/ref-bcp14.txt> ,
-    <https://datatracker.ietf.org/doc/html/rfc8174> ,
-    <https://datatracker.ietf.org/doc/html/rfc2119> .
-###...
+spec:MUST
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST"@en ;
+  skos:exactMatch spec:REQUIRED, spec:SHALL .
 
-spec:ConformanceStronglyEncouraged
-  a rdfs:Class ;
-  rdfs:subClassOf spec:InformativeConformanceLevel ;
-  rdfs:label "Strongly Encouraged"@en .
+spec:MUST-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST NOT"@en ;
+  skos:exactMatch spec:SHALL-NOT .
+#  rdfs:isDefinedBy
 
-spec:ConformanceMight
-  a rdfs:Class ;
-  rdfs:subClassOf spec:InformativeConformanceLevel ;
-  rdfs:label "Might"@en .
-###...
+spec:REQUIRED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "REQUIRED"@en ;
+  skos:exactMatch spec:MUST, spec:SHALL .
 
+spec:SHALL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL"@en ;
+  skos:exactMatch spec:MUST, spec:REQUIRED .
+
+spec:SHALL-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL NOT"@en ;
+  skos:exactMatch spec:MUST-NOT .
+
+spec:SHOULD
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD"@en ;
+  skos:exactMatch spec:RECOMMENDED .
+
+spec:SHOULD-NOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD NOT"@en ;
+  skos:exactMatch spec:NOT-RECOMMENDED .
+
+spec:RECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULD .
+
+spec:NOT-RECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "NOT RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULD-NOT .
+
+spec:MAY
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MAY"@en ;
+  skos:exactMatch spec:OPTIONAL .
+
+spec:OPTIONAL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "OPTIONAL"@en ;
+  skos:exactMatch spec:MAY .
 
 ### XXX: Experimental
 #spec:conformanceParameter
