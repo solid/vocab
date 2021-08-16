@@ -70,6 +70,16 @@ spec:requirementLevel
 #  rdfs:label "excerpt"@en ;
 #  rdfs:range rdfs:Literal ;
 
+spec:statement
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "statement"@en ;
+  rdfs:range rdfs:Literal .
+
+spec:violatesAdvice
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "violates advice"@en ;
+  rdfs:range rdfs:Literal .
+
 spec:basedOnConsensus
   a rdf:Property ;
   rdfs:label "based on consensus"@en .
