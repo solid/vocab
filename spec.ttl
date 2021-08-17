@@ -55,6 +55,10 @@ spec:requirementLevel
   rdfs:label "requirment level"@en ;
   rdfs:domain spec:Requirement .
 
+spec:requirementSubject
+  a rdf:Property ; owl:ObjectProperty ;
+  rdfs:label "requirement subject"@en ;
+  rdfs:domain spec:Requirement .
 
 ### XXX: Experimental
 #spec:NormativeRequirement
@@ -119,6 +123,14 @@ spec:ClientConformanceClass
   a rdfs:Class ;
   rdfs:label "Client Conformance"@en ;
   rdfs:subClassOf spec:ConformanceClass .
+
+spec:Server
+  a skos:Concept ;
+  skos:prefLabel "Server"@en .
+
+spec:Client
+  a skos:Concept ;
+  skos:prefLabel "Client"@en .
 
 ### XXX: Experimental.
 ### TODO: This needs to be higher level than Requirement
