@@ -56,7 +56,7 @@ spec:requirementLevel
   rdfs:domain spec:Requirement .
 
 spec:requirementSubject
-  a rdf:Property ; owl:ObjectProperty ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "requirement subject"@en ;
   rdfs:domain spec:Requirement .
 
