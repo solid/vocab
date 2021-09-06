@@ -61,8 +61,9 @@ spec:requirementSubject
   rdfs:domain spec:Requirement .
 
 spec:testScript
-  a rdf:Property , owl:ObjectProperty ;
-  rdfs:label "test script"@en .
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test script"@en ;
+  rdfs:domain test-description:TestCase .
 
 ### XXX: Experimental
 #spec:NormativeRequirement
