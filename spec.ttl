@@ -175,7 +175,7 @@ spec:RequirementLevel
   skos:prefLabel "Requirement Level"@en ;
   skos:hasTopConcept spec:MUST, spec:MUST-NOT, spec:REQUIRED, spec:REQUIRED, spec:SHALL-NOT, spec:SHOULD, spec:SHOULD-NOT, spec:RECOMMENDED, spec:NOT-RECOMMENDED, spec:MAY, spec:OPTIONAL ;
   rdfs:isDefinedBy
-    <https://www.rfc-editor.org/refs/ref-bcp14.txt> ,
+    <https://www.rfc-editor.org/info/bcp14> ,
     <https://datatracker.ietf.org/doc/html/rfc8174> ,
     <https://datatracker.ietf.org/doc/html/rfc2119> .
 
