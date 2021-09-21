@@ -7,6 +7,7 @@
 @prefix cc: <https://creativecommons.org/ns#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix log: <http://www.w3.org/2000/10/swap/log#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
 
 <>
     a owl:Ontology ;
@@ -22,11 +23,23 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "Account"@en .
 
+:Inbox
+    a rdfs:Class ;
+    rdfs:comment "A resource containing notifications."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Inbox"@en .
+
 :ListedDocument
     a rdfs:Class ;
     rdfs:comment "Listed Type Index is a registry of resources that are publicly discoverable by outside users and applications."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "Listed Type Index"@en .
+
+:Notification
+    a rdfs:Class ;
+    rdfs:comment "A notification resource."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "Notification"@en .
 
 :Patch
     a rdfs:Class ;
@@ -78,6 +91,15 @@
     rdfs:isDefinedBy <> ;
     rdfs:label "registry class"@en .
 
+:inbox
+    a rdf:Property ;
+    owl:deprecated true ;
+    owl:equivalentProperty ldp:inbox;
+    rdfs:subPropertyOf ldp:inbox;
+    rdfs:comment "Deprecated pointer to a Linked Data Notifications inbox; please use http://www.w3.org/ns/ldp#inbox instead."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "inbox (deprecated)"@en .
+
 :inserts
     a rdf:Property, owl:ObjectProperty, owl:FunctionalProperty ;
     rdfs:comment "The triple patterns this patch adds to the document."@en ;
@@ -109,6 +131,12 @@
     rdfs:comment "The logout URI of a given server."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:label "logoutEndpoint"@en .
+
+:notification
+    a rdf:Property ;
+    rdfs:comment "Notification resource for an inbox."@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:label "notification"@en .
 
 :privateTypeIndex
     a rdf:Property ;
@@ -177,3 +205,18 @@
     rdfs:label "where"@en ;
     rdfs:domain :Patch ;
     rdfs:range log:Formula .
+
+:storageQuota
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "The quota of non-volatile memory that is available for the account (in bytes)"@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:domain :Account ;
+    rdfs:label "Non-volatile memory quota"@en .
+
+:storageUsage
+    a rdf:Property, owl:DatatypeProperty ;
+    rdfs:comment "The amount of non-volatile memory that the account have used (in bytes)"@en ;
+    rdfs:isDefinedBy <> ;
+    rdfs:domain :Account ;
+    rdfs:label "Non-volatile memory usage"@en .
+
