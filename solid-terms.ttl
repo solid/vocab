@@ -112,16 +112,25 @@
 
 :privateTypeIndex
     a rdf:Property ;
-    rdfs:comment "Points to an unlisted type index resource."@en ;
-    rdfs:range <#UnlistedDocument> ;
+    rdfs:comment
+    """The object is  to a private (unlisted) type index resource..
+    The subject is the user's webid.
+    The triple in found in the private preferences file.
+    (which itself is pointed to from the public profile by space:preferencesFile)
+    """@en ;
+    rdfs:range :UnlistedDocument ;
     rdfs:isDefinedBy <> ;
     rdfs:label "private type index"@en .
 
 :publicTypeIndex
     a rdf:Property ;
     rdfs:subPropertyOf :typeIndex ;
-    rdfs:comment "Points to a listed type index resource."@en ;
-    rdfs:range <#ListedDocument> ;
+    rdfs:comment """The object is  to a pubic ("listed") type index resource..
+    The subject is the user's webid.
+    The triple in found in the private preferences file.
+    (which itself is pointed to from the public profile by space:preferencesFile)
+    """@en ;
+    rdfs:range :ListedDocument ;
     rdfs:isDefinedBy <> ;
     rdfs:label "public type index"@en .
 
@@ -130,6 +139,7 @@
     rdfs:comment "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
     rdfs:isDefinedBy <> ;
     rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
+    rdfs:range xsd:boolean;
     rdfs:label "read"@en .
 
 :typeIndex
