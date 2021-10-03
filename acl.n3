@@ -86,7 +86,7 @@ default
     a rdf:Property;
         rdfs:label "default access for things in this";
         rdfs:comment """If a resource has no ACL file (it is 404),
-        then access to the resource if given by the ACL of the immediately
+        then access to the resource is given by the ACL of the immediately
         containing directory, or failing that (404) the ACL of the recursively next
         containing directory which has an ACL file.
         Within that ACL file,
@@ -123,7 +123,7 @@ Origin a rdfs:Class;
 #################################### Access modes
 
 Access a rdfs:Class;
-    label "access"@en;
+    rdfs:label "access"@en;
     rdfs:comment """Any kind of access to a resource. Don't use this, use R W and RW""".
 
 Read a rdfs:Class;
