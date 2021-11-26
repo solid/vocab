@@ -42,6 +42,7 @@ spec:Specification
 
 spec:requirement
   a rdf:Property, owl:ObjectProperty ;
+  rdfs:subPropertyOf rdfs:isDefinedBy ;
   rdfs:label "requirement"@en ;
   rdfs:range spec:Requirement .
 
