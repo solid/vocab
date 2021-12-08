@@ -1,0 +1,67 @@
+{
+    "@context": {
+        "@version": 1.1,
+        "@protected": true,
+        "id": "@id",
+        "type": "@type",
+        "notify": "http://www.w3.org/ns/solid/notification#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+        "state": "notify:state",
+        "accept": "notify:accept",
+
+        "expiration": {
+            "@id": "notify:expiration",
+            "@type": "xsd:dateTime" },
+
+        "rate": {
+            "@id": "notify:rate",
+            "@type": "xsd:duration" },
+
+        "topic": {
+            "@id": "notify:topic",
+            "@type": "@id" },
+
+        "features": {
+            "@id": "notify:features",
+            "@type": "@id",
+            "@container": ["@id", "@set"] },
+
+        "WebSocketSubscription2021": {
+            "@id": "notify:WebSocketSubscription2021",
+            "@context": {
+                "endpoint": {
+                    "@id": "notify:endpoint",
+                    "@type": "@id" }
+            }
+        },
+        "EventSourceSubscription2021": {
+            "@id": "notify:EventSourceSubscription2021",
+            "@context": {
+                "endpoint": {
+                    "@id": "notify:endpoint",
+                    "@type": "@id" }
+            }
+        },
+        "LinkedDataNotifications2021": {
+            "@id": "notify:LinkedDataNotifications2021",
+            "@context": {
+                "webid": {
+                    "@id": "notify:webid",
+                    "@type": "@id" },
+
+                "endpoint": {
+                    "@id": "notify:endpoint",
+                    "@type": "@id" }
+            }
+        },
+        "WebHookSubscription2021": {
+            "@id": "notify:WebHookSubscription2021",
+            "@context": {
+                "target": {
+                    "@id": "notify:target",
+                    "@type": "@id" }
+            }
+        }
+    }
+}
