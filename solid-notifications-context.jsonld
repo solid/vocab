@@ -1,0 +1,47 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@protected": true,
+    "id": "@id",
+    "type": "@type",
+    "notify": "http://www.w3.org/ns/solid/notifications#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "accept": "notify:accept",
+
+    "expiration": {
+      "@id": "notify:expiration",
+      "@type": "xsd:dateTime" },
+
+    "features": {
+      "@id": "notify:features",
+      "@type": "@vocab" },
+
+    "notificationChannel": {
+      "@id": "notify:notificationChannel",
+      "@type": "@id" },
+
+    "rate": {
+      "@id": "notify:rate",
+      "@type": "xsd:duration" },
+
+    "state": "notify:state",
+
+    "subscription": {
+      "@id": "notify:subscription",
+      "@type": "@id" },
+
+    "topic": {
+      "@id": "notify:topic",
+      "@type": "@id" },
+
+    "WebSocketSubscription2021": {
+      "@id": "notify:WebSocketSubscription2021",
+      "@context": {
+        "source": {
+          "@id": "notify:source",
+          "@type": "@id" }
+      }
+    },
+  }
+}
