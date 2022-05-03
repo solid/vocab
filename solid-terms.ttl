@@ -17,8 +17,8 @@ prefix vann: <http://purl.org/vocab/vann/>
     dc:issued "2015-11-16"^^xsd:date ;
     owl:versionInfo [
             dc:date "2020-12-22"^^xsd:date ;
-            dc:replaces <https://raw.githubusercontent.com/solid/vocab/387df145ef39936120b25b48891315fe53cb4d91/solid-terms.ttl> ;
-            rdfs:seeAlso <https://github.com/solid/vocab/pull/46> ;
+            dc:replaces <https://raw.githubusercontent.com/solid/vocab/46a5e2a8df1df48cd21a6ecdd422a37d29d39cbe/solid-terms.ttl> ;
+            rdfs:seeAlso <https://github.com/solid/vocab/pull/67> ;
         ] ;
     vann:preferredNamespacePrefix "solid" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/terms#"^^xsd:anyURI .
@@ -38,6 +38,15 @@ solid:Inbox
     rdfs:comment "A resource containing notifications."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "Inbox"@en .
+
+solid:InsertDeletePatch
+    a rdfs:Class ;
+    dc:issued "2022-05-03"^^xsd:date ;
+    rdfs:subClassOf solid:Patch ;
+    rdfs:comment "A class of patch expressing insertions, deletions, and conditional modifications to a resource that has an RDF-based representation."@en ;
+    rdfs:seeAlso <https://solidproject.org/TR/2021/protocol-20211217#server-patch-n3-type> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "InsertDeletePatch"@en .
 
 solid:ListedDocument
     a rdfs:Class ;
