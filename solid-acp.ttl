@@ -41,7 +41,7 @@ acp:AccessControl
 acp:Policy
     a rdfs:Class ;
     rdfs:label "Access Policy"@en ;
-    rdfs:comment "Instances of the Policy class connect Access Controls to allowed and denied Access Modes, as well as to sets of Matchers describing instances of resource access.\n\nIn ACP, a policy MUST NOT be considered satisfied UNLESS (1) it references at least one matcher via a condition; (2) at least one matcher it references matches the given context; and (3) all the conditions it defines are satisfied. Given that the acp:noneOf condition excludes matches, a policy without a satisfied acp:allOf or acp:anyOf condition is never satisfied.\n\nAn access mode MUST NOT be granted over a resource UNLESS in the set of policies mandating access over it (1) a satisfied policy allows it; and (2) no satisfied policy denies it. ACP doesn't define its own access modes; instead, ACP reuses access modes defined elsewhere."@en ;
+    rdfs:comment "Instances of the Policy class connect Access Controls to allowed and denied Access Modes, as well as to sets of Matchers describing instances of resource access.\n\nIn ACP, a policy MUST NOT be considered satisfied UNLESS (1) it references at least one matcher via a condition; (2) at least one matcher it references matches the given context; and (3) all the conditions it defines are satisfied. Given that the acp:noneOf condition excludes matches, a policy without a satisfied acp:allOf or acp:anyOf condition is never satisfied.\n\nAn access mode MUST NOT be granted over a resource UNLESS in the set of policies mandating access over it (1) a satisfied policy allows it; and (2) no satisfied policy denies it."@en ;
     rdfs:isDefinedBy acp: .
 
 acp:Matcher
