@@ -9,7 +9,7 @@ prefix vann: <http://purl.org/vocab/vann/>
 <http://www.w3.org/ns/solid/acp#>
     a owl:Ontology ;
     rdfs:label "Access Control Policy Language (ACP)"@en ;
-    rdfs:comment "The Access Control Policy Language (ACP) is a language for describing, controlling and granting access to resources."@en ;
+    rdfs:comment "The Access Control Policy Language (ACP) is a language for describing, controlling, and granting access to resources."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:seeAlso <https://solid.github.io/authorization-panel/acp-specification/> ;
     dc:issued "2022-04-28"^^xsd:date ;
@@ -41,15 +41,13 @@ acp:AccessControl
 acp:Policy
     a rdfs:Class ;
     rdfs:label "Access Policy"@en ;
-    rdfs:comment "Instances of the Policy class connect Access Controls to allowed and denied Access Modes as well as sets of Matchers describing instances of resource access."@en ;
-    rdfs:comment "In ACP, a policy MUST be considered satisfied if and only if: It references at least one matcher via a condition; and, At least one matcher it references matches the given context; and, All the conditions it defines are satisfied. Given that the acp:noneOf condition excludes matches, a policy without a satisfied allOf or anyOf condition is never satisfied."@en ;
-    rdfs:comment "An access mode MUST be granted over a resource if and only if in the set of policies mandating access over it: A satisfied policy allows it; and No satisfied policy denies it. ACP doesn't define its own access modes, instead it reuses access modes defined elsewhere."@en ;
+    rdfs:comment "Instances of the Policy class connect Access Controls to allowed and denied Access Modes, as well as to sets of Matchers describing instances of resource access.\n\nIn ACP, a policy MUST NOT be considered satisfied UNLESS (1) it references at least one matcher via a condition; (2) at least one matcher it references matches the given context; and (3) all the conditions it defines are satisfied. Given that the acp:noneOf condition excludes matches, a policy without a satisfied acp:allOf or acp:anyOf condition is never satisfied.\n\nAn access mode MUST NOT be granted over a resource UNLESS in the set of policies mandating access over it (1) a satisfied policy allows it; and (2) no satisfied policy denies it. ACP doesn't define its own access modes; instead, ACP reuses access modes defined elsewhere."@en ;
     rdfs:isDefinedBy acp: .
 
 acp:Matcher
     a rdfs:Class ;
     rdfs:label "Matcher"@en ;
-    rdfs:comment "An ACP Matcher defines a set of resource access attributes that need to be matched in order for it to be satisfied. Specific types of ACP Matchers exist for each resource access attribute and a matcher can have multiple types."@en ;
+    rdfs:comment "An ACP Matcher defines a set of resource access attributes that need to be matched in order for it to be satisfied. Specific types of ACP Matchers exist for each resource access attribute, and a matcher can have multiple types."@en ;
     rdfs:isDefinedBy acp: .
 
 acp:AccessGrant
@@ -61,7 +59,7 @@ acp:AccessGrant
 acp:AccessMode
     a rdfs:Class ;
     rdfs:label "Access Mode"@en ;
-    rdfs:comment "The ACP specification does not define Access Modes. Instead, any Access Mode granted is an instance of the Access Mode class. Access Modes and their granularity can be tailored to the needs of an application. Access Modes defined in other vocabularies (for example ACL) can also be used."@en ;
+    rdfs:comment "The ACP specification does not define Access Modes. Instead, any Access Mode granted is an instance of the Access Mode class. Access Modes and their granularity can be tailored to the needs of an application. Access Modes defined in other vocabularies (for example, ACL) can also be used."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:seeAlso <http://www.w3.org/ns/auth/acl#Access> .
 
@@ -127,7 +125,7 @@ acp:deny
 acp:allOf
     a rdf:Property ;
     rdfs:label "all of"@en ;
-    rdfs:comment "The all of property connects Policies to the set of Matchers that must all match a resource access description for the policy to be satisfied."@en ;
+    rdfs:comment "The allOf property connects Policies to a set of Matchers, all of which must match a resource access description for the policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
@@ -135,7 +133,7 @@ acp:allOf
 acp:anyOf
     a rdf:Property ;
     rdfs:label "any of"@en ;
-    rdfs:comment "The any of property connects Policies to the set of Matchers any of which must match a resource access description for the policy to be satisfied."@en ;
+    rdfs:comment "The anyOf property connects Policies to a set of Matchers, any of which must match a resource access description for the policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
@@ -143,7 +141,7 @@ acp:anyOf
 acp:noneOf
     a rdf:Property ;
     rdfs:label "none of"@en ;
-    rdfs:comment "The none of property connects Policies to the set of Matchers none of which must match a resource access description for the policy to be satisfied."@en ;
+    rdfs:comment "The noneOf property connects Policies to a set of Matchers, none of which may match a resource access description for the policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
@@ -151,8 +149,7 @@ acp:noneOf
 acp:attribute
     a rdf:Property ;
     rdfs:label "attribute"@en ;
-    rdfs:comment "The attribute properties defined by ACP describe instances of resource access."@en ;
-    rdfs:comment "Sub-properties of acp:attribute can be created to fit the specific resource access description requirements of applications."@en ;
+    rdfs:comment "The attribute properties defined by ACP describe instances of resource access.\n\nSub-properties of acp:attribute can be created to fit the specific resource access description requirements of applications."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Context .
 
