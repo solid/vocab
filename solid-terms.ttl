@@ -46,7 +46,7 @@ solid:InsertDeletePatch
     rdfs:comment "A class of patch expressing insertions, deletions, and conditional modifications to a resource that has an RDF-based representation."@en ;
     rdfs:seeAlso <https://solidproject.org/TR/2021/protocol-20211217#server-patch-n3-type> ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
-    rdfs:label "InsertDeletePatch"@en .
+    rdfs:label "Insert/delete patch"@en .
 
 solid:ListedDocument
     a rdfs:Class ;
