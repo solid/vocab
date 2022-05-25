@@ -101,7 +101,7 @@ spec:acknowledgements
   rdfs:label "acknowledgements"@en .
 
 spec:requirementReference
-  a rdf:Property ;  
+  a rdf:Property ;
   rdfs:subPropertyOf rdfs:isDefinedBy ;
   rdfs:label "requirement reference"@en ;
   rdfs:domain test-description:SpecificationTestCase ;
