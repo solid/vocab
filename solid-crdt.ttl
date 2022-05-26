@@ -1,0 +1,138 @@
+@prefix : <https://w3.org/ns/crdt#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcmi: <http://purl.org/dc/dcmitype/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#dateTime> .
+
+<https://w3.org/ns/crdt#>
+    a owl:Ontology ;
+    rdfs:label "Conflict-Free Replicated Datatypes (CRDT)"@en ;
+    dc:description "The Conflict-Free Replicated Datatypes (CRDT) vocabulary can be used to describe changes made to resources over time"@en ;
+    rdfs:isDefinedBy : ;
+    dc:issued "2022-05-26"^^xsd:date ;
+    vann:preferredNamespacePrefix "crdt"@en ;
+    vann:preferredNamespaceUri "http://www.w3.org/ns/solid/crdt#"^^xsd:anyURI .
+
+:Metadata
+    a rdfs:Class ;
+    rdfs:label "Metadata"@en ;
+    dc:description "Metadata about a resource."@en ;
+    rdfs:subClassOf dcmi:Dataset ;
+    rdfs:isDefinedBy : .
+
+:Operation
+    a rdfs:Class ;
+    rdfs:label "Operation"@en ;
+    dc:description "Operation performed on a resource."@en ;
+    rdfs:subClassOf dcmi:Dataset ;
+    rdfs:isDefinedBy : .
+
+:DeleteOperation
+    a rdfs:Class ;
+    rdfs:label "Delete Operation"@en ;
+    dc:description "Operation that soft deletes a resource."@en ;
+    rdfs:subClassOf :Operation ;
+    rdfs:isDefinedBy : .
+
+:PropertyOperation
+    a rdfs:Class ;
+    rdfs:label "Property Operation"@en ;
+    dc:description "Operation affecting a resource's property."@en ;
+    rdfs:subClassOf :Operation ;
+    rdfs:isDefinedBy : .
+
+:SetPropertyOperation
+    a rdfs:Class ;
+    rdfs:label "Set Property Operation"@en ;
+    dc:description "Operation that replaces a resource's property."@en ;
+    rdfs:subClassOf :PropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:UnsetPropertyOperation
+    a rdfs:Class ;
+    rdfs:label "Unset Property Operation"@en ;
+    dc:description "Operation that removes a resource's property."@en ;
+    rdfs:subClassOf :PropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:AddPropertyOperation
+    a rdfs:Class ;
+    rdfs:label "Add Property Operation"@en ;
+    dc:description "Operation that adds values to a resource's property."@en ;
+    rdfs:subClassOf :PropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:RemovePropertyOperation
+    a rdfs:Class ;
+    rdfs:label "Remove Property Operation"@en ;
+    dc:description "Operation that removes values from a resource's property."@en ;
+    rdfs:subClassOf :PropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:Tombstone
+    a rdfs:Class ;
+    rdfs:label "Tombstone"@en ;
+    dc:description "Metadata left behind for a resource that has been deleted."@en ;
+    rdfs:isDefinedBy : .
+
+:resource
+    a rdf:Property ;
+    rdfs:label "resource"@en ;
+    dc:description "Resource which the metadata or tombstone make reference to, or is affected by the operation."@en ;
+    rdfs:subPropertyOf dcmi:subject ;
+    rdfs:range rdfs:Resource ;
+    rdfs:domain :Metadata, :Operation, :Tombstone ;
+    rdfs:isDefinedBy : .
+
+:createdAt
+    a rdf:Property ;
+    rdfs:label "createdAt"@en ;
+    dc:description "Time at which the resource was created."@en ;
+    rdfs:subPropertyOf dcmi:created ;
+    rdfs:range xsd:dateTime ;
+    rdfs:domain :Metadata ;
+    rdfs:isDefinedBy : .
+
+:updatedAt
+    a rdf:Property ;
+    rdfs:label "updatedAt"@en ;
+    dc:description "Time at which the resource was updated for the last time."@en ;
+    rdfs:subPropertyOf dcmi:modified ;
+    rdfs:range xsd:dateTime ;
+    rdfs:domain :Metadata ;
+    rdfs:isDefinedBy : .
+
+:deletedAt
+    a rdf:Property ;
+    rdfs:label "deletedAt"@en ;
+    dc:description "Time at which the resource was deleted or soft deleted."@en ;
+    rdfs:range xsd:dateTime ;
+    rdfs:domain :Metadata, :Tombstone ;
+    rdfs:isDefinedBy : .
+
+:property
+    a rdf:Property ;
+    rdfs:label "property"@en ;
+    dc:description "Property affected by the operation."@en ;
+    rdfs:range rdf:Property ;
+    rdfs:domain :PropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:value
+    a rdf:Property ;
+    rdfs:label "value"@en ;
+    dc:description "Property value used by the operation."@en ;
+    rdfs:domain :SetPropertyOperation, :AddPropertyOperation, :RemovePropertyOperation ;
+    rdfs:isDefinedBy : .
+
+:date
+    a rdf:Property ;
+    rdfs:label "date"@en ;
+    dc:description "Time at which the operation happened."@en ;
+    rdfs:subPropertyOf dcmi:created ;
+    rdfs:range xsd:dateTime ;
+    rdfs:domain :Operation ;
+    rdfs:isDefinedBy : .
