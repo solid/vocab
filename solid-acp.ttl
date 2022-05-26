@@ -19,7 +19,7 @@ prefix vann: <http://purl.org/vocab/vann/>
       <https://www.rfc-editor.org/info/rfc8288>,
       <https://www.w3.org/TR/vc-data-model/> ;
     dc:issued "2022-05-18"^^xsd:date ;
-    vann:preferredNamespacePrefix "vann" ;
+    vann:preferredNamespacePrefix "acp" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/acp#"^^xsd:anyURI .
 
 
@@ -143,7 +143,7 @@ acp:deny
 acp:allOf
     a rdf:Property ;
     rdfs:label "all of"@en ;
-    dc:description "The allOf property connects Policies to a set of Matchers, all of which MUST be satisfied for the Policy to be satisfied."@en ;
+    dc:description "The all of property connects Policies to a set of Matchers, all of which MUST be satisfied for the Policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
@@ -151,7 +151,7 @@ acp:allOf
 acp:anyOf
     a rdf:Property ;
     rdfs:label "any of"@en ;
-    dc:description "The anyOf property connects Policies to a set of Matchers, at least one of which MUST be satisfied for the Policy to be satisfied."@en ;
+    dc:description "The any of property connects Policies to a set of Matchers, at least one of which MUST be satisfied for the Policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
@@ -159,7 +159,7 @@ acp:anyOf
 acp:noneOf
     a rdf:Property ;
     rdfs:label "none of"@en ;
-    dc:description "The noneOf property connects Policies to a set of Matchers, all of which MUST NOT be satisfied for the Policy to be satisfied."@en ;
+    dc:description "The none of property connects Policies to a set of Matchers, all of which MUST NOT be satisfied for the Policy to be satisfied."@en ;
     rdfs:isDefinedBy acp: ;
     rdfs:domain acp:Policy ;
     rdfs:range acp:Matcher .
