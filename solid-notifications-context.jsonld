@@ -13,8 +13,8 @@
       "@id": "notify:expiration",
       "@type": "xsd:dateTime" },
 
-    "features": {
-      "@id": "notify:features",
+    "feature": {
+      "@id": "notify:feature",
       "@type": "@vocab" },
 
     "notificationChannel": {
