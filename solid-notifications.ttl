@@ -13,7 +13,7 @@
     rdfs:label "Solid Notifications"@en ;
     rdfs:comment "The vocabulary used by the Solid Notification protocol specification."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
-    rdfs:seeAlso <https://solid.github.io/notifications/protocol>
+    rdfs:seeAlso <https://solidproject.org/TR/notifications-protocol>
     dc:issued "2022-01-04"^^xsd:date ;
     vann:preferredNamespacePrefix "notify" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/notifications#"^^xsd:anyURI .
@@ -25,7 +25,7 @@ notify:WebSocketSubscription2021
     a rdf:Class ;
     rdfs:label "WebSocket Subscription 2021"@en ;
     rdfs:comment "A Subscription type that uses the WebSocket API"@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-subscription-2021> ;
     vs:term_status "testing" .
 
 # ------------
@@ -34,20 +34,20 @@ notify:WebSocketSubscription2021
 notify:accept
     a rdf:Property ;
     rdfs:label "accept"@en ;
-    rdfs:comment "A property to indicate the acceptable MIME-Type values for notification serialization."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:comment "A MIME-Type value that indicates the desired serialization of the notification."@en ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-accept> ;
     vs:term_status "testing" .
 
 notify:expiration
     a rdf:Property ;
     rdfs:label "expiration"@en ;
-    rdfs:comment "A property used to indicate a proposed expiration time for a subscription, expressed as an ISO 8601 datetime."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:comment "An ISO 8601 datetime value indicating a proposed expiration point for a subscription."@en ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-expiration> ;
     vs:term_status "testing" .
 
-notify:features
+notify:feature
     a rdf:Property ;
-    rdfs:label "features"@en ;
+    rdfs:label "feature"@en ;
     rdfs:comment "A property used to describe the features supported by a particular notification channel."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
@@ -62,22 +62,22 @@ notify:notificationChannel
 notify:rate
     a rdf:Property ;
     rdfs:label "rate"@en ;
-    rdfs:comment "A property used to indicate the requested rate of notification delivery."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:comment "An ISO 8601 duration value indicating the minimum amount of time to elapse between notifications sent to the client."@en ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-rate> ;
     vs:term_status "testing" .
 
 notify:source
     a rdf:Property ;
     rdfs:label "source"@en ;
     rdfs:comment "The IRI of a resource used by a client to establish a connection to a notification channel."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-subscription-2021#websocketsubscription2021-source> ;
     vs:term_status "testing" .
 
 notify:state
     a rdf:Property ;
     rdfs:label "state"@en ;
-    rdfs:comment "A property used to represent the state of a resource. This may be an opaque string similar to an ETag."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:comment "An opaque value representing the last known state of a resource."@en ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-state> ;
     vs:term_status "testing" .
 
 notify:subscription
@@ -91,6 +91,6 @@ notify:topic
     a rdf:Property ;
     rdfs:label "topic"@en ;
     rdfs:comment "The IRI of a resource about which a client would like to receive notifications."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#server-subscription-request-topic> ;
     vs:term_status "testing" .
 
