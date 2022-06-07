@@ -14,8 +14,6 @@
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#TODO: Specification Terms namespace. Possibly http://www.w3.org/ns/spec#
-
 #XXX: DO NOT USE besides experimenting.
 
 @prefix spec: <#> .
@@ -250,6 +248,11 @@ spec:OPTIONAL
 spec:AdvisementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Advisement Level"@en .
+
+spec:advisementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement"@en ;
+  rdfs:range spec:Advisement .
 
 spec:strongly-encouraged
   a skos:Concept ;
