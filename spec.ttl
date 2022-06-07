@@ -20,6 +20,8 @@
 
 spec:
   a owl:Ontology ;
+  rdfs:label "Spec Terms"@en ;
+  dcterms:description "Spec Terms provides classes and properties that can be used to describe any significant unit of information in technical reports."@en ;
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
