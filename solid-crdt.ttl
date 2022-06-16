@@ -81,7 +81,7 @@
 :resource
     a rdf:Property ;
     rdfs:label "resource"@en ;
-    dc:description "Resource which the metadata or tombstone make reference to, or is affected by the operation."@en ;
+    dc:description "Resource which the metadata or tombstone makes reference to, or which is affected by the operation."@en ;
     rdfs:subPropertyOf dcmi:subject ;
     rdfs:range rdfs:Resource ;
     rdfs:domain :Metadata, :Operation, :Tombstone ;
@@ -99,7 +99,7 @@
 :updatedAt
     a rdf:Property ;
     rdfs:label "updatedAt"@en ;
-    dc:description "Time at which the resource was updated for the last time."@en ;
+    dc:description "Time at which the resource was most recently updated."@en ;
     rdfs:subPropertyOf dcmi:modified ;
     rdfs:range xsd:dateTime ;
     rdfs:domain :Metadata ;
@@ -108,7 +108,7 @@
 :deletedAt
     a rdf:Property ;
     rdfs:label "deletedAt"@en ;
-    dc:description "Time at which the resource was deleted or soft deleted."@en ;
+    dc:description "Time at which the resource was deleted or soft-deleted."@en ;
     rdfs:range xsd:dateTime ;
     rdfs:domain :Metadata, :Tombstone ;
     rdfs:isDefinedBy : .
@@ -131,7 +131,7 @@
 :date
     a rdf:Property ;
     rdfs:label "date"@en ;
-    dc:description "Time at which the operation happened."@en ;
+    dc:description "Time at which the operation was performed."@en ;
     rdfs:subPropertyOf dcmi:created ;
     rdfs:range xsd:dateTime ;
     rdfs:domain :Operation ;
