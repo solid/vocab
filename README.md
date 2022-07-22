@@ -32,6 +32,14 @@ Canonical prefix URL: `http://www.w3.org/ns/solid/terms#`
 
 Source code: [solid-terms.ttl](solid-terms.ttl)
 
+##### `solid/ui`
+Contains core terms for forms and other user interface elements such as tabs, 
+buttons, and menus.
+
+Canonical prefix URL: `http://www.w3.org/ns/ui#`
+
+Source code: [solid-ui.ttl](solid-ui.ttl)
+
 ##### `solid/oidc`
 Contains OpenID Connect terms as used in the [Solid-OIDC](https://solid.github.io/authentication-panel/solid-oidc/)
 specification.
