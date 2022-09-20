@@ -1,4 +1,4 @@
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
 @prefix gen: <http://www.w3.org/2006/gen/ont#>.
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
@@ -8,13 +8,13 @@
 @prefix : <http://www.w3.org/ns/auth/acl#>.
 
 
-<> dc:title "Basic Access Control ontology";
+<> dct:title "Basic Access Control ontology";
     rdfs:comment """Defines the class Authorization and its essential properties,
     and also some classes of access such as read and write. """.
 
-<https://www.w3.org/wiki/WebAccessControl> dc:describes <>.
-<https://github.com/solid/web-access-control-spec> dc:describes <>.
-<https://solidproject.org/TR/wac> dc:describes <>.
+<https://www.w3.org/wiki/WebAccessControl> dct:description <>.
+<https://github.com/solid/web-access-control-spec> dct:description <>.
+<https://solidproject.org/TR/wac> dct:description <>.
 
 :Authorization a rdfs:Class;
     rdfs:label  "authorization";
