@@ -158,6 +158,7 @@ and for example to develop a reputation)
         rdfs:comment """The Access Control file for this information resource.
         This may of course be a virtual resource implemented by the access control system.
         Note that HTTP header `Link: <foo.acl>; rel="acl"` can also be used for this.""";
+        rdfs:seeAlso <https://solidproject.org/TR/wac#acl-link-relation>;
         rdfs:domain      gen:InformationResource;
         rdfs:range      gen:InformationResource.
 
