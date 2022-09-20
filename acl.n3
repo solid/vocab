@@ -13,7 +13,6 @@
     and also some classes of access such as read and write. """.
 
 <https://www.w3.org/wiki/WebAccessControl> dct:description <>.
-<https://github.com/solid/web-access-control-spec> dct:description <>.
 <https://solidproject.org/TR/wac> dct:description <>.
 
 :Authorization a rdfs:Class;
