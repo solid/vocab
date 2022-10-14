@@ -89,7 +89,7 @@ and for example to develop a reputation)
         containing directory, or failing that (404) the ACL of the recursively next
         containing directory which has an ACL file.
         Within that ACL file,
-        any Authentication which has that directory as its acl:default applies to the
+        any Authorization which has that directory as its acl:default applies to the
         resource. (The highest directory must have an ACL file.)
 """;
         rdfs:domain     :Authorization.
