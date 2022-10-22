@@ -25,7 +25,7 @@ spec:
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2021-08-17"^^xsd:date ;
+    dcterms:date "2022-10-22"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
@@ -136,6 +136,65 @@ spec:Server
 spec:Client
   a skos:Concept ;
   skos:prefLabel "Client"@en .
+
+
+spec:ClassesOfProducts
+  a skos:ConceptScheme ;
+  skos:prefLabel "Classes of Products"@en ;
+  skos:hasTopConcept spec:Content, spec:ProducerOfContent, spec:Player, spec:Consumer, spec:ResondingAgent, spec:Processor, spec:Module, spec:ProducerOfInstructions, spec:Profile, spec:SpecificationGuidelines ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#cop> .
+
+spec:Content
+  a skos:Concept ;
+  skos:prefLabel "Content"@en ;
+  skos:definition "Content (of type, meaning, and format as defined in the specification)"@en .
+
+spec:ProducerOfContent
+  a skos:Concept ;
+  skos:prefLabel "Producer of content"@en ;
+  skos:definition "Producer of content (may be divided into initiators and modifiers)"@en .
+
+spec:Player
+  a skos:Concept ;
+  skos:prefLabel "Player"@en ;
+  skos:definition "Player (read-only consumer, conveys content in non- XML way)"@en .
+
+spec:Consumer
+  a skos:Concept ;
+  skos:prefLabel "Consumer"@en ;
+  skos:definition "Consumer in a one-way pipeline"@en .
+
+spec:RespondingAgent
+  a skos:Concept ;
+  skos:prefLabel "Responding agent"@en ;
+  skos:definition "Responding agent (e.g., server) of API (consumer and producer)"@en .
+
+spec:Processor
+  a skos:Concept ;
+  skos:prefLabel "Processor"@en ;
+  skos:definition "Processor (consumer of its vocabulary/instructions)"@en .
+
+spec:Module
+  a skos:Concept ;
+  skos:prefLabel "Module"@en ;
+  skos:definition "Module that hosts the processor"@en .
+
+spec:ProducerOfInstructions
+  a skos:Concept ;
+  skos:prefLabel "ProducerOfInstructions"@en ;
+  skos:definition "Producer of instructions/commands to processor"@en .
+
+spec:Profile
+  a skos:Concept ;
+  skos:prefLabel "Profile"@en ;
+  skos:definition "Profile derived from the specification's Rules for Profiles"@en .
+
+spec:SpecificationGuidelines
+  a skos:Concept ;
+  skos:prefLabel "Specification Guidelines"@en ;
+  skos:definition "Specification (guidelines)"@en .
+
+
 
 ### XXX: Experimental.
 ### TODO: This needs to be higher level than Requirement
