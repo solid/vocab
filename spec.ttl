@@ -617,6 +617,26 @@ spec:ConformanceModule
   rdfs:comment "Modules are discrete divisions or functional groupings of the technology and do not necessarily fit in a simple hierarchical structure."@en ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-module> .
 
+
+#Subdivision by levels
+spec:functionalLevel
+  a rdf:Property ;
+  rdfs:label "functional level"@en ;
+  rdfs:subPropertyOf spec:defines .
+#  rdfs:range spec:ConformanceFunctionalLevel ;
+
+spec:buildUpon
+  a rdf:Property ;
+  rdfs:label "build upon"@en ;
+  rdfs:subPropertyOf spec:defines .
+
+spec:ConformanceFunctionalLevel
+  a rdfs:Class ;
+  a rdfs:label "Functional levels"@en ;
+  rdfs:comment "Functional levels — or in common usage simply levels — are used to group functionality into nested subsets, ranging from minimal or core functionality to full or complete functionally. Level 1 is the minimum or core of the technology. Level 2 includes all of level 1 plus additional functionality. This nesting continues until level n, which consists of the entire technology."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-level> .
+
+
 ### Already covered by random vocabs. Just listing to keep track.
 ### Consider reusing those or subProperty or equivalentProperty these..
 spec:thisVersion
