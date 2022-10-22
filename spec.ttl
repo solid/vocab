@@ -91,6 +91,12 @@ spec:testCase
   rdfs:label "test case"@en ;
   rdfs:range test-description:TestCase .
 
+#XXX: Perhaps 'testReports' instead?
+#Intended to refer to a document/collection that contains/links to reports (document).
+spec:implementationReports
+  a rdf:Property ;
+  rdfs:label "implementation reports"@en .
+
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
   rdfs:label "statement"@en ;
