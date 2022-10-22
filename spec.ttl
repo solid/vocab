@@ -86,6 +86,11 @@ spec:testSuite
   a rdf:Property ;
   rdfs:label "test suite"@en .
 
+spec:testCase
+  a rdf:Property ;
+  rdfs:label "test case"@en ;
+  rdfs:range test-description:TestCase .
+
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
   rdfs:label "statement"@en ;
