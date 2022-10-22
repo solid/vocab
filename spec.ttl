@@ -80,11 +80,11 @@ spec:testScript
 
 spec:scope
   a rdf:Property ;
-  rdfs:label "scope" .
+  rdfs:label "scope"@en .
 
 spec:testSuite
   a rdf:Property ;
-  rdfs:label "test suite" .
+  rdfs:label "test suite"@en .
 
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
@@ -199,7 +199,6 @@ spec:MUST-NOT
   skos:topConceptOf spec:RequirementLevel ;
   skos:prefLabel "MUST NOT"@en ;
   skos:exactMatch spec:SHALL-NOT .
-#  rdfs:isDefinedBy
 
 spec:REQUIRED
   a skos:Concept ;
