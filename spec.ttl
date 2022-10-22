@@ -196,6 +196,60 @@ spec:SpecificationGuidelines
 
 
 
+spec:SpecificationCategory
+  a skos:ConceptScheme ;
+  skos:prefLabel "Specification Category"@en ;
+  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehaviour, spec:API, spec:RulesForDerivingProfiles ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#spec-cat> .
+
+spec:SetOfGuidelines
+  a skos:Concept ;
+  skos:prefLabel "Set of guidelines"@en ;
+  skos:definition "Describes desirable attributes of content intended for human consumption. Examples: QA Specification Guidelines, Web Content Accessibility Guidelines."@en .
+
+spec:FoundationOrAbstract
+  a skos:Concept ;
+  skos:prefLabel "Foundation or abstract"@en ;
+  skos:definition """Describes an abstraction around which several other specs will synchronize, but which is not implemented in code. Example: XML InfoSet [INFOSET] is a foundation for various specs that have a "data model" of the usable content of an XML document. However, there is no "InfoSet API" or "InfoSet Parser" specified."""@en .
+
+spec:NotationSyntax
+  a skos:Concept ;
+  skos:prefLabel "Notation/syntax"@en ;
+  skos:definition "Describes a language that will be expressed as an actual character stream in XML or Web content and whose semantics will be understood by other W3C-specified technologies. Example: XPath [XPATH] is a non-XML-based notation for expressions that is used as the W3C-standard expression language for XSLT [XSLT], XPointer [XPOINTER], and XForms [XFORMS]. The specifications of those other technologies do not treat XPath as a black box, but rather impose limits, add extensions, and/or recognize the range of potential values of an XPath expression. By doing so, the other technologies require a certain level of precision in the XPath specification, including precision about its variability, to use the hooks and impose their limits."@en .
+
+spec:ContentData
+  a skos:Concept ;
+  skos:prefLabel "Content/data"@en ;
+  skos:definition "Describes a markup language whose downstream usage is to express meaning to an end user or to applications specific to a discipline other than the Web itself. Example: MathML [MATHML] is a markup language for the math discipline, and may be used to express mathematical ideas to a person or to math software. SVG is a language for expressing graphical ideas."@en .
+
+spec:SetOfEvents
+  a skos:Concept ;
+  skos:prefLabel "Set of events"@en ;
+  skos:definition "Describes a coherent set of events that software may need to raise or listen for. Example: one part of XForms [XFORMS] is a set of form-related events."@en .
+
+spec:Protocol
+  a skos:Concept ;
+  skos:prefLabel "Protocol"@en ;
+  skos:definition "Describes the interaction between two parties. Example: SOAP [SOAP]."@en .
+
+spec:ProcessorBehaviour
+  a skos:Concept ;
+  skos:prefLabel "Processor"@en ;
+  skos:definition "Describes the behavior of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language [XSLT] specifies the behavior of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behavior of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
+
+spec:API
+  a skos:Concept ;
+  skos:prefLabel "API"@en ;
+  skos:definition "APIs - describes a programmatic interface, allowing independent implementation of software that occupies the roles on either side of the interface. Example: DOM [DOM] specifies an interface that can be implemented by a parser or other processor that intends to offer an XML document in navigable form. Other software that wishes to navigate an XML document (e.g., an XSLT processor) can be written to use the DOM interface."@en .
+
+spec:RulesForDerivingProfiles
+  a skos:Concept ;
+  skos:prefLabel "Rules for deriving profiles"@en ;
+  skos:definition "Describes how implementers, or any parties other than the WG itself, may produce a profile for a particular situation that cannot be anticipated in complete detail at the time the WG is writing its specification. Example: part of SMIL."@en .
+
+
+
+
 ### XXX: Experimental.
 ### TODO: This needs to be higher level than Requirement
 #spec:conformanceLevel
