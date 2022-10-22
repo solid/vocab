@@ -576,6 +576,28 @@ spec:Extensibility
   rdfs:label "Extensibility"@en .
 
 
+spec:defines
+  a rdf:Property ;
+  rdfs:label "defines"@en .
+
+
+#Subdivisions by profiles
+spec:suitedFor
+  a rdf:Property ;
+  rdfs:label "suited for"@en .
+
+spec:profile
+  a rdf:Property ;
+  rdfs:label "profile"@en ;
+  rdfs:subPropertyOf spec:defines .
+#  rdfs:range spec:ConformanceProfile ;
+
+spec:ConformanceProfile
+  a rdfs:Class ;
+  rdfs:label "Profile"@en ;
+  rdfs:comment "A profile is a subset of the technology that supports a particular functional objective or a subset of a set of technologies defining how they are required to operate together (e.g., XHTML plus MathML plus SVG [X-M-S])."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-profile> .
+
 ### Already covered by random vocabs. Just listing to keep track.
 ### Consider reusing those or subProperty or equivalentProperty these..
 spec:thisVersion
