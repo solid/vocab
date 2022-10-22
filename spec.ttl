@@ -598,6 +598,25 @@ spec:ConformanceProfile
   rdfs:comment "A profile is a subset of the technology that supports a particular functional objective or a subset of a set of technologies defining how they are required to operate together (e.g., XHTML plus MathML plus SVG [X-M-S])."@en ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-profile> .
 
+
+#Subdivision by modules
+spec:composedOf
+  a rdf:Property ;
+  rdfs:label "composed of"@en ;
+  rdfs:subPropertyOf spec:defines .
+
+spec:module
+  a rdf:Property ;
+  rdfs:label "module"@en ;
+  rdfs:subPropertyOf spec:composedOf .
+#  rdfs:range spec:ConformanceModule ;
+
+spec:ConformanceModule
+  a rdfs:Class ;
+  rdfs:label "Module"@en ;
+  rdfs:comment "Modules are discrete divisions or functional groupings of the technology and do not necessarily fit in a simple hierarchical structure."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-module> .
+
 ### Already covered by random vocabs. Just listing to keep track.
 ### Consider reusing those or subProperty or equivalentProperty these..
 spec:thisVersion
