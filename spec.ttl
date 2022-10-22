@@ -82,6 +82,10 @@ spec:scope
   a rdf:Property ;
   rdfs:label "scope" .
 
+spec:testSuite
+  a rdf:Property ;
+  rdfs:label "test suite" .
+
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
   rdfs:label "statement"@en ;
