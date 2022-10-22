@@ -632,7 +632,7 @@ spec:buildUpon
 
 spec:ConformanceFunctionalLevel
   a rdfs:Class ;
-  a rdfs:label "Functional levels"@en ;
+  rdfs:label "Functional level"@en ;
   rdfs:comment "Functional levels — or in common usage simply levels — are used to group functionality into nested subsets, ranging from minimal or core functionality to full or complete functionally. Level 1 is the minimum or core of the technology. Level 2 includes all of level 1 plus additional functionality. This nesting continues until level n, which consists of the entire technology."@en ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-level> .
 
