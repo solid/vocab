@@ -78,6 +78,10 @@ spec:testScript
 #  rdfs:label "excerpt"@en ;
 #  rdfs:range rdfs:Literal ;
 
+spec:scope
+  a rdf:Property ;
+  rdfs:label "scope" .
+
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
   rdfs:label "statement"@en ;
