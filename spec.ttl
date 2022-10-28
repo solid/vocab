@@ -29,6 +29,7 @@ spec:
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
+  doap:repository <https://github.com/solid/vocab/> ;
   vann:preferredNamespacePrefix "spec"@en ;
   vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
   vann:usageNote "Work in Progress!"@en ;
