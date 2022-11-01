@@ -12,8 +12,8 @@
     rdfs:comment """Defines the class Authorization and its essential properties,
     and also some classes of access such as read and write. """.
 
-<https://www.w3.org/wiki/WebAccessControl> dct:description <>.
-<https://solidproject.org/TR/wac> dct:description <>.
+<https://www.w3.org/wiki/WebAccessControl> foaf:topic <>.
+<https://solidproject.org/TR/wac> foaf:topic <>.
 
 :Authorization a rdfs:Class;
     rdfs:label  "authorization";
