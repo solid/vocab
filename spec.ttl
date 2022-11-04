@@ -255,46 +255,6 @@ spec:might-not
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "might not"@en .
 
-#spec:conformanceParameter
-#  a rdf:Property ;
-#  rdfs:label "conformance parameter"@en ;
-#  rdfs:range spec:ConformanceParameter .
-
-#spec:ConformanceParameter
-#  a rdfs:Class ;
-#  rdfs:label "Conformance Parameter"@en .
-
-
-### Example spec:Requirement
-### TODO: Work out Request/Response eg, when not PUT+Content-Type, 400
-
-#<https://solidproject.org/TR/protocol#test-server-header-put-content-type>
-#  a spec:NormativeRequirement ;
-#  spec:conformanceRole spec:ServerConformanceClass ;
-#  spec:normativeConformanceLevel spec:ConformanceMust ;
-#  spec:httpRequest [
-#    http:mthd httpm:PUT .
-#  ]
-#  spec:httpRequestHeader [
-#    http:hdrName httph:content-type .
-#  ]
-#  spec:httpResponseHeader [
-#    http:hdrName httph:content-type .
-#  ]
-
-#TODO? Property-ize all classes in http://www.w3.org/2011/http eg:
-#spec:httpRequest
-#  a rdf:Property ;
-#  rdfs:subPropertyOf spec:conformanceParameter ;
-#  rdfs:range http:Request ;
-#  rdfs:label "HTTP request conformance parameter"@en .
-
-#spec:httpRequestHeader
-#  a rdf:Property ;
-#  rdfs:subPropertyOf spec:conformanceParameter ;
-#  rdfs:range http:RequestHeader ;
-#  rdfs:comment "HTTP request header conformance parameter"@en .
-
 
 
 spec:documentStatus
@@ -417,24 +377,13 @@ spec:defines
 
 
 #Conformance
-spec:conformanceRole
+spec:conformance
   a rdf:Property ;
-  rdfs:label "conformance role"@en ;
-  rdfs:range spec:ConformanceClass .
+  rdfs:label "conformance"@en .
 
-spec:ConformanceClass
+spec:Conformance
   a rdfs:Class ;
-  rdfs:label "Conformance Class"@en .
-
-spec:ServerConformanceClass
-  a rdfs:Class ;
-  rdfs:label "Server Conformance"@en ;
-  rdfs:subClassOf spec:ConformanceClass .
-
-spec:ClientConformanceClass
-  a rdfs:Class ;
-  rdfs:label "Client Conformance"@en ;
-  rdfs:subClassOf spec:ConformanceClass .
+  rdfs:label "Conformance"@en .
 
 spec:Server
   a skos:Concept ;
@@ -443,36 +392,6 @@ spec:Server
 spec:Client
   a skos:Concept ;
   skos:prefLabel "Client"@en .
-
-
-### TODO: This needs to be higher level than Requirement
-#spec:conformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "conformance level"@en ;
-#  rdfs:domain spec:Requirement ;
-#  rdfs:range spec:ConformanceLevel .
-
-#spec:ConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Conformance Level"@en .
-
-#spec:normativeConformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "normative conformance level"@en ;
-#  rdfs:subPropertyOf spec:conformanceLevel .
-#
-#spec:informativeConformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "informative conformance level"@en ;
-#  rdfs:subPropertyOf spec:conformanceLevel .
-#
-#spec:NormativeConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Conformance Level"@en .
-#
-#spec:InformativeConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Informative Conformance Level"@en .
 
 
 #Classes of products
