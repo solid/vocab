@@ -365,6 +365,9 @@ spec:extensibility
   a rdf:Property ;
   rdfs:label "extensibility"@en ;
   rdfs:range spec:Extensibility .
+spec:errorHandling
+  a rdf:Property ;
+  rdfs:label "error handling"@en .
 
 spec:Extensibility
   a rdfs:Class ;
