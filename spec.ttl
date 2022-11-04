@@ -97,6 +97,18 @@ spec:basedOnConsensus
   a rdf:Property ;
   rdfs:label "based on consensus"@en .
 
+spec:reviewProcess
+  a rdf:Property ;
+  rdfs:label "review process"@en .
+
+spec:publicationRules
+  a rdf:Property ;
+  rdfs:label "publication rules"@en .
+
+spec:operativeProcess
+  a rdf:Property ;
+  rdfs:label "operative process"@en .
+
 spec:scope
   a rdf:Property ;
   rdfs:label "scope"@en .
