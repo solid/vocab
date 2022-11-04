@@ -58,14 +58,6 @@ spec:requirementSubject
   rdfs:label "requirement subject"@en ;
   rdfs:domain spec:Requirement .
 
-#spec:NormativeRequirement
-#  rdfs:subClassOf spec:Requirement ;
-#  rdfs:label "Normative Requirement"@en .
-
-#spec:InformativeRequirement
-#  rdfs:subClassOf spec:Requirement ;
-#  rdfs:label "Informative Requirement"@en .
-
 spec:requirementReference
   a rdf:Property ;
   rdfs:subPropertyOf rdfs:isDefinedBy ;
@@ -118,8 +110,7 @@ spec:acknowledgements
   rdfs:label "acknowledgements"@en .
 
 
-
-### Requirement Level
+# Requirement Level
 spec:RequirementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Requirement Level"@en ;
@@ -195,7 +186,8 @@ spec:OPTIONAL
   skos:prefLabel "OPTIONAL"@en ;
   skos:exactMatch spec:MAY .
 
-### Advisement Level
+
+## Advisement Level
 spec:AdvisementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Advisement Level"@en .
@@ -294,8 +286,8 @@ spec:successCriteria
   a rdf:Property ;
   rdfs:label "success criteria"@en .
 
-### Considerations
 
+# Considerations
 spec:consideration
   a rdf:Property ;
   rdfs:label "consideration"@en ;
@@ -343,8 +335,7 @@ spec:SelfReviewQuestionnaireSecurityPrivacy
   rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
 
 
-### Variability in Specifications
-
+# Variability in Specifications
 spec:Variability
   a rdfs:Class ;
   rdfs:seeAlso <https://www.w3.org/TR/spec-variability/> .
@@ -373,7 +364,6 @@ spec:Extensibility
   a rdfs:Class ;
   rdfs:label "Extensibility"@en .
 
-
 spec:defines
   a rdf:Property ;
   rdfs:label "defines"@en .
@@ -387,14 +377,6 @@ spec:conformance
 spec:Conformance
   a rdfs:Class ;
   rdfs:label "Conformance"@en .
-
-spec:Server
-  a skos:Concept ;
-  skos:prefLabel "Server"@en .
-
-spec:Client
-  a skos:Concept ;
-  skos:prefLabel "Client"@en .
 
 
 #Classes of products
@@ -453,6 +435,15 @@ spec:SpecificationGuidelines
   a skos:Concept ;
   skos:prefLabel "Specification Guidelines"@en ;
   skos:definition "Specification (guidelines)"@en .
+
+
+spec:Server
+  a skos:Concept ;
+  skos:prefLabel "Server"@en .
+
+spec:Client
+  a skos:Concept ;
+  skos:prefLabel "Client"@en .
 
 
 #Specification category
@@ -564,32 +555,31 @@ spec:ConformanceFunctionalLevel
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-level> .
 
 
-### XXX: Already covered by other vocabs. Reuse existing or check for subProperty/equivalentProperty possibility.
+# XXX: Already covered by other vocabs. Reuse existing or check for subProperty/equivalentProperty possibility.
 spec:thisVersion
   a rdf:Property .
 spec:latestVersion
   a rdf:Property .
 spec:previousVersion
   a rdf:Property .
-### or editorList authorList contributorList
+# or editorList authorList contributorList
 spec:editor
   a rdf:Property .
 spec:author
   a rdf:Property .
 spec:contributor
   a rdf:Property .
-### doap-ish.
+# doap-ish.
 spec:repository
   a rdf:Property .
 spec:issueTracker
   a rdf:Property .
 spec:implementation
   a rdf:Property .
-### Citations / References. Use CiTO
+# Citations / References. Use CiTO
 spec:citation
    a rdf:Property .
-
-## Reuse Social
+#Social
 #as:inReplyTo
 #ldp:inbox
 #oa:annotationService
