@@ -9,14 +9,12 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spec: <#> .
 @prefix test-description: <http://www.w3.org/2006/03/test-description#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#XXX: DO NOT USE besides experimenting.
-
-@prefix spec: <#> .
 
 spec:
   a owl:Ontology ;
@@ -25,7 +23,7 @@ spec:
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2022-10-22"^^xsd:date ;
+    dcterms:date "2022-11-04"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
@@ -60,12 +58,6 @@ spec:requirementSubject
   rdfs:label "requirement subject"@en ;
   rdfs:domain spec:Requirement .
 
-spec:testScript
-  a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "test script"@en ;
-  rdfs:domain test-description:TestCase .
-
-### XXX: Experimental
 #spec:NormativeRequirement
 #  rdfs:subClassOf spec:Requirement ;
 #  rdfs:label "Normative Requirement"@en .
@@ -74,14 +66,17 @@ spec:testScript
 #  rdfs:subClassOf spec:Requirement ;
 #  rdfs:label "Informative Requirement"@en .
 
-#spec:excerpt
-#  a rdf:Property, owl:DatatypeProperty ;
-#  rdfs:label "excerpt"@en ;
-#  rdfs:range rdfs:Literal ;
-
-spec:scope
+spec:requirementReference
   a rdf:Property ;
-  rdfs:label "scope"@en .
+  rdfs:subPropertyOf rdfs:isDefinedBy ;
+  rdfs:label "requirement reference"@en ;
+  rdfs:domain test-description:SpecificationTestCase ;
+  rdfs:range spec:Requirement .
+
+spec:testScript
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test script"@en ;
+  rdfs:domain test-description:TestCase .
 
 spec:testSuite
   a rdf:Property ;
@@ -92,8 +87,6 @@ spec:testCase
   rdfs:label "test case"@en ;
   rdfs:range test-description:TestCase .
 
-#XXX: Perhaps 'testReports' instead?
-#Intended to refer to a document/collection that contains/links to reports (document).
 spec:implementationReports
   a rdf:Property ;
   rdfs:label "implementation reports"@en .
@@ -112,6 +105,10 @@ spec:basedOnConsensus
   a rdf:Property ;
   rdfs:label "based on consensus"@en .
 
+spec:scope
+  a rdf:Property ;
+  rdfs:label "scope"@en .
+
 spec:intellectualPropertyRights
   a rdf:Property ;
   rdfs:label "intellectual property rights"@en .
@@ -120,74 +117,6 @@ spec:acknowledgements
   a rdf:Property ;
   rdfs:label "acknowledgements"@en .
 
-spec:requirementReference
-  a rdf:Property ;
-  rdfs:subPropertyOf rdfs:isDefinedBy ;
-  rdfs:label "requirement reference"@en ;
-  rdfs:domain test-description:SpecificationTestCase ;
-  rdfs:range spec:Requirement .
-
-
-#Conformance
-### XXX: Experimental
-spec:conformanceRole
-  a rdf:Property ;
-  rdfs:label "conformance role"@en ;
-  rdfs:range spec:ConformanceClass .
-
-spec:ConformanceClass
-  a rdfs:Class ;
-  rdfs:label "Conformance Class"@en .
-
-spec:ServerConformanceClass
-  a rdfs:Class ;
-  rdfs:label "Server Conformance"@en ;
-  rdfs:subClassOf spec:ConformanceClass .
-
-spec:ClientConformanceClass
-  a rdfs:Class ;
-  rdfs:label "Client Conformance"@en ;
-  rdfs:subClassOf spec:ConformanceClass .
-
-spec:Server
-  a skos:Concept ;
-  skos:prefLabel "Server"@en .
-
-spec:Client
-  a skos:Concept ;
-  skos:prefLabel "Client"@en .
-
-
-### XXX: Experimental.
-### TODO: This needs to be higher level than Requirement
-#spec:conformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "conformance level"@en ;
-#  rdfs:domain spec:Requirement ;
-#  rdfs:range spec:ConformanceLevel .
-
-#spec:ConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Conformance Level"@en .
-
-### XXX: Experimental. May not be necessary.
-#spec:normativeConformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "normative conformance level"@en ;
-#  rdfs:subPropertyOf spec:conformanceLevel .
-#
-#spec:informativeConformanceLevel
-#  a rdf:Property ;
-#  rdfs:label "informative conformance level"@en ;
-#  rdfs:subPropertyOf spec:conformanceLevel .
-#
-#spec:NormativeConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Conformance Level"@en .
-#
-#spec:InformativeConformanceLevel
-#  a rdfs:Class ;
-#  rdfs:label "Informative Conformance Level"@en .
 
 
 ### Requirement Level
@@ -326,15 +255,14 @@ spec:might-not
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "might not"@en .
 
-### XXX: Experimental
 #spec:conformanceParameter
 #  a rdf:Property ;
-#  rdfs:label "conformance paramater"@en ;
+#  rdfs:label "conformance parameter"@en ;
 #  rdfs:range spec:ConformanceParameter .
 
 #spec:ConformanceParameter
 #  a rdfs:Class ;
-#  rdfs:label "Conformance Paramater"@en .
+#  rdfs:label "Conformance Parameter"@en .
 
 
 ### Example spec:Requirement
@@ -359,7 +287,7 @@ spec:might-not
 #  a rdf:Property ;
 #  rdfs:subPropertyOf spec:conformanceParameter ;
 #  rdfs:range http:Request ;
-#  rdfs:label "HTTP request conformance paramater"@en .
+#  rdfs:label "HTTP request conformance parameter"@en .
 
 #spec:httpRequestHeader
 #  a rdf:Property ;
@@ -488,11 +416,70 @@ spec:defines
   rdfs:label "defines"@en .
 
 
+#Conformance
+spec:conformanceRole
+  a rdf:Property ;
+  rdfs:label "conformance role"@en ;
+  rdfs:range spec:ConformanceClass .
+
+spec:ConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Conformance Class"@en .
+
+spec:ServerConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Server Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:ClientConformanceClass
+  a rdfs:Class ;
+  rdfs:label "Client Conformance"@en ;
+  rdfs:subClassOf spec:ConformanceClass .
+
+spec:Server
+  a skos:Concept ;
+  skos:prefLabel "Server"@en .
+
+spec:Client
+  a skos:Concept ;
+  skos:prefLabel "Client"@en .
+
+
+### TODO: This needs to be higher level than Requirement
+#spec:conformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "conformance level"@en ;
+#  rdfs:domain spec:Requirement ;
+#  rdfs:range spec:ConformanceLevel .
+
+#spec:ConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
+
+#spec:normativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "normative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:informativeConformanceLevel
+#  a rdf:Property ;
+#  rdfs:label "informative conformance level"@en ;
+#  rdfs:subPropertyOf spec:conformanceLevel .
+#
+#spec:NormativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Conformance Level"@en .
+#
+#spec:InformativeConformanceLevel
+#  a rdfs:Class ;
+#  rdfs:label "Informative Conformance Level"@en .
+
+
 #Classes of products
 spec:ClassesOfProducts
   a skos:ConceptScheme ;
   skos:prefLabel "Classes of Products"@en ;
-  skos:hasTopConcept spec:Content, spec:ProducerOfContent, spec:Player, spec:Consumer, spec:ResondingAgent, spec:Processor, spec:Module, spec:ProducerOfInstructions, spec:Profile, spec:SpecificationGuidelines ;
+  skos:hasTopConcept spec:Content, spec:ProducerOfContent, spec:Player, spec:Consumer, spec:RespondingAgent, spec:Processor, spec:Module, spec:ProducerOfInstructions, spec:Profile, spec:SpecificationGuidelines ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#cop> .
 
 spec:Content
@@ -655,8 +642,7 @@ spec:ConformanceFunctionalLevel
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-level> .
 
 
-### Already covered by random vocabs. Just listing to keep track.
-### Consider reusing those or subProperty or equivalentProperty these..
+### XXX: Already covered by other vocabs. Reuse existing or check for subProperty/equivalentProperty possibility.
 spec:thisVersion
   a rdf:Property .
 spec:latestVersion
