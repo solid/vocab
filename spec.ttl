@@ -352,7 +352,9 @@ spec:Variability
   a rdfs:Class ;
   rdfs:seeAlso <https://www.w3.org/TR/spec-variability/> .
 
-spec:productClass
+spec:classesOfProducts
+  a rdf:Property .
+spec:specificationCategory
   a rdf:Property .
 spec:profile
   a rdf:Property .
@@ -401,52 +403,52 @@ spec:ClassesOfProducts
 spec:Content
   a skos:Concept ;
   skos:prefLabel "Content"@en ;
-  skos:definition "Content (of type, meaning, and format as defined in the specification)"@en .
+  skos:definition "Content (of type, meaning, and format as defined in the specification)."@en .
 
 spec:ProducerOfContent
   a skos:Concept ;
   skos:prefLabel "Producer of content"@en ;
-  skos:definition "Producer of content (may be divided into initiators and modifiers)"@en .
+  skos:definition "Producer of content (may be divided into initiators and modifiers)."@en .
 
 spec:Player
   a skos:Concept ;
   skos:prefLabel "Player"@en ;
-  skos:definition "Player (read-only consumer, conveys content in non- XML way)"@en .
+  skos:definition "Player (read-only consumer, conveys content in non- XML way)."@en .
 
 spec:Consumer
   a skos:Concept ;
   skos:prefLabel "Consumer"@en ;
-  skos:definition "Consumer in a one-way pipeline"@en .
+  skos:definition "Consumer in a one-way pipeline."@en .
 
 spec:RespondingAgent
   a skos:Concept ;
   skos:prefLabel "Responding agent"@en ;
-  skos:definition "Responding agent (e.g., server) of API (consumer and producer)"@en .
+  skos:definition "Responding agent (e.g., server) of API (consumer and producer)."@en .
 
 spec:Processor
   a skos:Concept ;
   skos:prefLabel "Processor"@en ;
-  skos:definition "Processor (consumer of its vocabulary/instructions)"@en .
+  skos:definition "Processor (consumer of its vocabulary/instructions)."@en .
 
 spec:Module
   a skos:Concept ;
   skos:prefLabel "Module"@en ;
-  skos:definition "Module that hosts the processor"@en .
+  skos:definition "Module that hosts the processor."@en .
 
 spec:ProducerOfInstructions
   a skos:Concept ;
   skos:prefLabel "ProducerOfInstructions"@en ;
-  skos:definition "Producer of instructions/commands to processor"@en .
+  skos:definition "Producer of instructions/commands to processor."@en .
 
 spec:Profile
   a skos:Concept ;
   skos:prefLabel "Profile"@en ;
-  skos:definition "Profile derived from the specification's Rules for Profiles"@en .
+  skos:definition "Profile derived from the specification's Rules for Profiles."@en .
 
 spec:SpecificationGuidelines
   a skos:Concept ;
   skos:prefLabel "Specification Guidelines"@en ;
-  skos:definition "Specification (guidelines)"@en .
+  skos:definition "Specification (guidelines)."@en .
 
 
 spec:Server
@@ -461,7 +463,7 @@ spec:Client
 #Specification category
 spec:SpecificationCategory
   a skos:ConceptScheme ;
-  skos:prefLabel "Specification Category"@en ;
+  skos:prefLabel "Specification Categories"@en ;
   skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehaviour, spec:API, spec:RulesForDerivingProfiles ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#spec-cat> .
 
@@ -497,12 +499,12 @@ spec:Protocol
 
 spec:ProcessorBehaviour
   a skos:Concept ;
-  skos:prefLabel "Processor"@en ;
+  skos:prefLabel "Processor behaviour"@en ;
   skos:definition "Describes the behavior of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language [XSLT] specifies the behavior of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behavior of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
 
-spec:API
+spec:APIs
   a skos:Concept ;
-  skos:prefLabel "API"@en ;
+  skos:prefLabel "APIs"@en ;
   skos:definition "APIs - describes a programmatic interface, allowing independent implementation of software that occupies the roles on either side of the interface. Example: DOM [DOM] specifies an interface that can be implemented by a parser or other processor that intends to offer an XML document in navigable form. Other software that wishes to navigate an XML document (e.g., an XSLT processor) can be written to use the DOM interface."@en .
 
 spec:RulesForDerivingProfiles
