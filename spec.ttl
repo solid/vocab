@@ -329,7 +329,7 @@ spec:RegistrationConsideration
   a rdfs:Class ;
   rdfs:subClassOf spec:Consideration ;
   rdfs:label "Registration Consideration"@en ;
-  rdfs:comment "Registration considerations at standards bodies eg. Registering HTTP Link Relations at IANA."@en .
+  rdfs:comment "Registration considerations at standards bodies, e.g., Registering HTTP Link Relations at IANA."@en .
 
 spec:SelfReviewQuestionnaire
   a rdfs:Class ;
