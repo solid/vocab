@@ -55,7 +55,7 @@ spec:requirementSubject
   rdfs:domain spec:Requirement .
 
 spec:requirementReference
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:subPropertyOf rdfs:isDefinedBy ;
   rdfs:label "requirement reference"@en ;
   rdfs:domain test-description:SpecificationTestCase ;
@@ -67,16 +67,16 @@ spec:testScript
   rdfs:domain test-description:TestCase .
 
 spec:testSuite
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "test suite"@en .
 
 spec:testCase
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "test case"@en ;
   rdfs:range test-description:TestCase .
 
 spec:implementationReports
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "implementation reports"@en .
 
 spec:statement
@@ -90,31 +90,31 @@ spec:violatesAdvice
   rdfs:range rdfs:Literal .
 
 spec:basedOnConsensus
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "based on consensus"@en .
 
 spec:reviewProcess
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "review process"@en .
 
 spec:publicationRules
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "publication rules"@en .
 
 spec:operativeProcess
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "operative process"@en .
 
 spec:scope
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "scope"@en .
 
 spec:intellectualPropertyRights
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "intellectual property rights"@en .
 
 spec:acknowledgements
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "acknowledgements"@en .
 
 
@@ -258,46 +258,46 @@ spec:might-not
 
 
 spec:documentStatus
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "document status"@en .
 
 spec:terminology
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "terminology"@en ;
   rdfs:range skos:ConceptScheme .
 
 spec:conventions
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "conventions"@en .
 
 spec:complianceWithOtherSpecifications
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "compliance with other specifications"@en .
 
 spec:example
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "example"@en .
 
 spec:note
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "note"@en .
 
 spec:issue
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "issue"@en .
 
 spec:exitCriteria
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "exit criteria"@en .
 
 spec:successCriteria
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "success criteria"@en .
 
 
 # Considerations
 spec:consideration
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "consideration"@en ;
   rdfs:range spec:Consideration .
 
@@ -363,11 +363,11 @@ spec:discretionaryItem
 spec:deprecation
   a rdf:Property .
 spec:extensibility
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "extensibility"@en ;
   rdfs:range spec:Extensibility .
 spec:errorHandling
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "error handling"@en .
 
 spec:Extensibility
@@ -375,13 +375,13 @@ spec:Extensibility
   rdfs:label "Extensibility"@en .
 
 spec:defines
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "defines"@en .
 
 
 #Conformance
 spec:conformance
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "conformance"@en .
 
 spec:Conformance
@@ -511,11 +511,11 @@ spec:RulesForDerivingProfiles
 
 #Subdivisions by profiles
 spec:suitedFor
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "suited for"@en .
 
 spec:profile
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "profile"@en ;
   rdfs:subPropertyOf spec:defines .
 #  rdfs:range spec:ConformanceProfile ;
@@ -529,12 +529,12 @@ spec:ConformanceProfile
 
 #Subdivision by modules
 spec:composedOf
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "composed of"@en ;
   rdfs:subPropertyOf spec:defines .
 
 spec:module
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "module"@en ;
   rdfs:subPropertyOf spec:composedOf .
 #  rdfs:range spec:ConformanceModule ;
@@ -548,13 +548,13 @@ spec:ConformanceModule
 
 #Subdivision by levels
 spec:functionalLevel
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "functional level"@en ;
   rdfs:subPropertyOf spec:defines .
 #  rdfs:range spec:ConformanceFunctionalLevel ;
 
 spec:buildUpon
-  a rdf:Property ;
+  a rdf:Property, owl:ObjectProperty ;
   rdfs:label "build upon"@en ;
   rdfs:subPropertyOf spec:defines .
 
