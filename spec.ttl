@@ -433,7 +433,7 @@ spec:Module
 
 spec:ProducerOfInstructions
   a skos:Concept ;
-  skos:prefLabel "ProducerOfInstructions"@en ;
+  skos:prefLabel "Producer of instructions"@en ;
   skos:definition "Producer of instructions/commands to processor."@en .
 
 spec:Profile
@@ -443,7 +443,7 @@ spec:Profile
 
 spec:SpecificationGuidelines
   a skos:Concept ;
-  skos:prefLabel "Specification Guidelines"@en ;
+  skos:prefLabel "Specification guidelines"@en ;
   skos:definition "Specification (guidelines)."@en .
 
 
