@@ -46,7 +46,7 @@ spec:Requirement
 
 spec:requirementLevel
   a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "requirment level"@en ;
+  rdfs:label "requirement level"@en ;
   rdfs:domain spec:Requirement .
 
 spec:requirementSubject
@@ -471,37 +471,37 @@ spec:SetOfGuidelines
 spec:FoundationOrAbstract
   a skos:Concept ;
   skos:prefLabel "Foundation or abstract"@en ;
-  skos:definition """Describes an abstraction around which several other specs will synchronize, but which is not implemented in code. Example: XML InfoSet [INFOSET] is a foundation for various specs that have a "data model" of the usable content of an XML document. However, there is no "InfoSet API" or "InfoSet Parser" specified."""@en .
+  skos:definition """Describes an abstraction around which several other specs will synchronize, but which is not implemented in code. Example: XML InfoSet is a foundation for various specs that have a "data model" of the usable content of an XML document. However, there is no "InfoSet API" or "InfoSet Parser" specified."""@en .
 
 spec:NotationSyntax
   a skos:Concept ;
   skos:prefLabel "Notation/syntax"@en ;
-  skos:definition "Describes a language that will be expressed as an actual character stream in XML or Web content and whose semantics will be understood by other W3C-specified technologies. Example: XPath [XPATH] is a non-XML-based notation for expressions that is used as the W3C-standard expression language for XSLT [XSLT], XPointer [XPOINTER], and XForms [XFORMS]. The specifications of those other technologies do not treat XPath as a black box, but rather impose limits, add extensions, and/or recognize the range of potential values of an XPath expression. By doing so, the other technologies require a certain level of precision in the XPath specification, including precision about its variability, to use the hooks and impose their limits."@en .
+  skos:definition "Describes a language that will be expressed as an actual character stream in XML or Web content and whose semantics will be understood by other W3C-specified technologies. Example: XPath is a non-XML-based notation for expressions that is used as the W3C-standard expression language for XSLT, XPointer, and XForms. The specifications of those other technologies do not treat XPath as a black box, but rather impose limits, add extensions, and/or recognize the range of potential values of an XPath expression. By doing so, the other technologies require a certain level of precision in the XPath specification, including precision about its variability, to use the hooks and impose their limits."@en .
 
 spec:ContentData
   a skos:Concept ;
   skos:prefLabel "Content/data"@en ;
-  skos:definition "Describes a markup language whose downstream usage is to express meaning to an end user or to applications specific to a discipline other than the Web itself. Example: MathML [MATHML] is a markup language for the math discipline, and may be used to express mathematical ideas to a person or to math software. SVG is a language for expressing graphical ideas."@en .
+  skos:definition "Describes a markup language whose downstream usage is to express meaning to an end user or to applications specific to a discipline other than the Web itself. Example: MathML is a markup language for the math discipline, and may be used to express mathematical ideas to a person or to math software. SVG is a language for expressing graphical ideas."@en .
 
 spec:SetOfEvents
   a skos:Concept ;
   skos:prefLabel "Set of events"@en ;
-  skos:definition "Describes a coherent set of events that software may need to raise or listen for. Example: one part of XForms [XFORMS] is a set of form-related events."@en .
+  skos:definition "Describes a coherent set of events that software may need to raise or listen for. Example: one part of XForms is a set of form-related events."@en .
 
 spec:Protocol
   a skos:Concept ;
   skos:prefLabel "Protocol"@en ;
-  skos:definition "Describes the interaction between two parties. Example: SOAP [SOAP]."@en .
+  skos:definition "Describes the interaction between two parties. Example: SOAP."@en .
 
 spec:ProcessorBehaviour
   a skos:Concept ;
   skos:prefLabel "Processor behaviour"@en ;
-  skos:definition "Describes the behavior of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language [XSLT] specifies the behavior of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behavior of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
+  skos:definition "Describes the behaviour of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behaviour of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behaviour of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
 
-spec:APIs
+spec:API
   a skos:Concept ;
-  skos:prefLabel "APIs"@en ;
-  skos:definition "APIs - describes a programmatic interface, allowing independent implementation of software that occupies the roles on either side of the interface. Example: DOM [DOM] specifies an interface that can be implemented by a parser or other processor that intends to offer an XML document in navigable form. Other software that wishes to navigate an XML document (e.g., an XSLT processor) can be written to use the DOM interface."@en .
+  skos:prefLabel "API"@en ;
+  skos:definition "APIs - describes a programmatic interface, allowing independent implementation of software that occupies the roles on either side of the interface. Example: DOM specifies an interface that can be implemented by a parser or other processor that intends to offer an XML document in navigable form. Other software that wishes to navigate an XML document (e.g., an XSLT processor) can be written to use the DOM interface."@en .
 
 spec:RulesForDerivingProfiles
   a skos:Concept ;
@@ -518,12 +518,12 @@ spec:profile
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "profile"@en ;
   rdfs:subPropertyOf spec:defines .
-#  rdfs:range spec:ConformanceProfile ;
+# rdfs:range spec:ConformanceProfile ;
 
 spec:ConformanceProfile
   a rdfs:Class ;
   rdfs:label "Profile"@en ;
-  rdfs:comment "A profile is a subset of the technology that supports a particular functional objective or a subset of a set of technologies defining how they are required to operate together (e.g., XHTML plus MathML plus SVG [X-M-S])."@en ;
+  rdfs:comment "A profile is a subset of the technology that supports a particular functional objective or a subset of a set of technologies defining how they are required to operate together (e.g., XHTML plus MathML plus SVG)."@en ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-profile> .
 
 
@@ -537,7 +537,7 @@ spec:module
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "module"@en ;
   rdfs:subPropertyOf spec:composedOf .
-#  rdfs:range spec:ConformanceModule ;
+# rdfs:range spec:ConformanceModule ;
 
 spec:ConformanceModule
   a rdfs:Class ;
@@ -551,7 +551,7 @@ spec:functionalLevel
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "functional level"@en ;
   rdfs:subPropertyOf spec:defines .
-#  rdfs:range spec:ConformanceFunctionalLevel ;
+# rdfs:range spec:ConformanceFunctionalLevel ;
 
 spec:buildUpon
   a rdf:Property, owl:ObjectProperty ;
