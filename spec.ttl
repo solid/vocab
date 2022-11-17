@@ -1,0 +1,595 @@
+@prefix : <> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spec: <#> .
+@prefix test-description: <http://www.w3.org/2006/03/test-description#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+spec:
+  a owl:Ontology ;
+  rdfs:label "Spec Terms"@en ;
+  dcterms:description "Spec Terms provides classes and properties that can be used to describe any significant unit of information in technical reports."@en ;
+  dcterms:issued "2021-06-04"^^xsd:date ;
+  dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+  owl:versionInfo [
+    dcterms:date "2022-11-17"^^xsd:date ;
+#    dcterms:replaces <> ;
+#    rdfs:seeAlso <> ;
+  ] ;
+  doap:repository <https://github.com/solid/vocab/> ;
+  vann:preferredNamespacePrefix "spec"@en ;
+  vann:preferredNamespaceUri "http://www.w3.org/ns/spec#"^^xsd:anyURI ;
+  vann:usageNote "Work in Progress!"@en ;
+  vs:term_status "testing"@en ;
+  dcterms:creator <https://csarven.ca/#i> .
+
+spec:Specification
+  a rdfs:Class ;
+  rdfs:label "Specification"@en ;
+  rdfs:isDefinedBy spec: .
+
+spec:requirement
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirement"@en ;
+  rdfs:range spec:Requirement .
+
+spec:Requirement
+  a rdfs:Class ;
+  rdfs:label "Requirement"@en .
+
+spec:requirementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirement level"@en ;
+  rdfs:domain spec:Requirement .
+
+spec:requirementSubject
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "requirement subject"@en ;
+  rdfs:domain spec:Requirement .
+
+spec:requirementReference
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:subPropertyOf rdfs:isDefinedBy ;
+  rdfs:label "requirement reference"@en ;
+  rdfs:domain test-description:SpecificationTestCase ;
+  rdfs:range spec:Requirement .
+
+spec:testScript
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test script"@en ;
+  rdfs:domain test-description:TestCase .
+
+spec:testSuite
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test suite"@en .
+
+spec:testCase
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "test case"@en ;
+  rdfs:range test-description:TestCase .
+
+spec:implementationReports
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "implementation reports"@en .
+
+spec:statement
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "statement"@en ;
+  rdfs:range rdfs:Literal .
+
+spec:violatesAdvice
+  a rdf:Property, owl:DatatypeProperty ;
+  rdfs:label "violates advice"@en ;
+  rdfs:range rdfs:Literal .
+
+spec:basedOnConsensus
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "based on consensus"@en .
+
+spec:reviewProcess
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "review process"@en .
+
+spec:publicationRules
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "publication rules"@en .
+
+spec:operativeProcess
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "operative process"@en .
+
+spec:scope
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "scope"@en .
+
+spec:intellectualPropertyRights
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "intellectual property rights"@en .
+
+spec:acknowledgements
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "acknowledgements"@en .
+
+
+# Requirement Level
+spec:RequirementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Requirement Level"@en ;
+  skos:hasTopConcept spec:MUST, spec:MUSTNOT, spec:REQUIRED, spec:SHALL, spec:SHALLNOT, spec:SHOULD, spec:SHOULDNOT, spec:RECOMMENDED, spec:NOTRECOMMENDED, spec:MAY, spec:OPTIONAL ;
+  rdfs:isDefinedBy
+    <https://www.rfc-editor.org/info/bcp14> ,
+    <https://datatracker.ietf.org/doc/html/rfc8174> ,
+    <https://datatracker.ietf.org/doc/html/rfc2119> .
+
+spec:MUST
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST"@en ;
+  skos:exactMatch spec:REQUIRED, spec:SHALL .
+
+spec:MUSTNOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MUST NOT"@en ;
+  skos:exactMatch spec:SHALLNOT .
+
+spec:REQUIRED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "REQUIRED"@en ;
+  skos:exactMatch spec:MUST, spec:SHALL .
+
+spec:SHALL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL"@en ;
+  skos:exactMatch spec:MUST, spec:REQUIRED .
+
+spec:SHALLNOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHALL NOT"@en ;
+  skos:exactMatch spec:MUSTNOT .
+
+spec:SHOULD
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD"@en ;
+  skos:exactMatch spec:RECOMMENDED .
+
+spec:SHOULDNOT
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "SHOULD NOT"@en ;
+  skos:exactMatch spec:NOTRECOMMENDED .
+
+spec:RECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULD .
+
+spec:NOTRECOMMENDED
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "NOT RECOMMENDED"@en ;
+  skos:exactMatch spec:SHOULDNOT .
+
+spec:MAY
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "MAY"@en ;
+  skos:exactMatch spec:OPTIONAL .
+
+spec:OPTIONAL
+  a skos:Concept ;
+  skos:topConceptOf spec:RequirementLevel ;
+  skos:prefLabel "OPTIONAL"@en ;
+  skos:exactMatch spec:MAY .
+
+
+## Advisement Level
+spec:AdvisementLevel
+  a skos:ConceptScheme ;
+  skos:prefLabel "Advisement Level"@en .
+
+spec:advisementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement"@en ;
+  rdfs:range spec:Advisement .
+
+spec:STRONGLYENCOURAGED
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly encouraged"@en .
+
+spec:STRONGLYDISCOURAGED
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "strongly discouraged"@en .
+
+spec:encouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "encouraged"@en .
+
+spec:discouraged
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "discouraged"@en .
+
+spec:can
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "can"@en .
+
+spec:cannot
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "cannot"@en .
+
+spec:could
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could"@en .
+
+spec:COULDNOT
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "could not"@en .
+
+spec:might
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might"@en .
+
+spec:MIGHTNOT
+  a skos:Concept ;
+  skos:topConceptOf spec:AdvisementLevel ;
+  skos:prefLabel "might not"@en .
+
+
+
+spec:documentStatus
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "document status"@en .
+
+spec:terminology
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "terminology"@en ;
+  rdfs:range skos:ConceptScheme .
+
+spec:conventions
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "conventions"@en .
+
+spec:complianceWithOtherSpecifications
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "compliance with other specifications"@en .
+
+spec:example
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "example"@en .
+
+spec:note
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "note"@en .
+
+spec:issue
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "issue"@en .
+
+spec:exitCriteria
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "exit criteria"@en .
+
+spec:successCriteria
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "success criteria"@en .
+
+
+# Considerations
+spec:consideration
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "consideration"@en ;
+  rdfs:range spec:Consideration .
+
+spec:Consideration
+  a rdfs:Class ;
+  rdfs:label "Consideration"@en .
+
+spec:SecurityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Security Consideration"@en .
+
+spec:PrivacyConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Privacy Consideration"@en .
+
+spec:AccessibilityConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Accessibility Consideration"@en .
+
+spec:InternationalizationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Internationalization Consideration"@en .
+
+spec:RegistrationConsideration
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Registration Consideration"@en ;
+  rdfs:comment "Registration considerations for collection of values or data at standards organisations, e.g., IANA, W3C."@en .
+
+spec:SelfReviewQuestionnaire
+  a rdfs:Class ;
+  rdfs:subClassOf spec:Consideration ;
+  rdfs:label "Self-Review Questionnaire"@en .
+
+spec:SelfReviewQuestionnaireSecurityPrivacy
+  a rdfs:Class ;
+  rdfs:subClassOf spec:SelfReviewQuestionnaire ;
+  rdfs:label "Self-Review Questionnaire: Security and Privacy"@en ;
+  rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
+
+
+# Variability in Specifications
+spec:Variability
+  a rdfs:Class ;
+  rdfs:seeAlso <https://www.w3.org/TR/spec-variability/> .
+
+spec:classesOfProducts
+  a rdf:Property .
+spec:specificationCategory
+  a rdf:Property .
+spec:profile
+  a rdf:Property .
+spec:module
+  a rdf:Property .
+spec:level
+  a rdf:Property .
+spec:discretionaryItem
+  a rdf:Property .
+spec:deprecation
+  a rdf:Property .
+spec:extensibility
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "extensibility"@en ;
+  rdfs:range spec:Extensibility .
+spec:errorHandling
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "error handling"@en .
+
+spec:Extensibility
+  a rdfs:Class ;
+  rdfs:label "Extensibility"@en .
+
+spec:defines
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "defines"@en .
+
+
+#Conformance
+spec:conformance
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "conformance"@en .
+
+spec:Conformance
+  a rdfs:Class ;
+  rdfs:label "Conformance"@en .
+
+
+#Classes of products
+spec:ClassesOfProducts
+  a skos:ConceptScheme ;
+  skos:prefLabel "Classes of Products"@en ;
+  skos:hasTopConcept spec:Content, spec:ProducerOfContent, spec:Player, spec:Consumer, spec:RespondingAgent, spec:Processor, spec:Module, spec:ProducerOfInstructions, spec:Profile, spec:SpecificationGuidelines ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#cop> .
+
+spec:Content
+  a skos:Concept ;
+  skos:prefLabel "Content"@en ;
+  skos:definition "Content (of type, meaning, and format as defined in the specification)."@en .
+
+spec:ProducerOfContent
+  a skos:Concept ;
+  skos:prefLabel "Producer of content"@en ;
+  skos:definition "Producer of content (may be divided into initiators and modifiers)."@en .
+
+spec:Player
+  a skos:Concept ;
+  skos:prefLabel "Player"@en ;
+  skos:definition "Player (read-only consumer, conveys content in non- XML way)."@en .
+
+spec:Consumer
+  a skos:Concept ;
+  skos:prefLabel "Consumer"@en ;
+  skos:definition "Consumer in a one-way pipeline."@en .
+
+spec:RespondingAgent
+  a skos:Concept ;
+  skos:prefLabel "Responding agent"@en ;
+  skos:definition "Responding agent (e.g., server) of API (consumer and producer)."@en .
+
+spec:Processor
+  a skos:Concept ;
+  skos:prefLabel "Processor"@en ;
+  skos:definition "Processor (consumer of its vocabulary/instructions)."@en .
+
+spec:Module
+  a skos:Concept ;
+  skos:prefLabel "Module"@en ;
+  skos:definition "Module that hosts the processor."@en .
+
+spec:ProducerOfInstructions
+  a skos:Concept ;
+  skos:prefLabel "Producer of instructions"@en ;
+  skos:definition "Producer of instructions/commands to processor."@en .
+
+spec:Profile
+  a skos:Concept ;
+  skos:prefLabel "Profile"@en ;
+  skos:definition "Profile derived from the specification's Rules for Profiles."@en .
+
+spec:SpecificationGuidelines
+  a skos:Concept ;
+  skos:prefLabel "Specification guidelines"@en ;
+  skos:definition "Specification (guidelines)."@en .
+
+
+spec:Server
+  a skos:Concept ;
+  skos:prefLabel "Server"@en .
+
+spec:Client
+  a skos:Concept ;
+  skos:prefLabel "Client"@en .
+
+
+#Specification category
+spec:SpecificationCategory
+  a skos:ConceptScheme ;
+  skos:prefLabel "Specification Categories"@en ;
+  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehaviour, spec:API, spec:RulesForDerivingProfiles ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#spec-cat> .
+
+spec:SetOfGuidelines
+  a skos:Concept ;
+  skos:prefLabel "Set of guidelines"@en ;
+  skos:definition "Describes desirable attributes of content intended for human consumption. Examples: QA Specification Guidelines, Web Content Accessibility Guidelines."@en .
+
+spec:FoundationOrAbstract
+  a skos:Concept ;
+  skos:prefLabel "Foundation or abstract"@en ;
+  skos:definition """Describes an abstraction around which several other specs will synchronize, but which is not implemented in code. Example: XML InfoSet is a foundation for various specs that have a "data model" of the usable content of an XML document. However, there is no "InfoSet API" or "InfoSet Parser" specified."""@en .
+
+spec:NotationSyntax
+  a skos:Concept ;
+  skos:prefLabel "Notation/syntax"@en ;
+  skos:definition "Describes a language that will be expressed as an actual character stream in XML or Web content and whose semantics will be understood by other W3C-specified technologies. Example: XPath is a non-XML-based notation for expressions that is used as the W3C-standard expression language for XSLT, XPointer, and XForms. The specifications of those other technologies do not treat XPath as a black box, but rather impose limits, add extensions, and/or recognize the range of potential values of an XPath expression. By doing so, the other technologies require a certain level of precision in the XPath specification, including precision about its variability, to use the hooks and impose their limits."@en .
+
+spec:ContentData
+  a skos:Concept ;
+  skos:prefLabel "Content/data"@en ;
+  skos:definition "Describes a markup language whose downstream usage is to express meaning to an end user or to applications specific to a discipline other than the Web itself. Example: MathML is a markup language for the math discipline, and may be used to express mathematical ideas to a person or to math software. SVG is a language for expressing graphical ideas."@en .
+
+spec:SetOfEvents
+  a skos:Concept ;
+  skos:prefLabel "Set of events"@en ;
+  skos:definition "Describes a coherent set of events that software may need to raise or listen for. Example: one part of XForms is a set of form-related events."@en .
+
+spec:Protocol
+  a skos:Concept ;
+  skos:prefLabel "Protocol"@en ;
+  skos:definition "Describes the interaction between two parties. Example: SOAP."@en .
+
+spec:ProcessorBehaviour
+  a skos:Concept ;
+  skos:prefLabel "Processor behaviour"@en ;
+  skos:definition "Describes the behaviour of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behaviour of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behaviour of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
+
+spec:API
+  a skos:Concept ;
+  skos:prefLabel "API"@en ;
+  skos:definition "APIs - describes a programmatic interface, allowing independent implementation of software that occupies the roles on either side of the interface. Example: DOM specifies an interface that can be implemented by a parser or other processor that intends to offer an XML document in navigable form. Other software that wishes to navigate an XML document (e.g., an XSLT processor) can be written to use the DOM interface."@en .
+
+spec:RulesForDerivingProfiles
+  a skos:Concept ;
+  skos:prefLabel "Rules for deriving profiles"@en ;
+  skos:definition "Describes how implementers, or any parties other than the WG itself, may produce a profile for a particular situation that cannot be anticipated in complete detail at the time the WG is writing its specification. Example: part of SMIL."@en .
+
+
+#Subdivisions by profiles
+spec:suitedFor
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "suited for"@en .
+
+spec:profile
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "profile"@en ;
+  rdfs:subPropertyOf spec:defines .
+# rdfs:range spec:ConformanceProfile ;
+
+spec:ConformanceProfile
+  a rdfs:Class ;
+  rdfs:label "Profile"@en ;
+  rdfs:comment "A profile is a subset of the technology that supports a particular functional objective or a subset of a set of technologies defining how they are required to operate together (e.g., XHTML plus MathML plus SVG)."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-profile> .
+
+
+#Subdivision by modules
+spec:composedOf
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "composed of"@en ;
+  rdfs:subPropertyOf spec:defines .
+
+spec:module
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "module"@en ;
+  rdfs:subPropertyOf spec:composedOf .
+# rdfs:range spec:ConformanceModule ;
+
+spec:ConformanceModule
+  a rdfs:Class ;
+  rdfs:label "Module"@en ;
+  rdfs:comment "Modules are discrete divisions or functional groupings of the technology and do not necessarily fit in a simple hierarchical structure."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-module> .
+
+
+#Subdivision by levels
+spec:functionalLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "functional level"@en ;
+  rdfs:subPropertyOf spec:defines .
+# rdfs:range spec:ConformanceFunctionalLevel ;
+
+spec:buildUpon
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "build upon"@en ;
+  rdfs:subPropertyOf spec:defines .
+
+spec:ConformanceFunctionalLevel
+  a rdfs:Class ;
+  rdfs:label "Functional level"@en ;
+  rdfs:comment "Functional levels — or in common usage simply levels — are used to group functionality into nested subsets, ranging from minimal or core functionality to full or complete functionally. Level 1 is the minimum or core of the technology. Level 2 includes all of level 1 plus additional functionality. This nesting continues until level n, which consists of the entire technology."@en ;
+  rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#subdivision-level> .
+
+
+# XXX: Already covered by other vocabs. Reuse existing or check for subProperty/equivalentProperty possibility.
+spec:thisVersion
+  a rdf:Property .
+spec:latestVersion
+  a rdf:Property .
+spec:previousVersion
+  a rdf:Property .
+# or editorList authorList contributorList
+spec:editor
+  a rdf:Property .
+spec:author
+  a rdf:Property .
+spec:contributor
+  a rdf:Property .
+# doap-ish.
+spec:repository
+  a rdf:Property .
+spec:issueTracker
+  a rdf:Property .
+spec:implementation
+  a rdf:Property .
+# Citations / References. Use CiTO
+spec:citation
+   a rdf:Property .
+#Social
+#as:inReplyTo
+#ldp:inbox
+#oa:annotationService
