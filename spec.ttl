@@ -122,7 +122,7 @@ spec:acknowledgements
 spec:RequirementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Requirement Level"@en ;
-  skos:hasTopConcept spec:MUST, spec:MUST-NOT, spec:REQUIRED, spec:SHALL, spec:SHALL-NOT, spec:SHOULD, spec:SHOULD-NOT, spec:RECOMMENDED, spec:NOT-RECOMMENDED, spec:MAY, spec:OPTIONAL ;
+  skos:hasTopConcept spec:MUST, spec:MUSTNOT, spec:REQUIRED, spec:SHALL, spec:SHALLNOT, spec:SHOULD, spec:SHOULDNOT, spec:RECOMMENDED, spec:NOTRECOMMENDED, spec:MAY, spec:OPTIONAL ;
   rdfs:isDefinedBy
     <https://www.rfc-editor.org/info/bcp14> ,
     <https://datatracker.ietf.org/doc/html/rfc8174> ,
@@ -134,11 +134,11 @@ spec:MUST
   skos:prefLabel "MUST"@en ;
   skos:exactMatch spec:REQUIRED, spec:SHALL .
 
-spec:MUST-NOT
+spec:MUSTNOT
   a skos:Concept ;
   skos:topConceptOf spec:RequirementLevel ;
   skos:prefLabel "MUST NOT"@en ;
-  skos:exactMatch spec:SHALL-NOT .
+  skos:exactMatch spec:SHALLNOT .
 
 spec:REQUIRED
   a skos:Concept ;
@@ -152,11 +152,11 @@ spec:SHALL
   skos:prefLabel "SHALL"@en ;
   skos:exactMatch spec:MUST, spec:REQUIRED .
 
-spec:SHALL-NOT
+spec:SHALLNOT
   a skos:Concept ;
   skos:topConceptOf spec:RequirementLevel ;
   skos:prefLabel "SHALL NOT"@en ;
-  skos:exactMatch spec:MUST-NOT .
+  skos:exactMatch spec:MUSTNOT .
 
 spec:SHOULD
   a skos:Concept ;
@@ -164,11 +164,11 @@ spec:SHOULD
   skos:prefLabel "SHOULD"@en ;
   skos:exactMatch spec:RECOMMENDED .
 
-spec:SHOULD-NOT
+spec:SHOULDNOT
   a skos:Concept ;
   skos:topConceptOf spec:RequirementLevel ;
   skos:prefLabel "SHOULD NOT"@en ;
-  skos:exactMatch spec:NOT-RECOMMENDED .
+  skos:exactMatch spec:NOTRECOMMENDED .
 
 spec:RECOMMENDED
   a skos:Concept ;
@@ -176,11 +176,11 @@ spec:RECOMMENDED
   skos:prefLabel "RECOMMENDED"@en ;
   skos:exactMatch spec:SHOULD .
 
-spec:NOT-RECOMMENDED
+spec:NOTRECOMMENDED
   a skos:Concept ;
   skos:topConceptOf spec:RequirementLevel ;
   skos:prefLabel "NOT RECOMMENDED"@en ;
-  skos:exactMatch spec:SHOULD-NOT .
+  skos:exactMatch spec:SHOULDNOT .
 
 spec:MAY
   a skos:Concept ;
@@ -205,12 +205,12 @@ spec:advisementLevel
   rdfs:label "advisement"@en ;
   rdfs:range spec:Advisement .
 
-spec:strongly-encouraged
+spec:STRONGLYENCOURAGED
   a skos:Concept ;
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "strongly encouraged"@en .
 
-spec:strongly-discouraged
+spec:STRONGLYDISCOURAGED
   a skos:Concept ;
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "strongly discouraged"@en .
@@ -240,7 +240,7 @@ spec:could
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "could"@en .
 
-spec:could-not
+spec:COULDNOT
   a skos:Concept ;
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "could not"@en .
@@ -250,7 +250,7 @@ spec:might
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "might"@en .
 
-spec:might-not
+spec:MIGHTNOT
   a skos:Concept ;
   skos:topConceptOf spec:AdvisementLevel ;
   skos:prefLabel "might not"@en .
