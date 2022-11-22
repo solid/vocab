@@ -76,6 +76,7 @@
     a rdfs:Class ;
     rdfs:label "Tombstone"@en ;
     dc:description "Metadata left behind for a resource that has been deleted."@en ;
+    rdfs:subClassOf :Metadata ;
     rdfs:isDefinedBy : .
 
 :resource
@@ -84,7 +85,7 @@
     dc:description "Resource which the metadata or tombstone makes reference to, or which is affected by the operation."@en ;
     rdfs:subPropertyOf dcmi:subject ;
     rdfs:range rdfs:Resource ;
-    rdfs:domain :Metadata, :Operation, :Tombstone ;
+    rdfs:domain :Metadata, :Operation ;
     rdfs:isDefinedBy : .
 
 :createdAt
@@ -110,7 +111,7 @@
     rdfs:label "deletedAt"@en ;
     dc:description "Time at which the resource was deleted or soft-deleted."@en ;
     rdfs:range xsd:dateTime ;
-    rdfs:domain :Metadata, :Tombstone ;
+    rdfs:domain :Metadata ;
     rdfs:isDefinedBy : .
 
 :property
