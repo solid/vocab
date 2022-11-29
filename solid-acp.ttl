@@ -5,6 +5,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 prefix dc: <http://purl.org/dc/terms/>
 prefix vann: <http://purl.org/vocab/vann/>
+prefix cito: <http://purl.org/spar/cito/>
 
 <http://www.w3.org/ns/solid/acp#>
     a owl:Ontology ;
