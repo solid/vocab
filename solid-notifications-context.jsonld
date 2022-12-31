@@ -9,9 +9,13 @@
 
     "accept": "notify:accept",
 
-    "startAt": {
-      "@id": "notify:startAt",
-      "@type": "xsd:dateTime" },
+    "channel": {
+      "@id": "notify:channel",
+      "@type": "@id" },
+
+    "channelType": {
+      "@id": "notify:channelType",
+      "@type": "@id" },
 
     "endAt": {
       "@id": "notify:endAt",
@@ -21,19 +25,9 @@
       "@id": "notify:feature",
       "@type": "@vocab" },
 
-    "channel": {
-      "@id": "notify:channel",
-      "@type": "@id" },
-
-    "channelType": {
-      "@id": "notify:channelType",
-      "@type": "@id" },
-
     "rate": {
       "@id": "notify:rate",
       "@type": "xsd:duration" },
-
-    "state": "notify:state",
 
     "receiveFrom": {
       "@id": "notify:receiveFrom",
@@ -42,7 +36,13 @@
     "sendTo": {
       "@id": "notify:sendTo",
       "@type": "@id" },
-      
+
+    "state": "notify:state",
+
+    "startAt": {
+      "@id": "notify:startAt",
+      "@type": "xsd:dateTime" },
+
     "subscription": {
       "@id": "notify:subscription",
       "@type": "@id" },

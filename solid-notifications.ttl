@@ -13,7 +13,7 @@
     rdfs:label "Solid Notifications"@en ;
     rdfs:comment "The vocabulary used by the Solid Notification protocol specification."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
-    rdfs:seeAlso <https://solidproject.org/TR/notifications-protocol>
+    rdfs:seeAlso <https://solidproject.org/TR/notifications-protocol> ;
     dc:issued "2022-12-31"^^xsd:date ;
     vann:preferredNamespacePrefix "notify" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/notifications#"^^xsd:anyURI .
@@ -32,7 +32,7 @@
 #    rdfs:label "LDN Channel 2023"@en ;
 #    rdfs:comment "A notification channel type that uses the Linked Data Notifications protocol."@en ;
 #    rdfs:isDefinedBy <https://solidproject.org/TR/ldn-channel-2023> ;
-    vs:term_status "testing" .
+#    vs:term_status "testing" .
 
 # ------------
 #  Properties
@@ -44,12 +44,20 @@ notify:accept
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
-notify:startAt
+notify:channel
     a rdf:Property ;
-    rdfs:label "start at"@en ;
-    rdfs:comment "The proposed or actual starting date and time of a notification channel with value represented in the xsd:dateTime datatype."@en ;
+    rdfs:label "notification channel"@en ;
+    rdfs:comment "A property used to indicate an available notification channel."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
+
+notify:channelType
+    a rdf:Property ;
+    rdfs:label "notification channel type"@en ;
+    rdfs:comment "A property used to indicate the notification channel type."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    vs:term_status "testing" .
+
 notify:endAt
     a rdf:Property ;
     rdfs:label "end at"@en ;
@@ -61,13 +69,6 @@ notify:feature
     a rdf:Property ;
     rdfs:label "feature"@en ;
     rdfs:comment "A property used to describe the features supported by a particular notification channel."@en ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
-    vs:term_status "testing" .
-
-notify:channel
-    a rdf:Property ;
-    rdfs:label "notification channel"@en ;
-    rdfs:comment "A property used to indicate an available notification channel."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
@@ -91,6 +92,14 @@ notify:sendTo
     rdfs:comment "The property used to identify the resource that can accept notifications."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
+
+notify:startAt
+    a rdf:Property ;
+    rdfs:label "start at"@en ;
+    rdfs:comment "The proposed or actual starting date and time of a notification channel with value represented in the xsd:dateTime datatype."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    vs:term_status "testing" .
+
 notify:state
     a rdf:Property ;
     rdfs:label "state"@en ;
@@ -111,4 +120,3 @@ notify:topic
     rdfs:comment "The IRI of a resource about which a client would like to receive notifications."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
-
