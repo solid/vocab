@@ -14,18 +14,24 @@
     rdfs:comment "The vocabulary used by the Solid Notification protocol specification."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     rdfs:seeAlso <https://solidproject.org/TR/notifications-protocol>
-    dc:issued "2022-01-04"^^xsd:date ;
+    dc:issued "2022-12-31"^^xsd:date ;
     vann:preferredNamespacePrefix "notify" ;
     vann:preferredNamespaceUri "http://www.w3.org/ns/solid/notifications#"^^xsd:anyURI .
 
 # ---------
 #  Classes
 # ---------
-notify:WebSocketSubscription2021
-    a rdf:Class ;
-    rdfs:label "WebSocket Subscription 2021"@en ;
-    rdfs:comment "A Subscription type that uses the WebSocket API"@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-subscription-2021> ;
+#notify:WebSocketChannel2023
+#    a rdf:Class ;
+#    rdfs:label "WebSocket Channel 2023"@en ;
+#    rdfs:comment "A notification channel type that uses the WebSocket API."@en ;
+#    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-channel-2023> ;
+
+#notify:LDNChannel2023
+#    a rdf:Class ;
+#    rdfs:label "LDN Channel 2023"@en ;
+#    rdfs:comment "A notification channel type that uses the Linked Data Notifications protocol."@en ;
+#    rdfs:isDefinedBy <https://solidproject.org/TR/ldn-channel-2023> ;
     vs:term_status "testing" .
 
 # ------------
@@ -34,15 +40,21 @@ notify:WebSocketSubscription2021
 notify:accept
     a rdf:Property ;
     rdfs:label "accept"@en ;
-    rdfs:comment "A MIME-Type value that indicates the desired serialization of the notification."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-accept> ;
+    rdfs:comment "The media types that are acceptable by the recipient of a notification with value corresponding to the HTTP Accept header value [RFC7231]."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
-notify:expiration
+notify:startAt
     a rdf:Property ;
-    rdfs:label "expiration"@en ;
-    rdfs:comment "An ISO 8601 datetime value indicating a proposed expiration point for a subscription."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-expiration> ;
+    rdfs:label "start at"@en ;
+    rdfs:comment "The proposed or actual starting date and time of a notification channel with value represented in the xsd:dateTime datatype."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    vs:term_status "testing" .
+notify:endAt
+    a rdf:Property ;
+    rdfs:label "end at"@en ;
+    rdfs:comment "The proposed or actual ending date and time of a notification channel with value represented in the xsd:dateTime datatype."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
 notify:feature
@@ -52,38 +64,44 @@ notify:feature
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
-notify:notificationChannel
+notify:channel
     a rdf:Property ;
     rdfs:label "notification channel"@en ;
-    rdfs:comment "A property used to connect a Notification Subscription Metadata Resource to a particular notification channel."@en ;
+    rdfs:comment "A property used to indicate an available notification channel."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
 notify:rate
     a rdf:Property ;
     rdfs:label "rate"@en ;
-    rdfs:comment "An ISO 8601 duration value indicating the minimum amount of time to elapse between notifications sent to the client."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-rate> ;
+    rdfs:comment "The minimum amount of time to elapse between notifications sent to receiver with value represented in the xsd:duration datatype."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
-notify:source
+notify:receiveFrom
     a rdf:Property ;
-    rdfs:label "source"@en ;
-    rdfs:comment "The IRI of a resource used by a client to establish a connection to a notification channel."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-subscription-2021#websocketsubscription2021-source> ;
+    rdfs:label "receive from"@en ;
+    rdfs:comment "The property used to identify the resource that can be used to establish a connection to receive notifications."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
+notify:sendTo
+    a rdf:Property ;
+    rdfs:label "send to"@en ;
+    rdfs:comment "The property used to identify the resource that can accept notifications."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    vs:term_status "testing" .
 notify:state
     a rdf:Property ;
     rdfs:label "state"@en ;
-    rdfs:comment "An opaque value representing the last known state of a resource."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#feature-state> ;
+    rdfs:comment "The last known state of a resource (topic) with value represented in the xsd:string datatype."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
 notify:subscription
     a rdf:Property ;
     rdfs:label "subscription"@en ;
-    rdfs:comment "The subscription resource associated with a notification channel."@en ;
+    rdfs:comment "A property used to indicate an available subscription resource."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
@@ -91,6 +109,6 @@ notify:topic
     a rdf:Property ;
     rdfs:label "topic"@en ;
     rdfs:comment "The IRI of a resource about which a client would like to receive notifications."@en ;
-    rdfs:isDefinedBy <https://solidproject.org/TR/notifications-protocol#server-subscription-request-topic> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 

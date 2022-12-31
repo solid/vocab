@@ -9,16 +9,24 @@
 
     "accept": "notify:accept",
 
-    "expiration": {
-      "@id": "notify:expiration",
+    "startAt": {
+      "@id": "notify:startAt",
+      "@type": "xsd:dateTime" },
+
+    "endAt": {
+      "@id": "notify:endAt",
       "@type": "xsd:dateTime" },
 
     "feature": {
       "@id": "notify:feature",
       "@type": "@vocab" },
 
-    "notificationChannel": {
-      "@id": "notify:notificationChannel",
+    "channel": {
+      "@id": "notify:channel",
+      "@type": "@id" },
+
+    "channelType": {
+      "@id": "notify:channelType",
       "@type": "@id" },
 
     "rate": {
@@ -27,6 +35,14 @@
 
     "state": "notify:state",
 
+    "receiveFrom": {
+      "@id": "notify:receiveFrom",
+      "@type": "@id" },
+
+    "sendTo": {
+      "@id": "notify:sendTo",
+      "@type": "@id" },
+      
     "subscription": {
       "@id": "notify:subscription",
       "@type": "@id" },
@@ -35,13 +51,5 @@
       "@id": "notify:topic",
       "@type": "@id" },
 
-    "WebSocketSubscription2021": {
-      "@id": "notify:WebSocketSubscription2021",
-      "@context": {
-        "source": {
-          "@id": "notify:source",
-          "@type": "@id" }
-      }
-    },
   }
 }
