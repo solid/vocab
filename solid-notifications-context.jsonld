@@ -15,7 +15,7 @@
 
     "channelType": {
       "@id": "notify:channelType",
-      "@type": "@id" },
+      "@type": "@vocab" },
 
     "endAt": {
       "@id": "notify:endAt",
@@ -49,7 +49,7 @@
 
     "topic": {
       "@id": "notify:topic",
-      "@type": "@id" },
+      "@type": "@id" }
 
   }
 }
