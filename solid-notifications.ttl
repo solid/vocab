@@ -86,6 +86,13 @@ notify:receiveFrom
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
+notify:sender
+    a rdf:Property ;
+    rdfs:label "sender"@en ;
+    rdfs:comment "The property used to identify the party that sends notifications."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
+    vs:term_status "testing" .
+
 notify:sendTo
     a rdf:Property ;
     rdfs:label "send to"@en ;

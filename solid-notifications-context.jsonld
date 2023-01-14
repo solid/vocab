@@ -33,6 +33,10 @@
       "@id": "notify:receiveFrom",
       "@type": "@id" },
 
+    "sender": {
+      "@id": "notify:sender",
+      "@type": "@id" },
+
     "sendTo": {
       "@id": "notify:sendTo",
       "@type": "@id" },
@@ -50,6 +54,5 @@
     "topic": {
       "@id": "notify:topic",
       "@type": "@id" }
-
   }
 }
