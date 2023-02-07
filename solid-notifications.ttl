@@ -117,7 +117,7 @@ notify:state
 notify:subscription
     a rdf:Property ;
     rdfs:label "subscription"@en ;
-    rdfs:comment "A property used to indicate an available subscription resource."@en ;
+    rdfs:comment "A property used to indicate an available subscription service."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     vs:term_status "testing" .
 
