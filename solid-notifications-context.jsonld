@@ -7,6 +7,12 @@
     "notify": "http://www.w3.org/ns/solid/notifications#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
 
+    "EventSourceChannel2023": "notify:EventSourceChannel2023",
+    "LDNChannel2023": "notify:LDNChannel2023",
+    "StreamingHTTPChannel2023": "notify:StreamingHTTPChannel2023",
+    "WebhookChannel2023": "notify:WebhookChannel2023",
+    "WebSocketChannel2023": "notify:WebSocketChannel2023",
+
     "accept": "notify:accept",
 
     "channel": {

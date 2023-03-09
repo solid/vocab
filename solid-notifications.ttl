@@ -11,7 +11,7 @@
     a owl:Ontology ;
     dc:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
     rdfs:label "Solid Notifications"@en ;
-    rdfs:comment "The vocabulary used by the Solid Notification protocol specification."@en ;
+    rdfs:comment "The vocabulary used by the Solid Notifications Protocol specification."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/notifications#> ;
     rdfs:seeAlso <https://solidproject.org/TR/notifications-protocol> ;
     dc:issued "2022-12-31"^^xsd:date ;
@@ -21,18 +21,40 @@
 # ---------
 #  Classes
 # ---------
-#notify:WebSocketChannel2023
-#    a rdf:Class ;
-#    rdfs:label "WebSocket Channel 2023"@en ;
-#    rdfs:comment "A notification channel type that uses the WebSocket API."@en ;
-#    rdfs:isDefinedBy <https://solidproject.org/TR/websocket-channel-2023> ;
+notify:EventSourceChannel2023
+    a rdf:Class ;
+    rdfs:label "EventSourceChannel2023" ;
+    rdfs:comment "A notification channel type that uses the EventSource Web API."@en ;
+    rdfs:isDefinedBy <https://solid.github.io/notifications/eventsource-channel-2023> ;
+    vs:term_status "testing" .
 
-#notify:LDNChannel2023
-#    a rdf:Class ;
-#    rdfs:label "LDN Channel 2023"@en ;
-#    rdfs:comment "A notification channel type that uses the Linked Data Notifications protocol."@en ;
-#    rdfs:isDefinedBy <https://solidproject.org/TR/ldn-channel-2023> ;
-#    vs:term_status "testing" .
+notify:LDNChannel2023
+    a rdf:Class ;
+    rdfs:label "LDNChannel2023" ;
+    rdfs:comment "A notification channel type that uses the Linked Data Notifications protocol."@en ;
+    rdfs:isDefinedBy <https://solid.github.io/notifications/ldn-channel-2023> ;
+    vs:term_status "testing" .
+
+notify:StreamingHTTPChannel2023
+    a rdf:Class ;
+    rdfs:label "StreamingHTTPChannel2023" ;
+    rdfs:comment "A notification channel type that uses the Fetch API."@en ;
+    rdfs:isDefinedBy <https://solid.github.io/notifications/streaming-http-channel-2023> ;
+    vs:term_status "testing" .
+
+notify:WebhookChannel2023
+    a rdf:Class ;
+    rdfs:label "WebhookChannel2023" ;
+    rdfs:comment "A notification channel type that uses Webhooks."@en ;
+    rdfs:isDefinedBy <https://solid.github.io/notifications/webhook-channel-2023> ;
+    vs:term_status "testing" .
+
+notify:WebSocketChannel2023
+    a rdf:Class ;
+    rdfs:label "WebSocketChannel2023" ;
+    rdfs:comment "A notification channel type that uses the WebSocket API."@en ;
+    rdfs:isDefinedBy <https://solid.github.io/notifications/websocket-channel-2023> ;
+    vs:term_status "testing" .
 
 # ------------
 #  Properties
