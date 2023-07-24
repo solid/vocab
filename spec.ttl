@@ -18,7 +18,7 @@ spec:
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2023-01-14"^^xsd:date ;
+    dcterms:date "2023-07-24"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
@@ -74,9 +74,9 @@ spec:testCase
   rdfs:label "test case"@en ;
   rdfs:range test-description:TestCase .
 
-spec:implementationReports
+spec:implementationReport
   a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "implementation reports"@en .
+  rdfs:label "implementation report"@en .
 
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
