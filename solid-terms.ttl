@@ -227,6 +227,14 @@ solid:publicTypeIndex
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "public type index"@en .
 
+solid:privateLabelIndex
+    a rdf:Property ;
+    dc:issued "2023-10-04"^^xsd:date ;
+    rdfs:comment "Points to an unlisted label index resource."@en ;
+    rdfs:range solid:UnlistedDocument ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "private label index"@en .
+
 solid:read
     a rdf:Property ;
     dc:issued "2015-12-18"^^xsd:date ;
