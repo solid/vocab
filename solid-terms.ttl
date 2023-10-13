@@ -212,20 +212,29 @@ solid:patches
 
 solid:privateTypeIndex
     a rdf:Property ;
-    dc:issued "2018-01-24"^^xsd:date ;
-    rdfs:comment "Points to an unlisted type index resource."@en ;
+    rdfs:comment
+    """The object is  to a private (unlisted) type index resource.
+    The subject is the user's webid.
+    The triple in found in the private preferences file.
+    (which itself is pointed to from the public profile by space:preferencesFile)
+    """@en ;
     rdfs:range solid:UnlistedDocument ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "private type index"@en .
 
 solid:publicTypeIndex
     a rdf:Property ;
-    dc:issued "2018-01-24"^^xsd:date ;
     rdfs:subPropertyOf solid:typeIndex ;
-    rdfs:comment "Points to a listed type index resource."@en ;
+    rdfs:comment """The object is  to a pubic ("listed") type index resource..
+    The subject is the user's webid.
+    The triple in found in the private preferences file.
+    (which itself is pointed to from the public profile by space:preferencesFile)
+    """@en ;
     rdfs:range solid:ListedDocument ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
-    rdfs:label "public type index"@en .
+    rdfs:subPropertyOf solid:typeIndex ;
+    dc:issued "2018-01-24"^^xsd:date ;
+    rdfs:range solid:ListedDocument ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> .
 
 solid:privateLabelIndex
     a rdf:Property ;
@@ -241,6 +250,7 @@ solid:read
     rdfs:comment "Indicates if a message has been read or not. This property should have a boolean datatype."@en ;
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
+    rdfs:range xsd:boolean;
     rdfs:label "read"@en .
 
 solid:storageQuota
