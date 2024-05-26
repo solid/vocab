@@ -18,7 +18,7 @@ spec:
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2023-07-24"^^xsd:date ;
+    dcterms:date "2024-05-26"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
@@ -59,6 +59,20 @@ spec:requirementReference
   rdfs:label "requirement reference"@en ;
   rdfs:domain test-description:SpecificationTestCase ;
   rdfs:range spec:Requirement .
+
+spec:advisement
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement"@en ;
+  rdfs:range spec:Advisement .
+
+spec:Advisement
+  a rdfs:Class ;
+  rdfs:label "Advisement"@en .
+
+spec:advisementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement level"@en ;
+  rdfs:domain spec:Advisement .
 
 spec:testScript
   a rdf:Property, owl:ObjectProperty ;
@@ -198,11 +212,6 @@ spec:OPTIONAL
 spec:AdvisementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Advisement Level"@en .
-
-spec:advisementLevel
-  a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "advisement"@en ;
-  rdfs:range spec:Advisement .
 
 spec:StronglyEncouraged
   a skos:Concept ;
