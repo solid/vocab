@@ -298,41 +298,41 @@ spec:successCriteria
 spec:consideration
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "consideration"@en ;
-  rdfs:range spec:Consideration .
+  rdfs:range spec:Considerations .
 
-spec:Consideration
+spec:Considerations
   a rdfs:Class ;
-  rdfs:label "Consideration"@en .
+  rdfs:label "Considerations"@en .
 
-spec:SecurityConsideration
+spec:SecurityConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Security Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Security Considerations"@en .
 
-spec:PrivacyConsideration
+spec:PrivacyConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Privacy Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Privacy Considerations"@en .
 
-spec:AccessibilityConsideration
+spec:AccessibilityConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Accessibility Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Accessibility Considerations"@en .
 
-spec:InternationalizationConsideration
+spec:InternationalizationConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Internationalization Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Internationalization Considerations"@en .
 
-spec:RegistrationConsideration
+spec:RegistrationConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Registration Consideration"@en ;
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Registration Considerations"@en ;
   rdfs:comment "Registration considerations for collection of values or data at standards organisations, e.g., IANA, W3C."@en .
 
 spec:SelfReviewQuestionnaire
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
+  rdfs:subClassOf spec:Considerations ;
   rdfs:label "Self-Review Questionnaire"@en .
 
 spec:SelfReviewQuestionnaireSecurityPrivacy
