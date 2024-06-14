@@ -351,6 +351,32 @@ spec:SelfReviewQuestionnaireSecurityPrivacy
   rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
 
 
+# Changelog
+spec:Changelog
+  a rdfs:Class ;
+  rdfs:label "Changelog"@en .
+
+spec:Change
+  a rdfs:Class ;
+  rdfs:label "Change"@en .
+
+spec:change
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change"@en .
+
+spec:changelog
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "changelog"@en .
+
+spec:changeClass
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change class"@en .
+
+spec:changeSubject
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change subject"@en .
+
+
 # Variability in Specifications
 spec:Variability
   a rdfs:Class ;
