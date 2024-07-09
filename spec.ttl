@@ -494,7 +494,7 @@ spec:Client
 spec:SpecificationCategory
   a skos:ConceptScheme ;
   skos:prefLabel "Specification Categories"@en ;
-  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehaviour, spec:API, spec:RulesForDerivingProfiles ;
+  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehavior, spec:API, spec:RulesForDerivingProfiles ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#spec-cat> .
 
 spec:SetOfGuidelines
@@ -527,10 +527,10 @@ spec:Protocol
   skos:prefLabel "Protocol"@en ;
   skos:definition "Describes the interaction between two parties. Example: SOAP."@en .
 
-spec:ProcessorBehaviour
+spec:ProcessorBehavior
   a skos:Concept ;
-  skos:prefLabel "Processor behaviour"@en ;
-  skos:definition "Describes the behaviour of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behaviour of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behaviour of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
+  skos:prefLabel "Processor behavior"@en ;
+  skos:definition "Describes the behavior of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behavior of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behavior of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
 
 spec:API
   a skos:Concept ;
