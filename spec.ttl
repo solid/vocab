@@ -18,7 +18,7 @@ spec:
   dcterms:issued "2021-06-04"^^xsd:date ;
   dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
   owl:versionInfo [
-    dcterms:date "2023-01-14"^^xsd:date ;
+    dcterms:date "2024-07-09"^^xsd:date ;
 #    dcterms:replaces <> ;
 #    rdfs:seeAlso <> ;
   ] ;
@@ -60,6 +60,20 @@ spec:requirementReference
   rdfs:domain test-description:SpecificationTestCase ;
   rdfs:range spec:Requirement .
 
+spec:advisement
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement"@en ;
+  rdfs:range spec:Advisement .
+
+spec:Advisement
+  a rdfs:Class ;
+  rdfs:label "Advisement"@en .
+
+spec:advisementLevel
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "advisement level"@en ;
+  rdfs:domain spec:Advisement .
+
 spec:testScript
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "test script"@en ;
@@ -74,9 +88,9 @@ spec:testCase
   rdfs:label "test case"@en ;
   rdfs:range test-description:TestCase .
 
-spec:implementationReports
+spec:implementationReport
   a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "implementation reports"@en .
+  rdfs:label "implementation report"@en .
 
 spec:statement
   a rdf:Property, owl:DatatypeProperty ;
@@ -199,11 +213,6 @@ spec:AdvisementLevel
   a skos:ConceptScheme ;
   skos:prefLabel "Advisement Level"@en .
 
-spec:advisementLevel
-  a rdf:Property, owl:ObjectProperty ;
-  rdfs:label "advisement"@en ;
-  rdfs:range spec:Advisement .
-
 spec:StronglyEncouraged
   a skos:Concept ;
   skos:topConceptOf spec:AdvisementLevel ;
@@ -298,41 +307,41 @@ spec:successCriteria
 spec:consideration
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "consideration"@en ;
-  rdfs:range spec:Consideration .
+  rdfs:range spec:Considerations .
 
-spec:Consideration
+spec:Considerations
   a rdfs:Class ;
-  rdfs:label "Consideration"@en .
+  rdfs:label "Considerations"@en .
 
-spec:SecurityConsideration
+spec:SecurityConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Security Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Security Considerations"@en .
 
-spec:PrivacyConsideration
+spec:PrivacyConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Privacy Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Privacy Considerations"@en .
 
-spec:AccessibilityConsideration
+spec:AccessibilityConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Accessibility Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Accessibility Considerations"@en .
 
-spec:InternationalizationConsideration
+spec:InternationalizationConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Internationalization Consideration"@en .
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Internationalization Considerations"@en .
 
-spec:RegistrationConsideration
+spec:RegistrationConsiderations
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
-  rdfs:label "Registration Consideration"@en ;
+  rdfs:subClassOf spec:Considerations ;
+  rdfs:label "Registration Considerations"@en ;
   rdfs:comment "Registration considerations for collection of values or data at standards organisations, e.g., IANA, W3C."@en .
 
 spec:SelfReviewQuestionnaire
   a rdfs:Class ;
-  rdfs:subClassOf spec:Consideration ;
+  rdfs:subClassOf spec:Considerations ;
   rdfs:label "Self-Review Questionnaire"@en .
 
 spec:SelfReviewQuestionnaireSecurityPrivacy
@@ -340,6 +349,32 @@ spec:SelfReviewQuestionnaireSecurityPrivacy
   rdfs:subClassOf spec:SelfReviewQuestionnaire ;
   rdfs:label "Self-Review Questionnaire: Security and Privacy"@en ;
   rdfs:seeAlso <https://www.w3.org/TR/security-privacy-questionnaire/> .
+
+
+# Changelog
+spec:Changelog
+  a rdfs:Class ;
+  rdfs:label "Changelog"@en .
+
+spec:Change
+  a rdfs:Class ;
+  rdfs:label "Change"@en .
+
+spec:change
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change"@en .
+
+spec:changelog
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "changelog"@en .
+
+spec:changeClass
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change class"@en .
+
+spec:changeSubject
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "change subject"@en .
 
 
 # Variability in Specifications
@@ -459,7 +494,7 @@ spec:Client
 spec:SpecificationCategory
   a skos:ConceptScheme ;
   skos:prefLabel "Specification Categories"@en ;
-  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehaviour, spec:API, spec:RulesForDerivingProfiles ;
+  skos:hasTopConcept spec:SetOfGuidelines, spec:FoundationOrAbstract, spec:NotationSyntax, spec:ContentData, spec:SetOfEvents, spec:Protocol, spec:ProcessorBehavior, spec:API, spec:RulesForDerivingProfiles ;
   rdfs:isDefinedBy <https://www.w3.org/TR/spec-variability/#spec-cat> .
 
 spec:SetOfGuidelines
@@ -492,10 +527,10 @@ spec:Protocol
   skos:prefLabel "Protocol"@en ;
   skos:definition "Describes the interaction between two parties. Example: SOAP."@en .
 
-spec:ProcessorBehaviour
+spec:ProcessorBehavior
   a skos:Concept ;
-  skos:prefLabel "Processor behaviour"@en ;
-  skos:definition "Describes the behaviour of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behaviour of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behaviour of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
+  skos:prefLabel "Processor behavior"@en ;
+  skos:definition "Describes the behavior of a piece of software that takes well-defined inputs and operates on them to produce specified output. Example: the XSL Transformations language specifies the behavior of an XSLT processor. The specification describes an XML-based style sheet language that directs the operations of a processor, but it clearly states that conformance determinations apply to the processor, not the style sheets. Example: XML Query specifies the behavior of a processor that takes the query language and fetches data, typically arranging that data in a convenient form for XML/Web use. It allows flexibility of the storage system from which data is fetched."@en .
 
 spec:API
   a skos:Concept ;
