@@ -215,8 +215,15 @@ solid:privateTypeIndex
     dc:issued "2018-01-24"^^xsd:date ;
     rdfs:comment "Points to an unlisted type index resource."@en ;
     rdfs:range solid:UnlistedDocument ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "private type index"@en .
+
+solid:proxy
+    a rdf:Property ;
+    dc:issue "2024-10-10"^^xsd:date ;
+    rdfs:comment """A proxy endpoint for applications to use. The value of the property is intended to be used as the base URL for the request, e.g., the proxy as literal: `https://example.org/proxy?uri=` would be used to request `https://example.net/profile/card#me` as `https://example.org/proxy?uri=https://example.net/profile/card%23me`"""@en ;
+    rdfs:label "proxy"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:range rdfs:Literal .
 
 solid:publicTypeIndex
     a rdf:Property ;
