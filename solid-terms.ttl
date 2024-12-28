@@ -243,6 +243,14 @@ solid:read
     rdfs:domain <http://rdfs.org/sioc/ns#Post> ;
     rdfs:label "read"@en .
 
+solid:storageDescription
+    a rdf:Property , owl:ObjectProperty ;
+    dc:issued "2024-12-28"^^xsd:date ;
+    rdfs:comment "Refers to the resource that provides a description of the storage containing this resource."@en ;
+    rdfs:seeAlso <https://solidproject.org/TR/2024/protocol-20240512#server-storage-description> ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "storage description"@en .
+
 solid:storageQuota
     a rdf:Property, owl:DatatypeProperty ;
     dc:issued "2018-10-26"^^xsd:date ;
