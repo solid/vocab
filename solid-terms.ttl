@@ -184,6 +184,13 @@ solid:notification
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "notification"@en .
 
+solid:objectivePronoun
+    a rdf:Property ;
+    dc:issued "2022-09-16"^^xsd:date ;
+    rdfs:comment "String for an agent's personal objective pronoun, e.g., her, him, them."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "personal objective pronoun"@en .
+
 solid:oidcIssuer
     a rdf:Property ;
     dc:issued "2017-08-15"^^xsd:date ;
@@ -209,6 +216,13 @@ solid:patches
     rdfs:label "patches"@en ;
     rdfs:domain solid:Patch ;
     rdfs:range rdfs:Resource .
+
+solid:possessivePronoun
+    a rdf:Property ;
+    dc:issued "2022-09-16"^^xsd:date ;
+    rdfs:comment "String for an agent's personal possessive pronoun, e.g., hers, his, theirs."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "personal possessive pronoun"@en .
 
 solid:privateTypeIndex
     a rdf:Property ;
@@ -268,6 +282,13 @@ solid:storageUsage
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:domain solid:Account ;
     rdfs:label "Non-volatile memory usage"@en .
+
+solid:subjectPronoun
+    a rdf:Property ;
+    dc:issued "2022-09-16"^^xsd:date ;
+    rdfs:comment "String for an agent's personal subject pronoun, e.g., she, he, they."@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:label "personal subject pronoun"@en .
 
 solid:typeIndex
     a rdf:Property ;
