@@ -102,6 +102,16 @@ solid:UnlistedDocument
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
     rdfs:label "Unlisted Type Index"@en .
 
+solid:Wallet
+    a rdfs:Class ;
+    dc:issued "2024-10-10"^^xsd:date ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/terms#> ;
+    rdfs:comment "A part or all of a pod which contains credentials, etc." ;
+    rdfs:label "Wallet"@en ;
+    rdfs:label "portefeuille"@fr ;
+    rdfs:label "Geldbörse"@de .
+
+
 ### Properties
 solid:account
     a rdf:Property ;
