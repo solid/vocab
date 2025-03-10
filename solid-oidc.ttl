@@ -81,6 +81,13 @@ oidc:redirect_uris
     rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
     vs:term_status "testing" .
 
+oidc:post_logout_redirect_uris
+    a rdf:Property ;
+    rdfs:label "post-logout redirect URIs"@en ;
+    rdfs:comment "A collection of registered URIs used by the client for redirection after logging out"@en ;
+    rdfs:isDefinedBy <http://www.w3.org/ns/solid/oidc#> ;
+    vs:term_status "testing" .
+
 oidc:require_auth_time
     a rdf:Property ;
     rdfs:label "require auth time"@en ;
