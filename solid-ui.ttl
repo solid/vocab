@@ -1,0 +1,771 @@
+    @prefix : <http://www.w3.org/ns/ui#> .
+    @prefix dc: <http://purl.org/dc/elements/1.1/> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix r: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+    @prefix s: <http://www.w3.org/2000/01/rdf-schema#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+    <>     dc:author <https://www.w3.org/People/Berners-Lee/card#i>;
+         dc:created "2010-08-07"^^xsd:date;
+         dc:description """The User Interface ontology allows the definition
+	of forms for processing RDF model data, and include a bootstrap form for
+	editing forms. It allows user interface hints such as background colors,
+	can be associated with objects and classes.
+	""";
+         dc:license <https://creativecommons.org/publicdomain/zero/1.0/>;
+         dc:modified "$Date: 2021/03/04 18:29:49 $";
+         dc:title "An ontology for User Interface description, Hints and Forms." .
+    
+    :BooleanField     s:subClassOf :NumericField .
+    
+    :CaseForm     a :Group;
+         dc:title "Form for a conditional case in a form";
+         :parts  (
+         [
+                 a :Choice;
+                 :canMintNew :true;
+                 :from s:Class;
+                 :label "when it is";
+                 :property :for;
+                 :sequence 1 ]
+         [
+                 a :Choice;
+                 :canMintNew :true;
+                 :from :Form;
+                 :property :use;
+                 :sequence 2;
+                 :use :FieldForm ] ) .
+    
+    :Choice     s:subClassOf :Form,
+                :Single .
+    
+    :Classifier     a s:Class;
+         s:comment """A classifier allows the user to select the type of an object.
+    The possible types must be subclasses of some overall class, the "category".
+    (Ideally, the superclass is also set up as the disjoint union of the subclasses,
+    if they are disjoint.)
+
+    The form normally stores the resulting classes using an r:type triple,
+    but a different predicate can be used if required, so the classifier field
+    needs is 'property' defined too.
+
+    If the subclass selected itself is has subclasses defined, the user can
+    recursively select from them in turn, as many levels as needed.""";
+         s:label "classifier";
+         s:subClassOf :Form,
+                :Single .
+    
+    :Color     a s:Datatype;
+         s:comment """Must be a valid CSS color string such as one could put in
+			an HTML style attribute.  This must be in the #xxxxxx form,
+			(with 6 digits of lowercase hex) so that it
+			can work eg with Graphviz.
+			As this is just an encoded array of RGB values,
+			you can do math with these, such as blending, complement, etc.""";
+         s:label "hex color"@en;
+         owl:onDatatype xsd:string;
+         owl:withRestrictions  (
+        :ColorValuespaceRestriction ) .
+    
+    :ColorField     s:subClassOf :ValueField .
+    
+    :ColorValuespaceRestriction     xsd:pattern "#[0-9a-z]{6}" .
+    
+    :Comment     a s:Class;
+         s:isDefinedBy <>;
+         s:label "Comentario"@es,
+                "Comment"@en;
+         s:subClassOf :Form,
+                :Single .
+    
+    :DateField     s:subClassOf :ValueField .
+    
+    :DateTimeField     s:subClassOf :ValueField .
+    
+    :DecimalField     s:subClassOf :NumericField .
+    
+    :EmailField     s:subClassOf :ValueField .
+    
+    :FF1     a :Heading;
+         :contents "Edit Form"@en;
+         :sequence 1 .
+    
+    :FF2     a :SingleLineTextField;
+         :property dc:title;
+         :sequence 2;
+         :size 60 .
+    
+    :FF3     a :Comment;
+         :contents """To add a field to the form, press the plus at the bottom,
+        and then select what sort of field you want."""@en;
+         :sequence 3;
+         :style "background-color: #ffe;" .
+    
+    :FieldForm     a :Group;
+         dc:title "Form for selecting a type of field";
+         :parts  (
+         [
+                 a :Classifier;
+                 :category :Form;
+                 :property r:type;
+                 :sequence 1 ]
+         [
+                 a :Options;
+                 :case  [
+                     :for :TextField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property ]
+                         [
+                                 a :IntegerField;
+                                 :label "field size";
+                                 :max 4096;
+                                 :min 1;
+                                 :property :size ]
+                         [
+                                 a :IntegerField;
+                                 :label "Max. length of string";
+                                 :min 1;
+                                 :property :maxLength ] ) ] ],
+                         [
+                     :for :IntegerField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :IntegerField;
+                                 :label "minimum value";
+                                 :property :min;
+                                 :sequence 2 ]
+                         [
+                                 a :IntegerField;
+                                 :label "maximum value";
+                                 :property :max;
+                                 :sequence 3 ] ) ] ],
+                         [
+                     :for :DecimalField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :DecimalField;
+                                 :label "minimum value";
+                                 :property :min;
+                                 :sequence 2 ]
+                         [
+                                 a :DecimalField;
+                                 :label "maximum value";
+                                 :property :max;
+                                 :sequence 3 ] ) ] ],
+                         [
+                     :for :FloatField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :FloatField;
+                                 :label "minimum value";
+                                 :property :min;
+                                 :sequence 2 ]
+                         [
+                                 a :FloatField;
+                                 :label "maximum value";
+                                 :property :max;
+                                 :sequence 3 ] ) ] ],
+                         [
+                     :for :ColorField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ] ) ] ],
+                         [
+                     :for :DateField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :DateField;
+                                 :label "min";
+                                 :property :min;
+                                 :sequence 2 ]
+                         [
+                                 a :DateField;
+                                 :label "max";
+                                 :property :max;
+                                 :sequence 3 ] ) ] ],
+                         [
+                     :for :DateTimeField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:DatatypeProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :DateTimeField;
+                                 :label "min";
+                                 :property :min;
+                                 :sequence 2 ]
+                         [
+                                 a :DateTimeField;
+                                 :label "max";
+                                 :property :max;
+                                 :sequence 3 ] ) ] ],
+                         [
+                     :for :EmailField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:ObjectProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ] ) ] ],
+                         [
+                     :for :PhoneField;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:ObjectProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ] ) ] ],
+                         [
+                     :for :Group;
+                     :use :FieldList ],
+                         [
+                     :for :Options;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :default r:type;
+                                 :from r:Property;
+                                 :label "depending on";
+                                 :property :dependingOn;
+                                 :sequence 1 ]
+                         [
+                                 a :Multiple;
+                                 :part :CaseForm;
+                                 :property :case;
+                                 :sequence 2 ] ) ] ],
+                         [
+                     :for :Choice;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from owl:ObjectProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from s:Class;
+                                 :label "destination class";
+                                 :property :from;
+                                 :sequence 2 ]
+                         [
+                                 a :BooleanField;
+                                 :label "user can add new";
+                                 :property :canMintNew;
+                                 :sequence 3 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from :Form;
+                                 :label "Nested Form (if any)";
+                                 :optional :true;
+                                 :property :use;
+                                 :sequence 4;
+                                 :use :FormForm ] ) ] ],
+                         [
+                     :for :Classifier;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :Comment;
+                                 :contents "A classifier allows the user to which classes the item belongs to, given a common superclass of the allowed classes.  Give the superclass here:";
+                                 :sequence 2 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from s:Class;
+                                 :label "superclass";
+                                 :property :category;
+                                 :sequence 4 ]
+                         [
+                                 a :Comment;
+                                 :contents "(When the choice is made normally the item is given a r:type. Set this to r:type unless you want the form to set a different property.)";
+                                 :sequence 6 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :default r:type;
+                                 :from owl:ObjectProperty;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 8 ] ) ] ],
+                         [
+                     :for :Multiple;
+                     :use  [
+                         a :Group;
+                         :parts  (
+                         [
+                                 a :BooleanField;
+                                 :label "ordered";
+                                 :property :ordered;
+                                 :sequence 0 ]
+                         [
+                                 a :IntegerField;
+                                 :label "minimum number";
+                                 :property :min;
+                                 :sequence 0 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from r:Property;
+                                 :label "property";
+                                 :property :property;
+                                 :sequence 1 ]
+                         [
+                                 a :Choice;
+                                 :canMintNew :true;
+                                 :from :Form;
+                                 :property :part;
+                                 :sequence 2;
+                                 :use :FieldForm ] ) ] ],
+                         [
+                     :for :Heading;
+                     :use  [
+                         a :SingleLineTextField;
+                         :property :contents ] ],
+                         [
+                     :for :Comment;
+                     :use  [
+                         a :MultiLineTextField;
+                         :property :contents ] ];
+                 :dependingOn r:type;
+                 :sequence 2 ] ) .
+    
+    :FieldList     a :Multiple;
+         :ordered :true;
+         :part :FieldForm;
+         :property :parts;
+         :sequence 10 .
+    
+    :FloatField     s:subClassOf :NumericField .
+    
+    :Form     a s:Class;
+         s:comment """A form can be any type of single field, or typically a Group of several fields,
+    including interspersed headings and comments.  """;
+         owl:disjointUnionOf  (
+        :ValueField
+        :Group
+        :Choice
+        :Classifier
+        :Options
+        :Multiple
+        :Heading
+        :Comment );
+         :creationForm :FormForm .
+    
+    :FormForm     a :Form,
+                :Group;
+         dc:title "Form for editing Forms";
+         :parts  (
+        :FF1
+        :FF2
+        :FF3
+        :FieldList ) .
+    
+    :Group     s:subClassOf :Form,
+                :Single .
+    
+    :Heading     s:subClassOf :Form,
+                :Single .
+    
+    :IntegerField     s:subClassOf :NumericField .
+    
+    :MultiLineTextField     s:subClassOf :TextField .
+    
+    :Multiple     s:subClassOf :Form .
+    
+    :NamedNodeURIField     a s:Class;
+         s:comment """A NamedNodeURIField is like a SingleLineTextField, except
+		that the value it generates is not a literal string but an RDF node with the given URI.
+		Normally users should not see URIs. When they do, this a way to do it.
+		""";
+         s:label "Something by its URI";
+         s:subClassOf :TextField .
+    
+    :NumericField     a s:Class;
+         s:subClassOf :ValueField;
+         owl:disjointUnionOf  (
+        :BooleanField
+        :TriStateField
+        :IntegerField
+        :DecimalField
+        :FloatField ) .
+    
+    :Options     s:subClassOf :Form,
+                :Single .
+    
+    :PhoneField     s:subClassOf :ValueField .
+    
+    :Single     a s:Class;
+         owl:disjointUnionOf  (
+        :ValueField
+        :Group
+        :Choice
+        :Classifier
+        :Options
+        :Heading
+        :Comment ) .
+    
+    :SingleLineTextField     s:subClassOf :TextField .
+    
+    :TextField     a s:Class;
+         s:subClassOf :ValueField;
+         owl:disjointUnionOf  (
+        :SingleLineTextField
+        :MultiLineTextField
+        :NamedNodeURIField ) .
+    
+    :TimeField     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Campo de tiempo"@es,
+                "Time field"@en .
+    
+    :TriStateField     s:subClassOf :NumericField .
+    
+    :ValueField     a s:Class;
+         s:subClassOf :Form,
+                :Single;
+         owl:disjointUnionOf  (
+        :TextField
+        :NumericField
+        :ColorField
+        :DateField
+        :DateTimeField
+        :PhoneField
+        :EmailField ) .
+    
+    :annotationForm     a r:Property;
+         s:comment """A form which may be used to add more infromation to an
+instance of this class which we know something about.  Anything from
+adding just add one more fact, to adding a whole lot of information about a specific
+facet of the thing.
+""";
+         s:domain s:Class;
+         s:label "annotation form";
+         s:range :Form .
+    
+    :backgroundColor     a r:Property,
+                owl:DatatypeProperty;
+         s:label "background color"@en;
+         s:range :Color .
+    
+    :backgroundImage     a r:Property,
+                owl:DatatypeProperty;
+         s:comment "URI or base64 representation of an image";
+         s:label "background image"@en .
+    
+    :base     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Base"@en,
+                "Base"@es .
+    
+    :category     a r:Property;
+         s:comment "The superclass subclasses of which will be selected.";
+         s:domain :Classifier;
+         s:label "overall superclass"@en;
+         s:range s:Class .
+    
+    :color     a r:Property,
+                owl:DatatypeProperty;
+         s:label "color"@en;
+         s:range :Color .
+    
+    :contents     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Contenido"@es,
+                "Contents"@en .
+    
+    :creationForm     a r:Property;
+         s:comment """A form which may be used to collect information about a
+    hitherto locally undocumented instance instance of this class.""";
+         s:domain s:Class;
+         s:label "creation form";
+         s:range :Form .
+    
+    :defaultError     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Default error"@en,
+                "Error predeterminado"@es .
+    
+    :dependingOn     a r:Property;
+         s:comment "Many fields prompt for information about a given property of the subject";
+         s:domain :Options;
+         s:label "depending on"@en;
+         s:range r:Property .
+    
+    :for     a r:Property;
+         s:comment "The value for which this case is selected.";
+         s:label "for"@en .
+    
+    :from     a r:Property;
+         s:domain :Choice;
+         s:label "from";
+         s:range r:Class;
+         :prompt "from what class" .
+    
+    :initialProperties     a r:Property;
+         s:comment """A really simple way of enabling user interfaces to
+            create new information about a class of things is to make a define of properties
+            to be specified when a information about a new item
+            ("New item" here means an item which the system
+            does not have prvious information about yet,
+            not an items which has just been created,
+            like new friend as opposed to new baby)""";
+         s:domain s:Class;
+         s:label "initial properties";
+         s:range r:List;
+         :prompt "Properties to be specified for new ones" .
+    
+    :label     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Etiqueta"@es,
+                "Label"@en .
+    
+    :maxDateOffset     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Fecha mÃ¡xima de desplazamiento"@es,
+                "Maximum date offset"@en .
+    
+    :maxDatetimeOffset     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Desplazamiento mÃ¡ximo de fecha y hora"@es,
+                "Maximum datetime offset"@en .
+    
+    :maxLength     a r:Property;
+         s:domain :TextField;
+         s:isDefinedBy <>;
+         s:label "Longitud mÃ¡xima"@es,
+                "Max length"@en,
+                "max length of value";
+         s:range xsd:integer .
+    
+    :maxValue     a r:Property;
+         s:domain :ValueField;
+         s:label "max" .
+    
+    :minDateOffset     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Fecha mÃ­nima compensada"@es,
+                "Minimum date offset"@en .
+    
+    :minDatetimeOffset     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Desplazamiento mÃ­nimo de fecha y hora"@es,
+                "Minimum datetime offset"@en .
+    
+    :minLength     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Longitud mÃ­nima"@es,
+                "Min length"@en .
+    
+    :minValue     a r:Property;
+         s:domain :ValueField;
+         s:label "min" .
+    
+    :name     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Name"@en,
+                "Nombre"@es .
+    
+    :oldValue     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Old value"@en,
+                "Valor antiguo"@es .
+    
+    :ordered     s:label "ordered";
+         s:range xsd:Boolean;
+         :e r:Property .
+    
+    :parentProperty     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Parent property"@en,
+                "Propiedad principal"@es .
+    
+    :part     a r:Property;
+         s:domain :Form;
+         s:label "part"@en;
+         s:range :Form .
+    
+    :parts     a r:Property;
+         s:domain :Form;
+         s:label "parts"@en;
+         s:range r:Collection .
+    
+    :partsClone     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Clon de piezas"@es,
+                "Parts clone"@en .
+    
+    :pattern     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Modelo"@es,
+                "Pattern"@en .
+    
+    :prompt     a r:Property;
+         s:comment """A string for the UI to use if the user needs a longer
+        prompts than just a field name, the s:label. """;
+         s:label "user prompt";
+         :prompt "A longer prompt for a user inputting this property" .
+    
+    :property     a r:Property;
+         s:comment """Many fields prompt for information about a given property of the subject.
+    When field is filled in, this gives which property is written into the data.""";
+         s:domain :Form;
+         s:label "property to be stored"@en;
+         s:range r:Property .
+    
+    :reference     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Reference"@en,
+                "Referencia"@es .
+    
+    :required     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Requerido"@es,
+                "Required"@en .
+    
+    :requiredError     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Error requerido"@es,
+                "Required error"@en .
+    
+    :seqeunce     a r:Property;
+         s:comment "The sequence in which this item is arranged with repect to other parts.";
+         s:label "sequence number";
+         s:range xsd:integer .
+    
+    :size     a r:Property;
+         s:domain :ValueField;
+         s:label "size of field";
+         s:range xsd:integer;
+         :prompt "size of field in characters" .
+    
+    :sortBy     a r:Property;
+         s:comment """A property which typically is used to sort
+        members of a given class.""";
+         s:domain s:Class;
+         s:label "sort by";
+         s:range r:Property .
+    
+    :sortPriority     a r:Property,
+                owl:DatatypeProperty;
+         s:comment """When individuals or classes must be sorted, then
+        if they are given different values of sortPriority a user agent can
+        use this as a hint to how to present information.""";
+         s:label "sort priority";
+         s:range xsd:integer .
+    
+    :style     a r:Property,
+                owl:DatatypeProperty;
+         s:comment """Must be a valid CSS style string such as one could put in
+        an HTML style attribute.  Depending on the user interface system, this can
+        by given to individuals, classes or properties. It is up to a user interface
+        which wants to draw on them to pick how it uses styles from which parts
+        of the data it has.  For example, the style of a class may be picked
+        to distinguish information about things in that class.""";
+         s:label "style";
+         :prompt "CSS style" .
+    
+    :tableProperties     a r:Property;
+         s:comment """This  is a crude way of specifying a table-based
+            view for objects of this class.""";
+         s:domain s:Class;
+         s:label "table properties";
+         s:range r:List;
+         :prompt "Properties to be given in a default table view" .
+    
+    :use     a r:Property;
+         s:range :Form .
+    
+    :valid     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Valid"@en,
+                "VÃ¡lida"@es .
+    
+    :validationError     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Error de validacion"@es,
+                "Validation error"@en .
+    
+    :value     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Valor"@es,
+                "Value"@en .
+    
+    :values     a r:Property;
+         s:isDefinedBy <>;
+         s:label "Valores"@es,
+                "Values"@en .
+    
