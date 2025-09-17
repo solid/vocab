@@ -34,6 +34,15 @@ spec:Specification
   rdfs:label "Specification"@en ;
   rdfs:isDefinedBy spec: .
 
+spec:ClassOfProduct
+  a rdfs:Class ;
+  rdfs:label "Class of Product"@en .
+
+spec:definesConformanceFor
+  a rdf:Property, owl:ObjectProperty ;
+  rdfs:label "defines conformance for"@en ;
+  rdfs:range spec:ClassOfProduct .
+
 spec:requirement
   a rdf:Property, owl:ObjectProperty ;
   rdfs:label "requirement"@en ;
