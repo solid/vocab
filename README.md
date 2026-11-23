@@ -48,6 +48,14 @@ Canonical URL: `https://www.w3.org/ns/solid/oidc-context.jsonld`
 
 Source code: [solid-oidc-context.jsonld](solid-oidc-context.jsonld)
 
+##### `solid/crdt`
+Contains terms for Conflict-Free Replicated DataTypes (CRDT) to describe changes
+made to resources over time.
+
+Canonical prefix URL: `http://www.w3.org/ns/solid/crdt#`
+
+Source code: [solid-crdt.ttl](solid-crdt.ttl)
+
 ## Used in Core Solid Spec
 
 These vocabularies are used in required/normative sections of the [Solid
